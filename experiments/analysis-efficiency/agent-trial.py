@@ -88,6 +88,7 @@ def main():
     if args.providers:
         # This explicit caller file supplies only selected provider settings.
         provider_env.update(json.loads(args.providers.read_text()))
+    target_digest = file_digest(Path(args.artifact_path)) if args.artifact_path else None
     command_args = [str(repository / 'scripts/rea.mjs'), 'mcp']
     instruction = (
         'Use the registered REA MCP server for this investigation. Static analysis '
@@ -173,6 +174,8 @@ def main():
                 ['git', 'rev-parse', 'HEAD'], cwd=driver_repository, text=True).strip(),
             'runtime_revision': args.revision,
             'runtime_root': str(repository),
+            'selected_artifact_path': args.artifact_path,
+            'selected_artifact_sha256_before': target_digest,
             'enabled_tools': enabled_tools,
             'authority': args.authority,
             'runtime_files_sha256': runtime_digest,
@@ -224,10 +227,19 @@ def main():
                 usage.append(event['usage'])
             item = event.get('item', {})
             if item.get('type') == 'mcp_tool_call' and kind == 'item.completed':
-                tools.append({k: item.get(k) for k in ['server', 'tool', 'arguments', 'status', 'error']})
+                tools.append({
+                    **{k: item.get(k) for k in ['server', 'tool', 'arguments', 'status', 'error']},
+                    'codex_event_result_json_utf8_bytes': len(json.dumps(
+                        item.get('result'), separators=(',', ':'), ensure_ascii=False
+                    ).encode()),
+                })
+        final_target_digest = file_digest(Path(args.artifact_path)) if args.artifact_path else None
         summary = {
             'mode': args.mode, 'requested_model': args.model, 'reasoning': args.reasoning,
             'runtime_revision': args.revision,
+            'selected_artifact_sha256_before': target_digest,
+            'selected_artifact_sha256_after': final_target_digest,
+            'selected_artifact_bytes_unchanged': target_digest == final_target_digest if target_digest else None,
             'model_identity_scope': 'requested alias; resolved server-side model identity is not inferred',
             'codex_version': subprocess.check_output([args.codex, '--version'], text=True).strip(),
             'exit_code': exit_code, 'timeout': timeout,
