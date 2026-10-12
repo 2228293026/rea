@@ -100,6 +100,21 @@
         "derivation": "Parse the named eth_getCode JSON result from the official published example and preserve the hex carrier with one trailing LF",
         "authority": "published historical RPC example; live retrieval returned HTTP 403; deployment authenticity remains unverified"
       }
+    },
+    {
+      "id": "sharex.helpers.dll",
+      "file": "ShareX.HelpersLib.dll",
+      "bytes": 1076224,
+      "sha256": "e91bd1ec904e2bb8a1add4bb6187443b878bf33d24fe9e27f0b799bfee9de33d",
+      "provenance": {
+        "project": "ShareX HelpersLib",
+        "version": "19.0.2",
+        "upstreamFile": "ShareX-19.0.2-portable.zip",
+        "url": "https://github.com/ShareX/ShareX/releases/download/v19.0.2/ShareX-19.0.2-portable.zip",
+        "transport_sha256": "967b5d838df5ce25fb5fd7cbd16f1bd797427e2df16907b022b74a4bc0fb9d54",
+        "transport_bytes": 168796487,
+        "derivation": "selected regular ZIP member ShareX.HelpersLib.dll; no target execution"
+      }
     }
   ]
 }

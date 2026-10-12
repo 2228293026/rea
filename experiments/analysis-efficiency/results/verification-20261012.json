@@ -1,0 +1,282 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-12",
+  "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+  "real_wabt_cli_mcp": {
+    "verifier_report": {
+      "status": "passed",
+      "cases": 42,
+      "tool_profile": "wabt@1.0.42",
+      "entrypoint": "/home/yann/yann/rea-compatibility-first-20261012/scripts/rea.mjs",
+      "verifier": {
+        "run_id": "19fab0b3-ee3b-456a-9b8a-cc2b3e825ca5",
+        "verifier_pid": 1913329,
+        "parent_pid": 1913328,
+        "process_lineage": {
+          "status": "verified",
+          "observed_at": "2026-10-12T06:35:00.145Z",
+          "launcher_pid": 1913329,
+          "launcher_parent_pid": 1913328,
+          "process_group_id": 1913326,
+          "descendants": []
+        }
+      }
+    },
+    "resource": {
+      "resource_scope": "rea-efficiency-b6dd4bd538e6494a934c5f2596edcc44.scope",
+      "peak_cgroup_bytes_sampled": 1153855488,
+      "elapsed_seconds": 70.352,
+      "abort": null,
+      "hard_memory_bytes": 4294967296,
+      "early_stop_bytes": 3221225472,
+      "cpu_quota_percent": 100,
+      "cpu_affinity": [15],
+      "task_ceiling": 192,
+      "peak_tasks_sampled": 25,
+      "resource_events_last_observed": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 0
+        }
+      },
+      "cpu_stat_last_observed": {
+        "usage_usec": 69679217,
+        "user_usec": 50322383,
+        "system_usec": 19356834,
+        "nr_periods": 703,
+        "nr_throttled": 48,
+        "throttled_usec": 12381,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    }
+  },
+  "sqlite_default_complete_cli": {
+    "review": {
+      "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+      "target_sha256_before": "2ee8f3dab694532afc8840e07703127287662d08b74e6ff50491ce63f00d5752",
+      "target_sha256_after": "2ee8f3dab694532afc8840e07703127287662d08b74e6ff50491ce63f00d5752",
+      "target_bytes_unchanged": true,
+      "cli_evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140",
+      "baseline_mcp_evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140",
+      "complete_normalized_result_matches_baseline": true,
+      "raw_result_matches_baseline": true,
+      "complete_cli_json_bytes": 16439561,
+      "source_scope": "Unchanged default CLI arguments and complete JSON output compared with authenticated completed baseline MCP record recovered through public export."
+    },
+    "resource": {
+      "resource_scope": "rea-efficiency-31a8fc3c09e44da1b617202783282dfb.scope",
+      "peak_cgroup_bytes_sampled": 440184832,
+      "elapsed_seconds": 3.95,
+      "abort": null,
+      "hard_memory_bytes": 4294967296,
+      "early_stop_bytes": 3221225472,
+      "cpu_quota_percent": 100,
+      "cpu_affinity": [15],
+      "task_ceiling": 192,
+      "peak_tasks_sampled": 10,
+      "resource_events_last_observed": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 0
+        }
+      },
+      "cpu_stat_last_observed": {
+        "usage_usec": 3660311,
+        "user_usec": 2765079,
+        "system_usec": 895232,
+        "nr_periods": 39,
+        "nr_throttled": 2,
+        "throttled_usec": 815,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    }
+  },
+  "contract_composition_checks": {
+    "combined_run": {
+      "files": 7,
+      "passed_tests": 51,
+      "failed_tests": 1,
+      "failure": "Existing 20-second child deadline in contractPresentation under shared single-CPU project lane",
+      "resource": {
+        "resource_scope": "rea-efficiency-266e8bdd2db44e8baec186a15c24c4c1.scope",
+        "peak_cgroup_bytes_sampled": 1296224256,
+        "elapsed_seconds": 169.547,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 62,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 132947189,
+          "user_usec": 114400394,
+          "system_usec": 18546794,
+          "nr_periods": 1695,
+          "nr_throttled": 51,
+          "throttled_usec": 18864,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      }
+    },
+    "unmodified_isolated_retry": {
+      "file": "tests/boundary/mcp/contractPresentation.test.ts",
+      "passed_tests": 1,
+      "failed_tests": 0,
+      "test_duration_ms": 10835,
+      "resource": {
+        "resource_scope": "rea-efficiency-ebd24f43ea0a4599a851d20e6c9fdc2a.scope",
+        "peak_cgroup_bytes_sampled": 764485632,
+        "elapsed_seconds": 13.923,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 47,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 12491599,
+          "user_usec": 11205284,
+          "system_usec": 1286314,
+          "nr_periods": 138,
+          "nr_throttled": 30,
+          "throttled_usec": 7182,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      }
+    },
+    "interpretation": "Every selected assertion passes across the original run and isolated retry. The combined seven-file run itself did not pass; no deadline/concurrency/test or REA bug was patched."
+  },
+  "source_and_document_checks": {
+    "build": "passed",
+    "check_fast_typecheck_lint_module_boundaries": "passed",
+    "docs_generate_and_check": "passed",
+    "resource": {
+      "resource_scope": "rea-efficiency-b3397c07fe074a6ea5aa2658c0bb49cb.scope",
+      "peak_cgroup_bytes_sampled": 3149799424,
+      "elapsed_seconds": 83.501,
+      "abort": null,
+      "hard_memory_bytes": 4294967296,
+      "early_stop_bytes": 3221225472,
+      "cpu_quota_percent": 100,
+      "cpu_affinity": [15],
+      "task_ceiling": 192,
+      "peak_tasks_sampled": 103,
+      "resource_events_last_observed": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 0
+        }
+      },
+      "cpu_stat_last_observed": {
+        "usage_usec": 83271239,
+        "user_usec": 78369627,
+        "system_usec": 4901611,
+        "nr_periods": 834,
+        "nr_throttled": 109,
+        "throttled_usec": 28601,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    }
+  },
+  "scope": "Actual WABT 1.0.42 static CLI/MCP workflows and public contract/composition checks on Linux x64. Simulated provider tests do not establish IDA/Hopper or other platform behavior. Full reports, fixture outputs, SQLite complete Evidence, runtime copies and credentials remain outside Git.",
+  "final_experiment_checks": {
+    "checks": [
+      "changed-file oxfmt",
+      "research driver node --check",
+      "research Python py_compile",
+      "git diff --check",
+      "check:fast typecheck/lint/module boundaries"
+    ],
+    "status": "passed",
+    "cache_scope": "Both check:fast tasks reused the shared worktree cache; earlier uncached production checks are separately recorded.",
+    "resource": {
+      "resource_scope": "rea-efficiency-0972a09571814170b8e0dacb5da29191.scope",
+      "peak_cgroup_bytes_sampled": 115691520,
+      "elapsed_seconds": 1.433,
+      "abort": null,
+      "hard_memory_bytes": 4294967296,
+      "early_stop_bytes": 3221225472,
+      "cpu_quota_percent": 100,
+      "cpu_affinity": [15],
+      "task_ceiling": 192,
+      "peak_tasks_sampled": 26,
+      "resource_events_last_observed": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 0
+        }
+      },
+      "cpu_stat_last_observed": {
+        "usage_usec": 890864,
+        "user_usec": 546101,
+        "system_usec": 344762,
+        "nr_periods": 13,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    }
+  }
+}

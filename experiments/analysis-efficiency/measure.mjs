@@ -204,6 +204,18 @@ const normalized = (value) => value.normalized_result;
 const targetSha = (value) => value.subject?.digest.sha256;
 const inventoryPaths = ["package.json", "main.js", "preload.js"];
 const unique = (values) => [...new Set(values)].sort();
+const inspectManagedTarget = async () => {
+  const info = await call("inspect_managed_artifact", { path: values.path });
+  const boundaries = await call("inspect_managed_native_boundaries", {
+    path: values.path,
+  });
+  return {
+    artifact_sha256: targetSha(info),
+    artifact: normalized(info),
+    boundaries: normalized(boundaries),
+    evidence_ids: [info.evidence_id, boundaries.evidence_id],
+  };
+};
 
 const workflows = {
   "obsidian.asar": async () => {
@@ -376,18 +388,8 @@ const workflows = {
       evidence_ids: [pkg.evidence_id, found.evidence_id, cls.evidence_id],
     };
   },
-  "sharex.dll": async () => {
-    const info = await call("inspect_managed_artifact", { path: values.path });
-    const boundaries = await call("inspect_managed_native_boundaries", {
-      path: values.path,
-    });
-    return {
-      artifact_sha256: targetSha(info),
-      artifact: normalized(info),
-      boundaries: normalized(boundaries),
-      evidence_ids: [info.evidence_id, boundaries.evidence_id],
-    };
-  },
+  "sharex.dll": inspectManagedTarget,
+  "sharex.helpers.dll": inspectManagedTarget,
   "openwrt.bin": async () => {
     const info = await call("inspect_firmware_regions", { path: values.path });
     return {

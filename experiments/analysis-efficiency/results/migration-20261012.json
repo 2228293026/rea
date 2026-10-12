@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-12",
+  "issue": "https://github.com/morluto/rea/issues/2016",
+  "baseline_revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+  "candidate_runtime": {
+    "revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+    "runtime_files_sha256": "c35e1d11fdfa4c93ce7600b247ebf44abbd27e514b1024ca948fdb33e82c1a3b",
+    "product_change_since_0002caa07": "Tool description and example title only; WASM/inventory semantics and schemas unchanged."
+  },
+  "runner_sha256": "a1bf9218e9c849bb8ceb267559e834bc85fe2c49f8e8bcef0f5ac51bcb3ea645",
+  "report": {
+    "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+    "original_bundle_sha256": "e1ff3d28801436bcc11693f79cc847a4f31234f49d88449f9e0d77215c3765fc",
+    "original_inspection_reply_sha256": "7cecd07012bb79f3afad2ea9e70357e056e9eab48c1aa13bbbd310cdcb43eb9f",
+    "source_files_unchanged": true,
+    "imported_wasm_source_evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140",
+    "original_wasm_record_preserved_exactly": true,
+    "typed_summary_and_first4_exports_match": true,
+    "portable_old_inspection_and_atomic_inventory_identity_preserved": true,
+    "original_inventory_evidence_id": "ev_22c17e52489f3ec0e7298a62da37bd985dbbec202d7208a0bb1c20d863790aed",
+    "calls": [
+      {
+        "name": "import_evidence_bundle",
+        "arguments": {
+          "path": "/home/yann/yann/rea-compatibility-first-lab-20261012/sqlite-wasm-control-final/retained-evidence.json"
+        },
+        "evidence_id": null
+      },
+      {
+        "name": "inspect_analysis_view",
+        "arguments": {
+          "source": {
+            "kind": "retained-evidence",
+            "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+          },
+          "view": {
+            "kind": "summary"
+          }
+        },
+        "evidence_id": "ev_8c039b1e4ecefb3619f50d2cc0b9b83086cc505fb0b8662fad7ba11b9cec8922"
+      },
+      {
+        "name": "inspect_analysis_view",
+        "arguments": {
+          "source": {
+            "kind": "retained-evidence",
+            "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+          },
+          "view": {
+            "kind": "wasm",
+            "facet": "exports",
+            "offset": 0,
+            "limit": 4
+          }
+        },
+        "evidence_id": "ev_f78393e6d8e2e6930e9bbb58d29105b2bac3676ad84a3dc772a9518391cbafa1"
+      },
+      {
+        "name": "inspect_analysis_view",
+        "arguments": {
+          "source": {
+            "kind": "inline",
+            "original_evidence_id": "ev_08a04d3bd993ac132c2eea7a0a54ea5c7f65364a19c4daade0de49f1819885b9"
+          },
+          "view": {
+            "kind": "summary"
+          }
+        },
+        "evidence_id": "ev_014641bd80fbe3bd197c7a2ca514a4afd6ac87f8681629c207332e1ea056b267"
+      },
+      {
+        "name": "export_evidence_bundle",
+        "arguments": {
+          "path": "/home/yann/yann/rea-compatibility-first-lab-20261012/old-evidence-migration-final/exported-after-import.json"
+        },
+        "evidence_id": null
+      }
+    ],
+    "scope": "Actual old complete Evidence imported or passed inline to the new runtime; original authentication, IDs, records, source bytes and selected facts preserved. WABT is unavailable and no producer analysis is requested. Existing file import/export is used, not an engine database cache."
+  },
+  "resource": {
+    "resource_scope": "rea-efficiency-f48fa76b1a64402b90b2e19af176479a.scope",
+    "peak_cgroup_bytes_sampled": 700542976,
+    "elapsed_seconds": 5.458,
+    "abort": null,
+    "hard_memory_bytes": 4294967296,
+    "early_stop_bytes": 3221225472,
+    "cpu_quota_percent": 100,
+    "cpu_affinity": [15],
+    "task_ceiling": 192,
+    "peak_tasks_sampled": 16,
+    "resource_events_last_observed": {
+      "memory.events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "pids.events": {
+        "max": 0
+      }
+    },
+    "cpu_stat_last_observed": {
+      "usage_usec": 5003821,
+      "user_usec": 4324854,
+      "system_usec": 678966,
+      "nr_periods": 53,
+      "nr_throttled": 10,
+      "throttled_usec": 8680,
+      "nr_bursts": 0,
+      "burst_usec": 0
+    }
+  },
+  "scope": "Actual old public MCP outputs, public import/view/export tools, absent WABT provider. Complete source outputs and exported bundles remain outside Git; this receipt preserves identities and assertions."
+}

@@ -42,6 +42,13 @@ startup requires 8 GiB available. Cleanup failures retain the owned scope's
 identity. Run heavy builds, providers and model trials serially. Sampled peaks
 can miss short spikes; cgroup limit events are separately reported.
 
+An actual Codex + Chromium trial exceeded the initial 192-task allowance and
+was stopped automatically below 1 GiB sampled memory, with no OOM. The isolated
+browser model retry uses `resource-run.py --task-ceiling 256 -- COMMAND...` to
+account for both process trees; memory, swap and CPU controls are unchanged.
+Keep the original aborted run and cleanup receipt. This is experiment capacity,
+not a REA defect or a successful browser analysis.
+
 ## What the numbers mean
 
 `summary.json` records the selected artifact's before/after SHA-256, runtime
@@ -91,7 +98,10 @@ and the named recovery-path description. Different settings, changed facts or
 failed workflows make the comparator fail. Binwalk's per-invocation region UUIDs
 are separately preserved with both original values and JSON paths; only those
 opaque lookup values are excluded from physical-region fact equality. Original
-producer replies are never rewritten. Counts include extra view calls and
+producer replies are never rewritten. Selected JavaScript comparisons likewise
+preserve both values of the two named parent-heap-dependent byte budgets before
+excluding their values from fact equality; fixed limits and coverage rows remain
+checked. Counts include extra view calls and
 observed tool errors. Use repeated runs with alternating order before claiming
 a distribution or a speedup; one pair is only one observation.
 
@@ -212,3 +222,87 @@ published historical example; a live RPC request returned HTTP 403, so this is
 not live-chain verification. Every pair records unchanged target bytes and zero
 observed OOM/task-limit events. The Linux x64 results do not establish behavior
 for IDA, Hopper, macOS, Windows or Harmony.
+
+## Same-question model and selected-source follow-up
+
+[Two actual SQLite model trials](results/model-wasm-20261012.json) preserve all
+12 requested facts. The question, developer instruction, provider settings and
+tool allowlist hashes match. A description-only follow-up supplies the exact
+summary kind and its fields. Calls change from 42 to 3, workflow time from
+292.64 to 63.79 seconds, and reported input tokens from 304,698 to 74,387. The
+follow-up reads no unnecessary WAT pages. Both keep the original completed
+analysis's transport error and authenticate the retained source/view identities.
+This is one stochastic model pair, not a statistical or general causal claim.
+
+[The selected JavaScript pair](results/obsidian-selected-20261012.json) preserves
+all 24 observed `main.js` module identities and the exact two-source selection.
+The strict comparison initially differs on parent budget values derived from
+observed heap availability; both values and paths remain recorded separately.
+Other coverage facts, per-family rows, fixed worker limits, omitted/unknown
+counts, statistics and Electron observations agree. Coverage remains partial,
+with 36 unselected relevant files and 384 semantic unknowns. These static facts
+do not establish runtime behavior. The comparator does not rewrite Evidence.
+
+[Ten real CLI trial reviews](results/model-domains-20261012.json) cover native,
+managed, Android, firmware, Electron/JavaScript, WASM, EVM and browser tasks.
+The selected JavaScript model preserves core facts and partial coverage but
+omits full budget/family provenance. The browser producer captures complete
+DOM/accessibility/URL evidence and terminates its owned process; direct model
+answers lose two accessibility metadata fields to client context clipping and
+report them unknown. A requested under-development Codex code-mode configuration
+still produces a direct MCP call in the actual trace, so no executor/composition
+win is credited. Profile cleanup, original errors, actual calls, usage, facts and
+scope limits remain independently reviewed. Enabling a configuration flag does
+not prove that a capability was used.
+
+Discovered REA defects are recorded separately for team repair at the user's
+request. This follow-up performs no additional REA bug fixes.
+
+## Nonempty managed boundaries and final verification
+
+[A second shipped managed library](results/sharex-helpers-20261012.json) checks
+11 ModuleRefs, 147 PInvoke declarations and 225 native implementations from
+ShareX HelpersLib 19.0.2. All complete normalized artifact and native-boundary
+fields match between baseline and pilot, including source Evidence identities.
+This covers nonempty declarations beyond the main ShareX DLL's empty import
+tables. It does not verify native exports, execute the assembly or resolve CLR
+dependencies.
+
+[Verification receipts](results/verification-20261012.json) include 42 real
+WABT CLI/MCP cases and the complete real SQLite CLI JSON: the unchanged default
+returns the same original source Evidence ID, normalized result and raw result
+as the baseline exported MCP record. Source bytes are unchanged. The seven-file
+contract/composition run passes 51/52 assertions and hits the existing 20-second
+presentation-test deadline while sharing one CPU. That same unmodified assertion
+passes alone in 10.835 seconds. The original combined failure and isolated pass
+remain recorded; no test deadline or REA bug was patched. Build, type/lint/module
+checks and generated-document checks pass. No full `check:pr` or unverified
+provider/platform coverage is implied.
+
+## Actual old Evidence migration
+
+[The migration receipt](results/migration-20261012.json) imports the original
+baseline SQLite Evidence bundle into the pilot runtime, reads a typed summary
+and four export forms, and exports the retained bundle again. The complete old
+WASM record is deeply equal after import/export, with its original authenticated
+Evidence ID. The original baseline Obsidian complete inspection also works as
+inline input to the new inventory summary, retaining the old parent and atomic
+inventory identities and manifest. Original input files remain byte-identical.
+
+The runtime explicitly selects an absent WABT directory and requests no producer
+operation. These views consume existing Evidence without another provider run;
+this is portable-result reuse through existing import/export, not an engine
+database cache. The five-call workflow completes in 5.458 seconds with a sampled
+aggregate peak of 700,542,976 bytes and no observed limit or OOM events.
+
+To repeat it with genuine old public outputs:
+
+```sh
+python3 experiments/analysis-efficiency/resource-run.py -- \
+  node experiments/analysis-efficiency/verify-migration.mjs \
+  --runtime-root /absolute/frozen-pilot-runtime \
+  --revision 259e99dd906290189217cf0fb1a19769bcf87101 \
+  --bundle /absolute/baseline-exported-evidence.json \
+  --inspection-reply /absolute/baseline-complete-inspection-reply.json \
+  --output /absolute/new-migration-directory
+```
