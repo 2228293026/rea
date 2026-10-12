@@ -25,6 +25,7 @@ const sameSettings = [
   "artifact_sha256",
   "artifact_sha256_after",
   "native_question",
+  "javascript_question",
   "provider_settings_sha256",
   "measure_source_sha256",
   "package_lock_sha256",
@@ -47,6 +48,25 @@ const facts = (answer) =>
   );
 const a = facts(leftAnswer);
 const b = facts(rightAnswer);
+const runSpecific = [];
+// Binwalk assigns a new opaque region UUID in each invocation. Preserve both
+// original lookup values in this report; compare the observed region facts
+// separately. The product and original replies retain those IDs unchanged.
+if (left.artifact === "openwrt.bin") {
+  for (const [side, answer] of [
+    ["left", a],
+    ["right", b],
+  ]) {
+    for (const [index, region] of answer.result.regions.entries()) {
+      runSpecific.push({
+        side,
+        path: ["result", "regions", index, "provider_id"],
+        value: region.provider_id,
+      });
+      delete region.provider_id;
+    }
+  }
+}
 const factDifferences = [
   ...new Set([...Object.keys(a), ...Object.keys(b)]),
 ].filter((key) => !isDeepStrictEqual(a[key], b[key]));
@@ -83,6 +103,7 @@ const comparison = {
   setting_differences: settingDifferences,
   facts_match: factDifferences.length === 0,
   fact_differences: factDifferences,
+  preserved_run_specific_values: runSpecific,
   workflow_failures: [left.failure, right.failure],
   left: cost(left),
   right: cost(right),

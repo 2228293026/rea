@@ -25,6 +25,7 @@ const { values } = parseArgs({
     output: { type: "string" },
     delivery: { type: "string", default: "complete" },
     "native-question": { type: "string", default: "entry" },
+    "javascript-question": { type: "string", default: "inventory" },
     schemas: { type: "string", default: "default" },
   },
 });
@@ -37,8 +38,11 @@ if (
   !isAbsolute(values.output) ||
   !["complete", "summary"].includes(values.delivery) ||
   !["entry", "entry-and-main"].includes(values["native-question"]) ||
+  !["inventory", "selected"].includes(values["javascript-question"]) ||
   !["default", "selected"].includes(values.schemas) ||
-  (values.artifact !== "jq" && values["native-question"] !== "entry")
+  (values.artifact !== "jq" && values["native-question"] !== "entry") ||
+  (values.artifact !== "obsidian.asar" &&
+    values["javascript-question"] !== "inventory")
 )
   throw new Error(
     "Use --revision SHA --artifact ID --path ABS --output NEW_ABS_DIR [--runtime-root ABS] [--providers JSON] [--delivery complete|summary]",
@@ -203,6 +207,54 @@ const unique = (values) => [...new Set(values)].sort();
 
 const workflows = {
   "obsidian.asar": async () => {
+    if (values["javascript-question"] === "selected") {
+      const inspected = await call("analyze_javascript_application", {
+        input_path: values.path,
+        source_paths: ["package.json", "main.js"],
+        detail: "summary",
+      });
+      const receipt = normalized(inspected);
+      const parent = receipt.parent_evidence_id;
+      const evidenceIds = [parent, inspected.evidence_id];
+      const modules = [];
+      let offset = 0;
+      do {
+        const page = await call("inspect_analysis_view", {
+          source: { kind: "retained-evidence", evidence_id: parent },
+          view: { kind: "page", collection: "modules", offset, limit: 64 },
+        });
+        evidenceIds.push(page.evidence_id);
+        const view = normalized(page);
+        for (const module of view.items.filter(
+          (row) => row.path === "main.js",
+        )) {
+          const selected = await call("inspect_analysis_view", {
+            source: { kind: "retained-evidence", evidence_id: parent },
+            view: {
+              kind: "item",
+              collection: "modules",
+              selector: { node_id: module.node_id },
+            },
+          });
+          evidenceIds.push(selected.evidence_id);
+          modules.push(normalized(selected).item);
+        }
+        if (view.coverage.exhausted) break;
+        if (
+          view.coverage.next_offset === null ||
+          view.coverage.next_offset <= offset
+        )
+          throw new Error("Module page did not advance");
+        offset = view.coverage.next_offset;
+      } while (true);
+      return {
+        artifact_sha256: targetSha(inspected),
+        ...receipt.summary,
+        modules,
+        limitations: receipt.limitations,
+        evidence_ids: evidenceIds,
+      };
+    }
     await call("open_binary", { path: values.path });
     try {
       const inspected = await call(
@@ -360,6 +412,37 @@ const workflows = {
           ? error.value.error.details?.reported_limits?.evidence_reference
           : undefined;
       if (reference?.kind !== "retained-evidence") throw error;
+      if (values.delivery === "summary") {
+        const summaryEvidence = await call("inspect_analysis_view", {
+          source: reference,
+          view: { kind: "summary" },
+        });
+        const summary = normalized(summaryEvidence).summary;
+        const exportsEvidence = await call("inspect_analysis_view", {
+          source: reference,
+          view: { kind: "wasm", facet: "exports", offset: 0, limit: 4 },
+        });
+        return {
+          artifact_sha256: targetSha(summaryEvidence),
+          validation: summary.validation,
+          section_count: summary.available_counts.sections,
+          import_count: summary.available_counts.imports,
+          export_count: summary.available_counts.exports,
+          exports_first4: normalized(exportsEvidence).item,
+          wat_sha256: summary.wat.sha256,
+          wat_code_units: summary.wat.code_units,
+          tool_profile: summary.tool_profile,
+          runtime_execution: summary.runtime_execution,
+          network_fetch: summary.network_fetch,
+          evidence_ids: [
+            reference.evidence_id,
+            summaryEvidence.evidence_id,
+            exportsEvidence.evidence_id,
+          ],
+          recovery:
+            "existing completed producer reference read through typed WASM views",
+        };
+      }
       const path = resolve(values.output, "retained-evidence.json");
       await call("export_evidence_bundle", { path });
       const bundle = JSON.parse(await readFile(path, "utf8"));
@@ -375,11 +458,38 @@ const workflows = {
       recovery =
         "complete producer Evidence exported after an observed transport constraint";
     }
+    const n = normalized(info);
     return {
       artifact_sha256: targetSha(info),
-      result: normalized(info),
+      validation: n.validation,
+      section_count: n.sections.length,
+      import_count: n.imports.length,
+      export_count: n.exports.length,
+      exports_first4: n.exports.slice(0, 4),
+      wat_sha256: n.wat.sha256,
+      wat_code_units: n.wat.text.length,
+      tool_profile: n.tool_profile,
+      runtime_execution: n.runtime_execution,
+      network_fetch: n.network_fetch,
       evidence_ids: [info.evidence_id],
       recovery,
+    };
+  },
+  "weth.hex": async () => {
+    const info = await call("inspect_evm_interface", {
+      path: values.path,
+      encoding: "hex",
+    });
+    const n = normalized(info);
+    return {
+      artifact_sha256: targetSha(info),
+      artifact: n.artifact,
+      bytecode: n.bytecode,
+      functions: n.functions,
+      discovery_completeness: n.discovery_completeness,
+      runtime_execution: n.runtime_execution,
+      limitations: n.limitations,
+      evidence_ids: [info.evidence_id],
     };
   },
   jq: async () => {
@@ -578,6 +688,8 @@ const report = {
   delivery: values.delivery,
   sdk_schema_mode: values.schemas,
   native_question: values.artifact === "jq" ? values["native-question"] : null,
+  javascript_question:
+    values.artifact === "obsidian.asar" ? values["javascript-question"] : null,
   provider_settings_sha256: sha(JSON.stringify(selectedProviders)),
   ...fingerprints,
   node_version: process.version,

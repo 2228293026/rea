@@ -70,6 +70,11 @@ inventory. It must be supported by the selected server's advertised schema.
 The default `complete` runs the existing calls unchanged. Compare the same
 analyst facts and complete source Evidence before crediting a smaller response.
 Projection can reduce delivery bytes without reducing upstream analysis time.
+For SQLite WASM, summary delivery reads the completed retained result through
+the summary and exports views after preserving the original transport error.
+`--javascript-question selected` analyzes only the exact Obsidian sources
+`package.json` and `main.js`, keeps inventory identity, and reads each observed
+`main.js` module by its exact node ID. Package metadata is not a module selector.
 
 Compare paired runs with the same runner source and provider settings:
 
@@ -83,7 +88,10 @@ This checks all selected analyst facts, including inventory source IDs, exact
 path records, manifest, counts, completeness, contradictions, coverage,
 unexplored branches and limitations. It excludes only delivery observation IDs
 and the named recovery-path description. Different settings, changed facts or
-failed workflows make the comparator fail. Counts include extra view calls and
+failed workflows make the comparator fail. Binwalk's per-invocation region UUIDs
+are separately preserved with both original values and JSON paths; only those
+opaque lookup values are excluded from physical-region fact equality. Original
+producer replies are never rewritten. Counts include extra view calls and
 observed tool errors. Use repeated runs with alternating order before claiming
 a distribution or a speedup; one pair is only one observation.
 
@@ -180,3 +188,27 @@ It leaves the REA catalog and other clients intact. Initial Obsidian trials
 showed parameter-correction attempts and different delivery choices even with
 the same question; filtering alone has not established a cost or quality win.
 Requested model aliases are recorded without inventing a resolved model identity.
+
+The browser question uses `--authority browser` to permit only its explicitly
+selected public scenario in a fresh, owned headless profile. Browser observations
+and cleanup are graded separately from static artifact analysis.
+
+## Real artifact compatibility checkpoint
+
+[Six frozen baseline/pilot pairs](results/real-artifacts-20261012.json) exercise
+Obsidian, NewPipe, ShareX, OpenWrt, SQLite WASM and published historical WETH code
+through public MCP tools. All selected facts agree under the stated comparison
+rules. Obsidian complete delivery and atomic inventory Evidence identity remain
+unchanged. ShareX native-boundary claims remain scoped to the selected DLL;
+NewPipe retains a null DEX descriptor rather than inventing one.
+
+SQLite's complete 15,382,128-code-unit WAT exceeds the MCP response budget in both
+revisions. The control recovers complete Evidence through file export; the pilot
+reads summary and four exact export forms inline, without running WABT again.
+Inline byte totals exclude file exports, so they do not establish a size win.
+OpenWrt comparison preserves both sets of upstream-generated region UUIDs before
+comparing offsets, extents, signatures, coverage and limitations. WETH is a
+published historical example; a live RPC request returned HTTP 403, so this is
+not live-chain verification. Every pair records unchanged target bytes and zero
+observed OOM/task-limit events. The Linux x64 results do not establish behavior
+for IDA, Hopper, macOS, Windows or Harmony.

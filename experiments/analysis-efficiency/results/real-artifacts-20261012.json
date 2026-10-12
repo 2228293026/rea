@@ -1,0 +1,1541 @@
+{
+  "schema_version": 1,
+  "issue": "https://github.com/morluto/rea/issues/2016",
+  "date": "2026-10-12",
+  "study": "Public MCP SDK compatibility checks after static WASM module pilot",
+  "checks": [
+    {
+      "artifact": "obsidian.asar",
+      "comparison": {
+        "artifact": "obsidian.asar",
+        "artifact_sha256": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+        "settings_match": true,
+        "setting_differences": [],
+        "facts_match": true,
+        "fact_differences": [],
+        "preserved_run_specific_values": [],
+        "workflow_failures": [null, null],
+        "left": {
+          "revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+          "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+          "delivery": "complete",
+          "sdk_schema_mode": "selected",
+          "elapsed_ms": 4795.722892,
+          "catalog_json_utf8_bytes": 2326609,
+          "calls": 3,
+          "observed_tool_errors": 0,
+          "client_result_json_utf8_bytes": 937404,
+          "client_before_send_ms": 148.66699100000005,
+          "transport_roundtrip_ms": 1225.9412740000007,
+          "client_after_receive_ms": 11.288870999999745
+        },
+        "right": {
+          "revision": "0002caa07ffd7319672a21ce901dbfbc55e21aac",
+          "runtime_files_sha256": "c1cab7fe56cc35439a480114da3c435d42b0c6875ff8bb98d75e8143418c3380",
+          "delivery": "complete",
+          "sdk_schema_mode": "selected",
+          "elapsed_ms": 5131.953906000001,
+          "catalog_json_utf8_bytes": 2387332,
+          "calls": 3,
+          "observed_tool_errors": 0,
+          "client_result_json_utf8_bytes": 937404,
+          "client_before_send_ms": 179.866074999999,
+          "transport_roundtrip_ms": 1482.459033,
+          "client_after_receive_ms": 20.213450999999623
+        },
+        "scope": "Same selected analyst facts; includes extra view calls and preserves observed tool errors. Result JSON bytes exclude file exports, catalog responses and raw wire framing. This is one paired observation, not a statistical speedup or independent ground-truth proof."
+      },
+      "observed_candidate_facts": {
+        "manifest": {
+          "manifest_id": "agm_f14eba8a5c6c5f36b29b3e6df89e88e0b9453734d0e20d40e7af8de19a8be460",
+          "root_artifact_id": "art_1e706d7a33a4c2894f8f6cd43c0c05d59b55a85a26409ed798d61f009c31de3a",
+          "root_sha256": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+          "root_format": "asar",
+          "graph_sha256": "36a44bd2c52a12c6773afba5c6e16943ae149855029666d201b97cab34d1db77",
+          "node_count": 397,
+          "occurrence_count": 397,
+          "edge_count": 396
+        },
+        "source_complete": true,
+        "entry_kind_counts": {
+          "file": 369,
+          "directory": 28,
+          "symlink": 0,
+          "slice": 0
+        },
+        "requested_paths": [
+          {
+            "occurrence_id": "occ_839f7aa14abf21d836a3916667d4da1775c61a9859bc007780f053c53e75a3d9",
+            "artifact_id": "art_ac287efbb299ba9940b99d493dbd5a66d95e1e551e184260eee273db5037f0f7",
+            "parent_occurrence_id": "occ_da6fce4b8550348d7c7549e2ca320e694dc0684e35cd48ec2d5a73f60ff817da",
+            "logical_path": "main.js",
+            "entry_kind": "file",
+            "artifact_kind": "javascript",
+            "artifact_format": "javascript-bundle",
+            "declared_size": 203702,
+            "compressed_size": null,
+            "executable": false,
+            "encrypted": false,
+            "hash_status": "verified",
+            "source_location": null,
+            "limitations": []
+          },
+          {
+            "occurrence_id": "occ_86d81ff656dcda0e4438d7ab062735ba1e2785523bd3db9ffb4795bf41c59d5d",
+            "artifact_id": "art_11d385925bb6d5aef5c1928f5ad031c83f40c1ff1b251df7e767e8a5e8d30ed3",
+            "parent_occurrence_id": "occ_da6fce4b8550348d7c7549e2ca320e694dc0684e35cd48ec2d5a73f60ff817da",
+            "logical_path": "package.json",
+            "entry_kind": "file",
+            "artifact_kind": "resource",
+            "artifact_format": "file",
+            "declared_size": 260,
+            "compressed_size": null,
+            "executable": false,
+            "encrypted": false,
+            "hash_status": "verified",
+            "source_location": null,
+            "limitations": []
+          }
+        ],
+        "inventory_evidence_ids": [
+          "ev_22c17e52489f3ec0e7298a62da37bd985dbbec202d7208a0bb1c20d863790aed"
+        ],
+        "coverage": {
+          "status": "complete-within-substeps",
+          "substeps_completed": 1,
+          "observations_retained": 1,
+          "observations_omitted": 0,
+          "hypotheses_retained": 1,
+          "hypotheses_omitted": 0,
+          "unexplored_branches_retained": 1,
+          "unexplored_branches_omitted": 0,
+          "next_probes_retained": 1,
+          "next_probes_omitted": 0
+        },
+        "unexplored_branches": [
+          {
+            "branch_id": "aib_f9d25a2dcb994e2a45fdd99d4a3dc6b1576dde7fd5e6f56292dd0e515ef35f8a",
+            "reason": "format-specific-analysis-required",
+            "detail": "analyze_javascript_application was not run by provider-neutral artifact inspection.",
+            "next_probe": {
+              "operation": "analyze_javascript_application",
+              "rationale": "Recover bounded JavaScript modules, source maps, Electron boundaries, and application relationships.",
+              "authority": "ast-static-analysis"
+            },
+            "evidence_id": "ev_22c17e52489f3ec0e7298a62da37bd985dbbec202d7208a0bb1c20d863790aed"
+          }
+        ],
+        "limitations": [
+          "Inspection derives bounded static hypotheses and next probes; it does not execute the artifact or claim format-specific semantics."
+        ]
+      },
+      "runs": {
+        "control": {
+          "runtime_revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+          "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+          "provider_settings_sha256": "8f391e4f78bad489477f8b5e7f6cb156d49e8cecf94671bbc4088f35d97488c2",
+          "measure_source_sha256": "335ac792e3e3ccdc6b93e26395afbb4dd28f47c8bf52ba211984a715bc7c98b5",
+          "target_sha256_before": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+          "target_sha256_after": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+          "catalog_input_definition_utf8_bytes": 494207,
+          "evidence_ids": [
+            "ev_08a04d3bd993ac132c2eea7a0a54ea5c7f65364a19c4daade0de49f1819885b9",
+            "ev_22c17e52489f3ec0e7298a62da37bd985dbbec202d7208a0bb1c20d863790aed"
+          ],
+          "source_evidence_ids": [
+            "ev_08a04d3bd993ac132c2eea7a0a54ea5c7f65364a19c4daade0de49f1819885b9"
+          ],
+          "calls": [
+            {
+              "name": "open_binary",
+              "arguments": {
+                "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/obsidian-1.14.4.asar"
+              },
+              "elapsed_ms": 146.8673920000001,
+              "client_result_json_utf8_bytes": 538,
+              "is_error": false
+            },
+            {
+              "name": "inspect_artifact",
+              "arguments": {},
+              "elapsed_ms": 1216.5129020000004,
+              "client_result_json_utf8_bytes": 936774,
+              "is_error": false
+            },
+            {
+              "name": "close_binary",
+              "arguments": {},
+              "elapsed_ms": 22.516841999999997,
+              "client_result_json_utf8_bytes": 92,
+              "is_error": false
+            }
+          ],
+          "resource": {
+            "resource_scope": "rea-efficiency-09eef1094fe543f19334119aff288c83.scope",
+            "peak_cgroup_bytes_sampled": 534704128,
+            "elapsed_seconds": 5.96,
+            "abort": null,
+            "hard_memory_bytes": 4294967296,
+            "early_stop_bytes": 3221225472,
+            "cpu_quota_percent": 100,
+            "cpu_affinity": [15],
+            "task_ceiling": 192,
+            "peak_tasks_sampled": 16,
+            "resource_events_last_observed": {
+              "memory.events": {
+                "low": 0,
+                "high": 0,
+                "max": 0,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "pids.events": {
+                "max": 0
+              }
+            },
+            "cpu_stat_last_observed": {
+              "usage_usec": 5827028,
+              "user_usec": 4907936,
+              "system_usec": 919092,
+              "nr_periods": 59,
+              "nr_throttled": 0,
+              "throttled_usec": 0,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            }
+          },
+          "answer_json_canonical_sha256": "ac9752ea4b5db8102c2efc58f5e730c873ed8bd5f4fffd76e71b2ec3f624f28a"
+        },
+        "candidate": {
+          "runtime_revision": "0002caa07ffd7319672a21ce901dbfbc55e21aac",
+          "runtime_files_sha256": "c1cab7fe56cc35439a480114da3c435d42b0c6875ff8bb98d75e8143418c3380",
+          "provider_settings_sha256": "8f391e4f78bad489477f8b5e7f6cb156d49e8cecf94671bbc4088f35d97488c2",
+          "measure_source_sha256": "335ac792e3e3ccdc6b93e26395afbb4dd28f47c8bf52ba211984a715bc7c98b5",
+          "target_sha256_before": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+          "target_sha256_after": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+          "catalog_input_definition_utf8_bytes": 497641,
+          "evidence_ids": [
+            "ev_08a04d3bd993ac132c2eea7a0a54ea5c7f65364a19c4daade0de49f1819885b9",
+            "ev_22c17e52489f3ec0e7298a62da37bd985dbbec202d7208a0bb1c20d863790aed"
+          ],
+          "source_evidence_ids": [
+            "ev_08a04d3bd993ac132c2eea7a0a54ea5c7f65364a19c4daade0de49f1819885b9"
+          ],
+          "calls": [
+            {
+              "name": "open_binary",
+              "arguments": {
+                "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/obsidian-1.14.4.asar"
+              },
+              "elapsed_ms": 129.9728809999997,
+              "client_result_json_utf8_bytes": 538,
+              "is_error": false
+            },
+            {
+              "name": "inspect_artifact",
+              "arguments": {},
+              "elapsed_ms": 1534.4650269999993,
+              "client_result_json_utf8_bytes": 936774,
+              "is_error": false
+            },
+            {
+              "name": "close_binary",
+              "arguments": {},
+              "elapsed_ms": 18.100650999999743,
+              "client_result_json_utf8_bytes": 92,
+              "is_error": false
+            }
+          ],
+          "resource": {
+            "resource_scope": "rea-efficiency-c4fd8529a3c74b85a3149cf0a2525648.scope",
+            "peak_cgroup_bytes_sampled": 544993280,
+            "elapsed_seconds": 6.366,
+            "abort": null,
+            "hard_memory_bytes": 4294967296,
+            "early_stop_bytes": 3221225472,
+            "cpu_quota_percent": 100,
+            "cpu_affinity": [15],
+            "task_ceiling": 192,
+            "peak_tasks_sampled": 17,
+            "resource_events_last_observed": {
+              "memory.events": {
+                "low": 0,
+                "high": 0,
+                "max": 0,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "pids.events": {
+                "max": 0
+              }
+            },
+            "cpu_stat_last_observed": {
+              "usage_usec": 6196625,
+              "user_usec": 5277952,
+              "system_usec": 918672,
+              "nr_periods": 63,
+              "nr_throttled": 14,
+              "throttled_usec": 14011,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            }
+          },
+          "answer_json_canonical_sha256": "ac9752ea4b5db8102c2efc58f5e730c873ed8bd5f4fffd76e71b2ec3f624f28a"
+        }
+      }
+    },
+    {
+      "artifact": "newpipe.apk",
+      "comparison": {
+        "artifact": "newpipe.apk",
+        "artifact_sha256": "18447bfb1e06d113edc88df93f471827280de06f6f3d4dc42f56f28b9c1bab79",
+        "settings_match": true,
+        "setting_differences": [],
+        "facts_match": true,
+        "fact_differences": [],
+        "workflow_failures": [null, null],
+        "left": {
+          "revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+          "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+          "delivery": "complete",
+          "sdk_schema_mode": "selected",
+          "elapsed_ms": 21513.991296,
+          "catalog_json_utf8_bytes": 2326609,
+          "calls": 3,
+          "observed_tool_errors": 0,
+          "client_result_json_utf8_bytes": 149346,
+          "client_before_send_ms": 193.66411099999686,
+          "transport_roundtrip_ms": 17950.819967,
+          "client_after_receive_ms": 14.337381000004825
+        },
+        "right": {
+          "revision": "0002caa07ffd7319672a21ce901dbfbc55e21aac",
+          "runtime_files_sha256": "c1cab7fe56cc35439a480114da3c435d42b0c6875ff8bb98d75e8143418c3380",
+          "delivery": "complete",
+          "sdk_schema_mode": "selected",
+          "elapsed_ms": 21024.057570999998,
+          "catalog_json_utf8_bytes": 2387332,
+          "calls": 3,
+          "observed_tool_errors": 0,
+          "client_result_json_utf8_bytes": 149346,
+          "client_before_send_ms": 207.8066730000005,
+          "transport_roundtrip_ms": 17474.173138000002,
+          "client_after_receive_ms": 12.094742000004771
+        },
+        "scope": "Same selected analyst facts; includes extra view calls and preserves observed tool errors. Result JSON bytes exclude file exports, catalog responses and raw wire framing. This is one paired observation, not a statistical speedup or independent ground-truth proof."
+      },
+      "observed_candidate_facts": {
+        "package_name": "org.schabi.newpipe",
+        "version_name": "0.29.1",
+        "version_code": "1015",
+        "matches": [
+          "org.schabi.newpipe.MainActivity",
+          "org.schabi.newpipe.MainActivity$$ExternalSyntheticLambda3"
+        ],
+        "coverage": "complete",
+        "onCreate": [
+          {
+            "name": "onCreate",
+            "reported_signature": "onCreate(android.os.Bundle): void",
+            "overload_index": 0,
+            "is_constructor": false,
+            "dex_descriptor": null
+          }
+        ]
+      },
+      "runs": {
+        "control": {
+          "runtime_revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+          "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+          "provider_settings_sha256": "8f391e4f78bad489477f8b5e7f6cb156d49e8cecf94671bbc4088f35d97488c2",
+          "measure_source_sha256": "335ac792e3e3ccdc6b93e26395afbb4dd28f47c8bf52ba211984a715bc7c98b5",
+          "target_sha256_before": "18447bfb1e06d113edc88df93f471827280de06f6f3d4dc42f56f28b9c1bab79",
+          "target_sha256_after": "18447bfb1e06d113edc88df93f471827280de06f6f3d4dc42f56f28b9c1bab79",
+          "catalog_input_definition_utf8_bytes": 494207,
+          "evidence_ids": [
+            "ev_4679d89d16a4c1e40db1d0216bc3694840d657a38b1891d526f0ca7c720fdf1d",
+            "ev_3716298f0b5e20010429d3bb0f7ab846114cb379d0dd5dd1a15e48eadc72fe2a",
+            "ev_b82ac60a5288c12ea9eccd58e36a40f4a513b649d882b4352a451dd671c98ca9"
+          ],
+          "source_evidence_ids": [
+            "ev_4679d89d16a4c1e40db1d0216bc3694840d657a38b1891d526f0ca7c720fdf1d",
+            "ev_3716298f0b5e20010429d3bb0f7ab846114cb379d0dd5dd1a15e48eadc72fe2a",
+            "ev_b82ac60a5288c12ea9eccd58e36a40f4a513b649d882b4352a451dd671c98ca9"
+          ],
+          "calls": [
+            {
+              "name": "inspect_android_package",
+              "arguments": {
+                "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/NewPipe_v0.29.1.apk"
+              },
+              "elapsed_ms": 17077.437241,
+              "client_result_json_utf8_bytes": 119450,
+              "is_error": false
+            },
+            {
+              "name": "search_android_classes",
+              "arguments": {
+                "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/NewPipe_v0.29.1.apk",
+                "query": "MainActivity"
+              },
+              "elapsed_ms": 338.3758369999996,
+              "client_result_json_utf8_bytes": 6668,
+              "is_error": false
+            },
+            {
+              "name": "inspect_android_class",
+              "arguments": {
+                "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/NewPipe_v0.29.1.apk",
+                "class_name": "org.schabi.newpipe.MainActivity"
+              },
+              "elapsed_ms": 743.0083809999996,
+              "client_result_json_utf8_bytes": 23228,
+              "is_error": false
+            }
+          ],
+          "resource": {
+            "resource_scope": "rea-efficiency-3a40260e485442578334c29b8fca6b9b.scope",
+            "peak_cgroup_bytes_sampled": 1219190784,
+            "elapsed_seconds": 22.675,
+            "abort": null,
+            "hard_memory_bytes": 4294967296,
+            "early_stop_bytes": 3221225472,
+            "cpu_quota_percent": 100,
+            "cpu_affinity": [15],
+            "task_ceiling": 192,
+            "peak_tasks_sampled": 34,
+            "resource_events_last_observed": {
+              "memory.events": {
+                "low": 0,
+                "high": 0,
+                "max": 0,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "pids.events": {
+                "max": 0
+              }
+            },
+            "cpu_stat_last_observed": {
+              "usage_usec": 22452612,
+              "user_usec": 20943791,
+              "system_usec": 1508821,
+              "nr_periods": 225,
+              "nr_throttled": 14,
+              "throttled_usec": 4877,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            }
+          },
+          "answer_json_canonical_sha256": "19b35631891bde1592b8062946f4d5e2130b6e4952edbfd0a95e6adf648244fd"
+        },
+        "candidate": {
+          "runtime_revision": "0002caa07ffd7319672a21ce901dbfbc55e21aac",
+          "runtime_files_sha256": "c1cab7fe56cc35439a480114da3c435d42b0c6875ff8bb98d75e8143418c3380",
+          "provider_settings_sha256": "8f391e4f78bad489477f8b5e7f6cb156d49e8cecf94671bbc4088f35d97488c2",
+          "measure_source_sha256": "335ac792e3e3ccdc6b93e26395afbb4dd28f47c8bf52ba211984a715bc7c98b5",
+          "target_sha256_before": "18447bfb1e06d113edc88df93f471827280de06f6f3d4dc42f56f28b9c1bab79",
+          "target_sha256_after": "18447bfb1e06d113edc88df93f471827280de06f6f3d4dc42f56f28b9c1bab79",
+          "catalog_input_definition_utf8_bytes": 497641,
+          "evidence_ids": [
+            "ev_09ed02dab6d0fea353da6b8144a6dbbdbeefae3ccd3cb07aca0441048fd83cf4",
+            "ev_e0c444b6ac7ffee3524c517e9024770343ad2eecbf87520e1a6945918750878b",
+            "ev_b15b502ed456ad659e7047dc8a2ae2a8085603fd575454a5140c49abd6eef4ee"
+          ],
+          "source_evidence_ids": [
+            "ev_09ed02dab6d0fea353da6b8144a6dbbdbeefae3ccd3cb07aca0441048fd83cf4",
+            "ev_e0c444b6ac7ffee3524c517e9024770343ad2eecbf87520e1a6945918750878b",
+            "ev_b15b502ed456ad659e7047dc8a2ae2a8085603fd575454a5140c49abd6eef4ee"
+          ],
+          "calls": [
+            {
+              "name": "inspect_android_package",
+              "arguments": {
+                "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/NewPipe_v0.29.1.apk"
+              },
+              "elapsed_ms": 16586.506786,
+              "client_result_json_utf8_bytes": 119450,
+              "is_error": false
+            },
+            {
+              "name": "search_android_classes",
+              "arguments": {
+                "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/NewPipe_v0.29.1.apk",
+                "query": "MainActivity"
+              },
+              "elapsed_ms": 341.80705600000147,
+              "client_result_json_utf8_bytes": 6668,
+              "is_error": false
+            },
+            {
+              "name": "inspect_android_class",
+              "arguments": {
+                "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/NewPipe_v0.29.1.apk",
+                "class_name": "org.schabi.newpipe.MainActivity"
+              },
+              "elapsed_ms": 765.7607110000026,
+              "client_result_json_utf8_bytes": 23228,
+              "is_error": false
+            }
+          ],
+          "resource": {
+            "resource_scope": "rea-efficiency-11cd673ea94440238a3537abfae1f1b3.scope",
+            "peak_cgroup_bytes_sampled": 1203896320,
+            "elapsed_seconds": 22.069,
+            "abort": null,
+            "hard_memory_bytes": 4294967296,
+            "early_stop_bytes": 3221225472,
+            "cpu_quota_percent": 100,
+            "cpu_affinity": [15],
+            "task_ceiling": 192,
+            "peak_tasks_sampled": 33,
+            "resource_events_last_observed": {
+              "memory.events": {
+                "low": 0,
+                "high": 0,
+                "max": 0,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "pids.events": {
+                "max": 0
+              }
+            },
+            "cpu_stat_last_observed": {
+              "usage_usec": 21902777,
+              "user_usec": 20393882,
+              "system_usec": 1508894,
+              "nr_periods": 219,
+              "nr_throttled": 12,
+              "throttled_usec": 15336,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            }
+          },
+          "answer_json_canonical_sha256": "addb281781857886c6a9223cd86c84780e1c62843025637f67a5fa2255411800"
+        }
+      }
+    },
+    {
+      "artifact": "sharex.dll",
+      "comparison": {
+        "artifact": "sharex.dll",
+        "artifact_sha256": "191a191be964e434daf0f9d76d1e0d8ddce90d7e248cba2a6b5ac9577f288d53",
+        "settings_match": true,
+        "setting_differences": [],
+        "facts_match": true,
+        "fact_differences": [],
+        "workflow_failures": [null, null],
+        "left": {
+          "revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+          "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+          "delivery": "complete",
+          "sdk_schema_mode": "selected",
+          "elapsed_ms": 3834.3293299999996,
+          "catalog_json_utf8_bytes": 2326609,
+          "calls": 2,
+          "observed_tool_errors": 0,
+          "client_result_json_utf8_bytes": 1298598,
+          "client_before_send_ms": 209.21719400000075,
+          "transport_roundtrip_ms": 336.97572799999944,
+          "client_after_receive_ms": 24.570372999999563
+        },
+        "right": {
+          "revision": "0002caa07ffd7319672a21ce901dbfbc55e21aac",
+          "runtime_files_sha256": "c1cab7fe56cc35439a480114da3c435d42b0c6875ff8bb98d75e8143418c3380",
+          "delivery": "complete",
+          "sdk_schema_mode": "selected",
+          "elapsed_ms": 3688.81418,
+          "catalog_json_utf8_bytes": 2387332,
+          "calls": 2,
+          "observed_tool_errors": 0,
+          "client_result_json_utf8_bytes": 1298598,
+          "client_before_send_ms": 212.069524,
+          "transport_roundtrip_ms": 386.6409139999996,
+          "client_after_receive_ms": 23.384532000000036
+        },
+        "scope": "Same selected analyst facts; includes extra view calls and preserves observed tool errors. Result JSON bytes exclude file exports, catalog responses and raw wire framing. This is one paired observation, not a statistical speedup or independent ground-truth proof."
+      },
+      "observed_candidate_facts": {
+        "assembly": {
+          "name": "ShareX",
+          "version": "19.0.2.0",
+          "culture": null,
+          "flags": 0,
+          "hash_algorithm": 32772,
+          "public_key": {
+            "kind": "none",
+            "byte_length": 0,
+            "sha256": null,
+            "token": null
+          },
+          "token": "0x20000001",
+          "row_offset": 481946
+        },
+        "module": {
+          "name": "ShareX.dll",
+          "generation": 0,
+          "mvid": "4009d057-7404-4348-8e28-db0c5200d885",
+          "enc_id": null,
+          "enc_base_id": null,
+          "token": "0x00000001",
+          "row_offset": 313976
+        },
+        "classification": {
+          "status": "managed",
+          "container": "pe",
+          "runtime_family": "modern-dotnet",
+          "implementation": "cil",
+          "managed_architecture": "x86_64",
+          "evidence": [
+            {
+              "code": "cli-header-observed",
+              "detail": "A file-backed PE CLI header and metadata root were admitted.",
+              "file_offset": 512
+            },
+            {
+              "code": "target-framework-observed",
+              "detail": "An assembly-level TargetFrameworkAttribute names modern .NET.",
+              "file_offset": 450480
+            },
+            {
+              "code": "managed-architecture-derived",
+              "detail": "Managed architecture x86_64 is derived from PE machine and CLI flags.",
+              "file_offset": 528
+            }
+          ]
+        },
+        "target_frameworks": [".NETCoreApp,Version=v9.0"],
+        "native_boundary_summary": {
+          "module_ref_count": 0,
+          "pinvoke_import_count": 0,
+          "native_implementation_count": 40,
+          "ready_to_run": false,
+          "mixed_mode_or_native_header": false
+        },
+        "native_boundary_coverage": {
+          "state": "complete",
+          "issues": []
+        },
+        "native_boundary_limitations": [
+          "P/Invoke rows prove managed import declarations only; this inspection does not verify that a native library, export, thunk, or provider-qualified function exists.",
+          "Managed metadata tokens are build-local coordinates and are only meaningful with the reported artifact SHA-256 and MVID.",
+          "ReadyToRun, NativeAOT, C++/CLI, and IL2CPP native semantics require separately selected native-provider evidence; this tool does not translate managed tokens into native addresses."
+        ]
+      },
+      "runs": {
+        "control": {
+          "runtime_revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+          "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+          "provider_settings_sha256": "8f391e4f78bad489477f8b5e7f6cb156d49e8cecf94671bbc4088f35d97488c2",
+          "measure_source_sha256": "335ac792e3e3ccdc6b93e26395afbb4dd28f47c8bf52ba211984a715bc7c98b5",
+          "target_sha256_before": "191a191be964e434daf0f9d76d1e0d8ddce90d7e248cba2a6b5ac9577f288d53",
+          "target_sha256_after": "191a191be964e434daf0f9d76d1e0d8ddce90d7e248cba2a6b5ac9577f288d53",
+          "catalog_input_definition_utf8_bytes": 494207,
+          "evidence_ids": [
+            "ev_b2385781af98ca89082366b7a7c3302dd2810a1feb8db231fae5d1eeca2e3eac",
+            "ev_7917bac75edef7ca836b9882ae9aab24cbcfb840eef853ff1cf30594a8e85b70"
+          ],
+          "source_evidence_ids": [
+            "ev_b2385781af98ca89082366b7a7c3302dd2810a1feb8db231fae5d1eeca2e3eac",
+            "ev_7917bac75edef7ca836b9882ae9aab24cbcfb840eef853ff1cf30594a8e85b70"
+          ],
+          "calls": [
+            {
+              "name": "inspect_managed_artifact",
+              "arguments": {
+                "path": "/home/yann/yann/rea-codemode-lab-20261011/real-artifacts/ShareX.dll"
+              },
+              "elapsed_ms": 403.228916,
+              "client_result_json_utf8_bytes": 1270762,
+              "is_error": false
+            },
+            {
+              "name": "inspect_managed_native_boundaries",
+              "arguments": {
+                "path": "/home/yann/yann/rea-codemode-lab-20261011/real-artifacts/ShareX.dll"
+              },
+              "elapsed_ms": 167.53437899999972,
+              "client_result_json_utf8_bytes": 27836,
+              "is_error": false
+            }
+          ],
+          "resource": {
+            "resource_scope": "rea-efficiency-d43293cd350b4c45a8b4a5975a282656.scope",
+            "peak_cgroup_bytes_sampled": 488660992,
+            "elapsed_seconds": 4.955,
+            "abort": null,
+            "hard_memory_bytes": 4294967296,
+            "early_stop_bytes": 3221225472,
+            "cpu_quota_percent": 100,
+            "cpu_affinity": [15],
+            "task_ceiling": 192,
+            "peak_tasks_sampled": 16,
+            "resource_events_last_observed": {
+              "memory.events": {
+                "low": 0,
+                "high": 0,
+                "max": 0,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "pids.events": {
+                "max": 0
+              }
+            },
+            "cpu_stat_last_observed": {
+              "usage_usec": 4792461,
+              "user_usec": 4204905,
+              "system_usec": 587556,
+              "nr_periods": 48,
+              "nr_throttled": 0,
+              "throttled_usec": 0,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            }
+          },
+          "answer_json_canonical_sha256": "f1429f1f675a8dcac03e854dd27bc00bd65d9d8a1f92db6bdca1bd2bef3aab4d"
+        },
+        "candidate": {
+          "runtime_revision": "0002caa07ffd7319672a21ce901dbfbc55e21aac",
+          "runtime_files_sha256": "c1cab7fe56cc35439a480114da3c435d42b0c6875ff8bb98d75e8143418c3380",
+          "provider_settings_sha256": "8f391e4f78bad489477f8b5e7f6cb156d49e8cecf94671bbc4088f35d97488c2",
+          "measure_source_sha256": "335ac792e3e3ccdc6b93e26395afbb4dd28f47c8bf52ba211984a715bc7c98b5",
+          "target_sha256_before": "191a191be964e434daf0f9d76d1e0d8ddce90d7e248cba2a6b5ac9577f288d53",
+          "target_sha256_after": "191a191be964e434daf0f9d76d1e0d8ddce90d7e248cba2a6b5ac9577f288d53",
+          "catalog_input_definition_utf8_bytes": 497641,
+          "evidence_ids": [
+            "ev_b2385781af98ca89082366b7a7c3302dd2810a1feb8db231fae5d1eeca2e3eac",
+            "ev_7917bac75edef7ca836b9882ae9aab24cbcfb840eef853ff1cf30594a8e85b70"
+          ],
+          "source_evidence_ids": [
+            "ev_b2385781af98ca89082366b7a7c3302dd2810a1feb8db231fae5d1eeca2e3eac",
+            "ev_7917bac75edef7ca836b9882ae9aab24cbcfb840eef853ff1cf30594a8e85b70"
+          ],
+          "calls": [
+            {
+              "name": "inspect_managed_artifact",
+              "arguments": {
+                "path": "/home/yann/yann/rea-codemode-lab-20261011/real-artifacts/ShareX.dll"
+              },
+              "elapsed_ms": 469.7665229999998,
+              "client_result_json_utf8_bytes": 1270762,
+              "is_error": false
+            },
+            {
+              "name": "inspect_managed_native_boundaries",
+              "arguments": {
+                "path": "/home/yann/yann/rea-codemode-lab-20261011/real-artifacts/ShareX.dll"
+              },
+              "elapsed_ms": 152.32844699999987,
+              "client_result_json_utf8_bytes": 27836,
+              "is_error": false
+            }
+          ],
+          "resource": {
+            "resource_scope": "rea-efficiency-f751c90d76b04cf784fed50aac01a4a9.scope",
+            "peak_cgroup_bytes_sampled": 501719040,
+            "elapsed_seconds": 4.855,
+            "abort": null,
+            "hard_memory_bytes": 4294967296,
+            "early_stop_bytes": 3221225472,
+            "cpu_quota_percent": 100,
+            "cpu_affinity": [15],
+            "task_ceiling": 192,
+            "peak_tasks_sampled": 17,
+            "resource_events_last_observed": {
+              "memory.events": {
+                "low": 0,
+                "high": 0,
+                "max": 0,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "pids.events": {
+                "max": 0
+              }
+            },
+            "cpu_stat_last_observed": {
+              "usage_usec": 4689574,
+              "user_usec": 3990773,
+              "system_usec": 698801,
+              "nr_periods": 47,
+              "nr_throttled": 6,
+              "throttled_usec": 2577,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            }
+          },
+          "answer_json_canonical_sha256": "f1429f1f675a8dcac03e854dd27bc00bd65d9d8a1f92db6bdca1bd2bef3aab4d"
+        }
+      }
+    },
+    {
+      "artifact": "openwrt.bin",
+      "comparison": {
+        "artifact": "openwrt.bin",
+        "artifact_sha256": "f15b16b36df7fce8a5cf1302320fdb428c3bb6fbc2949a4858afa257f4f364a2",
+        "settings_match": true,
+        "setting_differences": [],
+        "facts_match": true,
+        "fact_differences": [],
+        "preserved_run_specific_values": [
+          {
+            "side": "left",
+            "path": ["result", "regions", 0, "provider_id"],
+            "value": "b3982d58-9efc-40af-8e1a-27736df67021"
+          },
+          {
+            "side": "left",
+            "path": ["result", "regions", 1, "provider_id"],
+            "value": "2fad90b7-e837-408c-a5b0-9e7b18278d5d"
+          },
+          {
+            "side": "right",
+            "path": ["result", "regions", 0, "provider_id"],
+            "value": "07ad5195-78db-48f4-9494-f706c7b1a574"
+          },
+          {
+            "side": "right",
+            "path": ["result", "regions", 1, "provider_id"],
+            "value": "74fe557c-0111-4108-a742-d4000fa9f668"
+          }
+        ],
+        "workflow_failures": [null, null],
+        "left": {
+          "revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+          "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+          "delivery": "complete",
+          "sdk_schema_mode": "selected",
+          "elapsed_ms": 3319.9393459999997,
+          "catalog_json_utf8_bytes": 2326609,
+          "calls": 1,
+          "observed_tool_errors": 0,
+          "client_result_json_utf8_bytes": 9867,
+          "client_before_send_ms": 79.12977899999987,
+          "transport_roundtrip_ms": 317.9189430000001,
+          "client_after_receive_ms": 6.942829999999958
+        },
+        "right": {
+          "revision": "0002caa07ffd7319672a21ce901dbfbc55e21aac",
+          "runtime_files_sha256": "c1cab7fe56cc35439a480114da3c435d42b0c6875ff8bb98d75e8143418c3380",
+          "delivery": "complete",
+          "sdk_schema_mode": "selected",
+          "elapsed_ms": 3291.80204,
+          "catalog_json_utf8_bytes": 2387332,
+          "calls": 1,
+          "observed_tool_errors": 0,
+          "client_result_json_utf8_bytes": 9867,
+          "client_before_send_ms": 72.54593699999987,
+          "transport_roundtrip_ms": 246.28908599999977,
+          "client_after_receive_ms": 4.165840000000571
+        },
+        "scope": "Same selected analyst facts; includes extra view calls and preserves observed tool errors. Result JSON bytes exclude file exports, catalog responses and raw wire framing. This is one paired observation, not a statistical speedup or independent ground-truth proof."
+      },
+      "observed_candidate_facts": {
+        "engine": {
+          "name": "binwalk",
+          "version": "3.1.0",
+          "executable_path": "/home/yann/yann/rea-benchmark-lab-20261011/tools/binwalk-build/release/binwalk",
+          "executable_sha256": "deac795ffd31de4ac186ba158af5e36b8e408ebfcc1e77dae3af60d21efb8c40",
+          "source_revision": null,
+          "worker_count": 1
+        },
+        "input_size": 7405862,
+        "regions": [
+          {
+            "provider_id": "07ad5195-78db-48f4-9494-f706c7b1a574",
+            "offset": 0,
+            "reported_size": 2741985,
+            "signature": "uimage",
+            "description": "uImage firmware image, header size: 64 bytes, data size: 2741921 bytes, compression: lzma, CPU: MIPS32, OS: Linux, image type: OS Kernel Image, load address: 0x80060000, entry point: 0x80060000, creation time: 2026-06-29 12:59:20, image name: \"MIPS OpenWrt Linux-6.12.94\"",
+            "reported_confidence": 250,
+            "size_basis": "provider_reported_validation_unknown"
+          },
+          {
+            "provider_id": "74fe557c-0111-4108-a742-d4000fa9f668",
+            "offset": 2741985,
+            "reported_size": 4626494,
+            "signature": "squashfs",
+            "description": "SquashFS file system, little endian, version: 4.0, compression: xz, inode count: 1214, block size: 262144, image size: 4626494 bytes, created: 2026-06-29 12:59:20",
+            "reported_confidence": 250,
+            "size_basis": "provider_reported_validation_unknown"
+          }
+        ],
+        "coverage": "signature_scan"
+      },
+      "runs": {
+        "control": {
+          "runtime_revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+          "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+          "provider_settings_sha256": "8f391e4f78bad489477f8b5e7f6cb156d49e8cecf94671bbc4088f35d97488c2",
+          "measure_source_sha256": "335ac792e3e3ccdc6b93e26395afbb4dd28f47c8bf52ba211984a715bc7c98b5",
+          "target_sha256_before": "f15b16b36df7fce8a5cf1302320fdb428c3bb6fbc2949a4858afa257f4f364a2",
+          "target_sha256_after": "f15b16b36df7fce8a5cf1302320fdb428c3bb6fbc2949a4858afa257f4f364a2",
+          "catalog_input_definition_utf8_bytes": 494207,
+          "evidence_ids": [
+            "ev_7e98ea7932794c9d60dcc6b1bd7a6bc829d3bbb5ac7237c2814604210f150f54"
+          ],
+          "source_evidence_ids": [
+            "ev_7e98ea7932794c9d60dcc6b1bd7a6bc829d3bbb5ac7237c2814604210f150f54"
+          ],
+          "calls": [
+            {
+              "name": "inspect_firmware_regions",
+              "arguments": {
+                "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/openwrt-25.12.5-ath79-generic-tplink_archer-c7-v5-squashfs-sysupgrade.bin"
+              },
+              "elapsed_ms": 403.99155199999996,
+              "client_result_json_utf8_bytes": 9867,
+              "is_error": false
+            }
+          ],
+          "resource": {
+            "resource_scope": "rea-efficiency-e9368401f8034777aee95d6e89409584.scope",
+            "peak_cgroup_bytes_sampled": 476532736,
+            "elapsed_seconds": 4.449,
+            "abort": null,
+            "hard_memory_bytes": 4294967296,
+            "early_stop_bytes": 3221225472,
+            "cpu_quota_percent": 100,
+            "cpu_affinity": [15],
+            "task_ceiling": 192,
+            "peak_tasks_sampled": 17,
+            "resource_events_last_observed": {
+              "memory.events": {
+                "low": 0,
+                "high": 0,
+                "max": 0,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "pids.events": {
+                "max": 0
+              }
+            },
+            "cpu_stat_last_observed": {
+              "usage_usec": 4266717,
+              "user_usec": 3478883,
+              "system_usec": 787834,
+              "nr_periods": 44,
+              "nr_throttled": 0,
+              "throttled_usec": 0,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            }
+          },
+          "answer_json_canonical_sha256": "1d8b8b25d9d1aa8dfaad5f2ef4a7a9adb813db15cba8e010ae9164e95ec29493"
+        },
+        "candidate": {
+          "runtime_revision": "0002caa07ffd7319672a21ce901dbfbc55e21aac",
+          "runtime_files_sha256": "c1cab7fe56cc35439a480114da3c435d42b0c6875ff8bb98d75e8143418c3380",
+          "provider_settings_sha256": "8f391e4f78bad489477f8b5e7f6cb156d49e8cecf94671bbc4088f35d97488c2",
+          "measure_source_sha256": "335ac792e3e3ccdc6b93e26395afbb4dd28f47c8bf52ba211984a715bc7c98b5",
+          "target_sha256_before": "f15b16b36df7fce8a5cf1302320fdb428c3bb6fbc2949a4858afa257f4f364a2",
+          "target_sha256_after": "f15b16b36df7fce8a5cf1302320fdb428c3bb6fbc2949a4858afa257f4f364a2",
+          "catalog_input_definition_utf8_bytes": 497641,
+          "evidence_ids": [
+            "ev_7b7bacb8ad83b2b10c4cb31f5fa6a837d952ddd5bc82e43aadf356a18722e560"
+          ],
+          "source_evidence_ids": [
+            "ev_7b7bacb8ad83b2b10c4cb31f5fa6a837d952ddd5bc82e43aadf356a18722e560"
+          ],
+          "calls": [
+            {
+              "name": "inspect_firmware_regions",
+              "arguments": {
+                "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/openwrt-25.12.5-ath79-generic-tplink_archer-c7-v5-squashfs-sysupgrade.bin"
+              },
+              "elapsed_ms": 323.0008630000002,
+              "client_result_json_utf8_bytes": 9867,
+              "is_error": false
+            }
+          ],
+          "resource": {
+            "resource_scope": "rea-efficiency-b402ad21a256463482bf5ba842c6e3be.scope",
+            "peak_cgroup_bytes_sampled": 459218944,
+            "elapsed_seconds": 4.449,
+            "abort": null,
+            "hard_memory_bytes": 4294967296,
+            "early_stop_bytes": 3221225472,
+            "cpu_quota_percent": 100,
+            "cpu_affinity": [15],
+            "task_ceiling": 192,
+            "peak_tasks_sampled": 17,
+            "resource_events_last_observed": {
+              "memory.events": {
+                "low": 0,
+                "high": 0,
+                "max": 0,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "pids.events": {
+                "max": 0
+              }
+            },
+            "cpu_stat_last_observed": {
+              "usage_usec": 4287555,
+              "user_usec": 3519764,
+              "system_usec": 767791,
+              "nr_periods": 43,
+              "nr_throttled": 5,
+              "throttled_usec": 5282,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            }
+          },
+          "answer_json_canonical_sha256": "be321af45b22ca85cb2b9f359289bdbd791395cf6e4da8c22505a8bb2fcc5a7c"
+        }
+      }
+    },
+    {
+      "artifact": "sqlite.wasm",
+      "comparison": {
+        "artifact": "sqlite.wasm",
+        "artifact_sha256": "2ee8f3dab694532afc8840e07703127287662d08b74e6ff50491ce63f00d5752",
+        "settings_match": true,
+        "setting_differences": [],
+        "facts_match": true,
+        "fact_differences": [],
+        "workflow_failures": [null, null],
+        "left": {
+          "revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+          "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+          "delivery": "complete",
+          "sdk_schema_mode": "selected",
+          "elapsed_ms": 5180.693596,
+          "catalog_json_utf8_bytes": 2326609,
+          "calls": 2,
+          "observed_tool_errors": 1,
+          "client_result_json_utf8_bytes": 1987,
+          "client_before_send_ms": 96.65056000000004,
+          "transport_roundtrip_ms": 1972.334820999999,
+          "client_after_receive_ms": 1.3639600000005885
+        },
+        "right": {
+          "revision": "0002caa07ffd7319672a21ce901dbfbc55e21aac",
+          "runtime_files_sha256": "c1cab7fe56cc35439a480114da3c435d42b0c6875ff8bb98d75e8143418c3380",
+          "delivery": "summary",
+          "sdk_schema_mode": "selected",
+          "elapsed_ms": 5316.414307,
+          "catalog_json_utf8_bytes": 2387332,
+          "calls": 3,
+          "observed_tool_errors": 1,
+          "client_result_json_utf8_bytes": 20118,
+          "client_before_send_ms": 290.09770400000025,
+          "transport_roundtrip_ms": 1945.0051940000008,
+          "client_after_receive_ms": 17.937042999999903
+        },
+        "scope": "Same selected analyst facts; includes extra view calls and preserves observed tool errors. Result JSON bytes exclude file exports, catalog responses and raw wire framing. This is one paired observation, not a statistical speedup or independent ground-truth proof."
+      },
+      "observed_candidate_facts": {
+        "validation": "valid",
+        "section_count": 11,
+        "import_count": 36,
+        "export_count": 262,
+        "exports_first4": [
+          "(export \"__wasm_call_ctors\" (func 35))",
+          "(export \"sqlite3_status64\" (func 37))",
+          "(export \"sqlite3_status\" (func 40))",
+          "(export \"sqlite3_db_status64\" (func 41))"
+        ],
+        "wat_sha256": "7b1f8cd4fcbf310f4203ce64e15b4eb068ecdf29838551137245efecb7283f81",
+        "wat_code_units": 15382128,
+        "tool_profile": {
+          "source": "https://github.com/WebAssembly/wabt",
+          "release": "1.0.42",
+          "source_commit": "ff0ef7e0009402740c805a9744c09b05be063e48",
+          "commands": [
+            {
+              "tool": "wasm-validate",
+              "path": "/home/yann/yann/rea-codemode-lab-20261011/tools/wabt-1.0.42/bin/wasm-validate",
+              "sha256": "6b722ed0df68204cfc7a8effdf1fc2ddeac2d184bd211cdf7fdfa5f9d49d3eb5",
+              "version_banner": "1.0.42\n",
+              "arguments": ["--enable-all", "module.wasm"]
+            },
+            {
+              "tool": "wasm-objdump",
+              "path": "/home/yann/yann/rea-codemode-lab-20261011/tools/wabt-1.0.42/bin/wasm-objdump",
+              "sha256": "dad264def1a3b7755859c5bf48227f01259a95fa82b7c38358b12b9e70b27a41",
+              "version_banner": "1.0.42\n",
+              "arguments": ["-h", "-x", "module.wasm"]
+            },
+            {
+              "tool": "wasm2wat",
+              "path": "/home/yann/yann/rea-codemode-lab-20261011/tools/wabt-1.0.42/bin/wasm2wat",
+              "sha256": "4322d652f650c1ee117b549c9722f42fc93eb4676ff046d60ba033b5639697a5",
+              "version_banner": "1.0.42\n",
+              "arguments": ["--enable-all", "module.wasm"]
+            }
+          ],
+          "timeout_ms": 30000,
+          "output_budget_bytes": 33554432
+        },
+        "runtime_execution": "not-performed",
+        "network_fetch": "not-performed"
+      },
+      "runs": {
+        "control": {
+          "runtime_revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+          "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+          "provider_settings_sha256": "8f391e4f78bad489477f8b5e7f6cb156d49e8cecf94671bbc4088f35d97488c2",
+          "measure_source_sha256": "335ac792e3e3ccdc6b93e26395afbb4dd28f47c8bf52ba211984a715bc7c98b5",
+          "target_sha256_before": "2ee8f3dab694532afc8840e07703127287662d08b74e6ff50491ce63f00d5752",
+          "target_sha256_after": "2ee8f3dab694532afc8840e07703127287662d08b74e6ff50491ce63f00d5752",
+          "catalog_input_definition_utf8_bytes": 494207,
+          "evidence_ids": [
+            "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+          ],
+          "source_evidence_ids": [],
+          "calls": [
+            {
+              "name": "inspect_wasm_artifact",
+              "arguments": {
+                "path": "/home/yann/yann/rea-codemode-lab-20261011/real-artifacts/sqlite3.wasm",
+                "glue_paths": [],
+                "candidate_paths": []
+              },
+              "elapsed_ms": 1956.4101779999996,
+              "client_result_json_utf8_bytes": 1585,
+              "is_error": true
+            },
+            {
+              "name": "export_evidence_bundle",
+              "arguments": {
+                "path": "/home/yann/yann/rea-compatibility-first-lab-20261012/sqlite-wasm-control-final/retained-evidence.json"
+              },
+              "elapsed_ms": 113.93916300000001,
+              "client_result_json_utf8_bytes": 402,
+              "is_error": false
+            }
+          ],
+          "resource": {
+            "resource_scope": "rea-efficiency-6f9f50bcb06642a1bf70914b8c00152b.scope",
+            "peak_cgroup_bytes_sampled": 661151744,
+            "elapsed_seconds": 6.364,
+            "abort": null,
+            "hard_memory_bytes": 4294967296,
+            "early_stop_bytes": 3221225472,
+            "cpu_quota_percent": 100,
+            "cpu_affinity": [15],
+            "task_ceiling": 192,
+            "peak_tasks_sampled": 17,
+            "resource_events_last_observed": {
+              "memory.events": {
+                "low": 0,
+                "high": 0,
+                "max": 0,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "pids.events": {
+                "max": 0
+              }
+            },
+            "cpu_stat_last_observed": {
+              "usage_usec": 6133637,
+              "user_usec": 4933244,
+              "system_usec": 1200393,
+              "nr_periods": 63,
+              "nr_throttled": 0,
+              "throttled_usec": 0,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            }
+          },
+          "answer_json_canonical_sha256": "79f2b8f617009f299d797bef0280a05e2b7f02b36fa65242512e3d718fad78ff"
+        },
+        "candidate": {
+          "runtime_revision": "0002caa07ffd7319672a21ce901dbfbc55e21aac",
+          "runtime_files_sha256": "c1cab7fe56cc35439a480114da3c435d42b0c6875ff8bb98d75e8143418c3380",
+          "provider_settings_sha256": "8f391e4f78bad489477f8b5e7f6cb156d49e8cecf94671bbc4088f35d97488c2",
+          "measure_source_sha256": "335ac792e3e3ccdc6b93e26395afbb4dd28f47c8bf52ba211984a715bc7c98b5",
+          "target_sha256_before": "2ee8f3dab694532afc8840e07703127287662d08b74e6ff50491ce63f00d5752",
+          "target_sha256_after": "2ee8f3dab694532afc8840e07703127287662d08b74e6ff50491ce63f00d5752",
+          "catalog_input_definition_utf8_bytes": 497641,
+          "evidence_ids": [
+            "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140",
+            "ev_8c039b1e4ecefb3619f50d2cc0b9b83086cc505fb0b8662fad7ba11b9cec8922",
+            "ev_f78393e6d8e2e6930e9bbb58d29105b2bac3676ad84a3dc772a9518391cbafa1"
+          ],
+          "source_evidence_ids": [],
+          "calls": [
+            {
+              "name": "inspect_wasm_artifact",
+              "arguments": {
+                "path": "/home/yann/yann/rea-codemode-lab-20261011/real-artifacts/sqlite3.wasm",
+                "glue_paths": [],
+                "candidate_paths": []
+              },
+              "elapsed_ms": 1939.892535,
+              "client_result_json_utf8_bytes": 1585,
+              "is_error": true
+            },
+            {
+              "name": "inspect_analysis_view",
+              "arguments": {
+                "source": {
+                  "kind": "retained-evidence",
+                  "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+                },
+                "view": {
+                  "kind": "summary"
+                }
+              },
+              "elapsed_ms": 293.6459640000003,
+              "client_result_json_utf8_bytes": 10409,
+              "is_error": false
+            },
+            {
+              "name": "inspect_analysis_view",
+              "arguments": {
+                "source": {
+                  "kind": "retained-evidence",
+                  "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+                },
+                "view": {
+                  "kind": "wasm",
+                  "facet": "exports",
+                  "offset": 0,
+                  "limit": 4
+                }
+              },
+              "elapsed_ms": 19.50144200000068,
+              "client_result_json_utf8_bytes": 8124,
+              "is_error": false
+            }
+          ],
+          "resource": {
+            "resource_scope": "rea-efficiency-2dfbd8403f684bfa9d73c3a3bc55be4b.scope",
+            "peak_cgroup_bytes_sampled": 646447104,
+            "elapsed_seconds": 6.364,
+            "abort": null,
+            "hard_memory_bytes": 4294967296,
+            "early_stop_bytes": 3221225472,
+            "cpu_quota_percent": 100,
+            "cpu_affinity": [15],
+            "task_ceiling": 192,
+            "peak_tasks_sampled": 17,
+            "resource_events_last_observed": {
+              "memory.events": {
+                "low": 0,
+                "high": 0,
+                "max": 0,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "pids.events": {
+                "max": 0
+              }
+            },
+            "cpu_stat_last_observed": {
+              "usage_usec": 6174479,
+              "user_usec": 5060476,
+              "system_usec": 1114003,
+              "nr_periods": 63,
+              "nr_throttled": 0,
+              "throttled_usec": 0,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            }
+          },
+          "answer_json_canonical_sha256": "071377385a4bd0063a02fa932a2b99dd2cb390b8f858bc770f0bb20a1b3d89ec"
+        }
+      }
+    },
+    {
+      "artifact": "weth.hex",
+      "comparison": {
+        "artifact": "weth.hex",
+        "artifact_sha256": "eb67ea4da28b88358df0385358bad3a58b131317835b45b3ede85c61851335e4",
+        "settings_match": true,
+        "setting_differences": [],
+        "facts_match": true,
+        "fact_differences": [],
+        "preserved_run_specific_values": [],
+        "workflow_failures": [null, null],
+        "left": {
+          "revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+          "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+          "delivery": "complete",
+          "sdk_schema_mode": "selected",
+          "elapsed_ms": 3499.8018479999996,
+          "catalog_json_utf8_bytes": 2326609,
+          "calls": 1,
+          "observed_tool_errors": 0,
+          "client_result_json_utf8_bytes": 26760,
+          "client_before_send_ms": 82.73219700000027,
+          "transport_roundtrip_ms": 430.47108500000013,
+          "client_after_receive_ms": 4.723760999999286
+        },
+        "right": {
+          "revision": "0002caa07ffd7319672a21ce901dbfbc55e21aac",
+          "runtime_files_sha256": "c1cab7fe56cc35439a480114da3c435d42b0c6875ff8bb98d75e8143418c3380",
+          "delivery": "complete",
+          "sdk_schema_mode": "selected",
+          "elapsed_ms": 3483.9836549999995,
+          "catalog_json_utf8_bytes": 2387332,
+          "calls": 1,
+          "observed_tool_errors": 0,
+          "client_result_json_utf8_bytes": 26760,
+          "client_before_send_ms": 89.09317800000008,
+          "transport_roundtrip_ms": 448.89354600000024,
+          "client_after_receive_ms": 7.326960999999756
+        },
+        "scope": "Same selected analyst facts; includes extra view calls and preserves observed tool errors. Result JSON bytes exclude file exports, catalog responses and raw wire framing. This is one paired observation, not a statistical speedup or independent ground-truth proof."
+      },
+      "observed_candidate_facts": {
+        "artifact": {
+          "path": "/home/yann/yann/rea-compatibility-first-lab-20261012/real-artifacts/weth-published.hex",
+          "sha256": "eb67ea4da28b88358df0385358bad3a58b131317835b45b3ede85c61851335e4",
+          "bytes": 6251,
+          "encoding": "hex"
+        },
+        "functions": [
+          {
+            "selector": "0x06fdde03",
+            "bytecode_offset": 185,
+            "dispatch": "abi",
+            "inferred_arguments": "",
+            "inferred_state_mutability": "view"
+          },
+          {
+            "selector": "0x095ea7b3",
+            "bytecode_offset": 327,
+            "dispatch": "abi",
+            "inferred_arguments": "address,uint256",
+            "inferred_state_mutability": "nonpayable"
+          },
+          {
+            "selector": "0x18160ddd",
+            "bytecode_offset": 417,
+            "dispatch": "abi",
+            "inferred_arguments": "",
+            "inferred_state_mutability": "view"
+          },
+          {
+            "selector": "0x23b872dd",
+            "bytecode_offset": 458,
+            "dispatch": "abi",
+            "inferred_arguments": "address,address,uint256",
+            "inferred_state_mutability": "nonpayable"
+          },
+          {
+            "selector": "0x2e1a7d4d",
+            "bytecode_offset": 579,
+            "dispatch": "abi",
+            "inferred_arguments": "uint256",
+            "inferred_state_mutability": "nonpayable"
+          },
+          {
+            "selector": "0x313ce567",
+            "bytecode_offset": 614,
+            "dispatch": "abi",
+            "inferred_arguments": "",
+            "inferred_state_mutability": "view"
+          },
+          {
+            "selector": "0x70a08231",
+            "bytecode_offset": 661,
+            "dispatch": "abi",
+            "inferred_arguments": "address",
+            "inferred_state_mutability": "view"
+          },
+          {
+            "selector": "0x95d89b41",
+            "bytecode_offset": 738,
+            "dispatch": "abi",
+            "inferred_arguments": "",
+            "inferred_state_mutability": "view"
+          },
+          {
+            "selector": "0xa9059cbb",
+            "bytecode_offset": 880,
+            "dispatch": "abi",
+            "inferred_arguments": "address,uint256",
+            "inferred_state_mutability": "nonpayable"
+          },
+          {
+            "selector": "0xd0e30db0",
+            "bytecode_offset": 970,
+            "dispatch": "abi",
+            "inferred_arguments": "",
+            "inferred_state_mutability": "payable"
+          },
+          {
+            "selector": "0xdd62ed3e",
+            "bytecode_offset": 980,
+            "dispatch": "abi",
+            "inferred_arguments": "address,address",
+            "inferred_state_mutability": "view"
+          }
+        ],
+        "discovery_completeness": "unknown",
+        "runtime_execution": "not-performed",
+        "limitations": [
+          "Configured worker resource soft limits: address_space_bytes=3221225472, cpu_seconds=30, file_size_bytes=16777216. Selected from inherited tighter limits; original hard limits are retained. Effective worker limits are not independently probed.",
+          "Upstream may also report terminal metadata while recovering selectors. Its reported values are retained in raw_result, but integer precision and non-text-key coverage are unknown in the JS binding; complete original bytecode remains available.",
+          "Recovered selectors, argument strings and mutability are upstream inferences, not verified ABI signatures or names. Empty results do not prove the absence of callable dispatch.",
+          "Bytecode kind, hardfork and deployed-contract authenticity are unknown. This inspection performs no target runtime execution, chain/RPC lookup or network request.",
+          "Original carrier and decoded bytecode SHA-256 are distinct identities; SHA-256 is not the Ethereum Keccak code hash.",
+          "The owned worker has a 256 MiB JavaScript heap, 3 GiB virtual address-space limit and 30-second deadline. Virtual address space is distinct from resident memory; limits fail without partial success."
+        ],
+        "decoded_bytecode": {
+          "sha256": "5566bf50796faf93c9b6f6adacd3b32c70bfe16b48ffc59db6cd144cbdc89739",
+          "bytes": 3124,
+          "digest_algorithm": "sha256",
+          "kind": "unknown",
+          "deployment_authenticity": "unknown",
+          "hardfork": "unknown"
+        }
+      },
+      "runs": {
+        "control": {
+          "runtime_revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+          "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+          "provider_settings_sha256": "8f391e4f78bad489477f8b5e7f6cb156d49e8cecf94671bbc4088f35d97488c2",
+          "measure_source_sha256": "335ac792e3e3ccdc6b93e26395afbb4dd28f47c8bf52ba211984a715bc7c98b5",
+          "target_sha256_before": "eb67ea4da28b88358df0385358bad3a58b131317835b45b3ede85c61851335e4",
+          "target_sha256_after": "eb67ea4da28b88358df0385358bad3a58b131317835b45b3ede85c61851335e4",
+          "catalog_input_definition_utf8_bytes": 494207,
+          "evidence_ids": [
+            "ev_ea026a63bf6dce9218070ffb73eb4595adec1a521ba2a8c6de6ed91043a1d5eb"
+          ],
+          "source_evidence_ids": [
+            "ev_ea026a63bf6dce9218070ffb73eb4595adec1a521ba2a8c6de6ed91043a1d5eb"
+          ],
+          "calls": [
+            {
+              "name": "inspect_evm_interface",
+              "arguments": {
+                "path": "/home/yann/yann/rea-compatibility-first-lab-20261012/real-artifacts/weth-published.hex",
+                "encoding": "hex"
+              },
+              "elapsed_ms": 517.9270429999997,
+              "client_result_json_utf8_bytes": 26760,
+              "is_error": false
+            }
+          ],
+          "resource": {
+            "resource_scope": "rea-efficiency-61ad89ff4b404b37807ef869cd22fa93.scope",
+            "peak_cgroup_bytes_sampled": 468078592,
+            "elapsed_seconds": 4.551,
+            "abort": null,
+            "hard_memory_bytes": 4294967296,
+            "early_stop_bytes": 3221225472,
+            "cpu_quota_percent": 100,
+            "cpu_affinity": [15],
+            "task_ceiling": 192,
+            "peak_tasks_sampled": 21,
+            "resource_events_last_observed": {
+              "memory.events": {
+                "low": 0,
+                "high": 0,
+                "max": 0,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "pids.events": {
+                "max": 0
+              }
+            },
+            "cpu_stat_last_observed": {
+              "usage_usec": 4371930,
+              "user_usec": 3693083,
+              "system_usec": 678846,
+              "nr_periods": 44,
+              "nr_throttled": 0,
+              "throttled_usec": 0,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            }
+          },
+          "answer_json_canonical_sha256": "deccb4623fd62f2bf6acabdd9cc3d0cf8a4c9ce676731c68695231f2dc9ab623"
+        },
+        "candidate": {
+          "runtime_revision": "0002caa07ffd7319672a21ce901dbfbc55e21aac",
+          "runtime_files_sha256": "c1cab7fe56cc35439a480114da3c435d42b0c6875ff8bb98d75e8143418c3380",
+          "provider_settings_sha256": "8f391e4f78bad489477f8b5e7f6cb156d49e8cecf94671bbc4088f35d97488c2",
+          "measure_source_sha256": "335ac792e3e3ccdc6b93e26395afbb4dd28f47c8bf52ba211984a715bc7c98b5",
+          "target_sha256_before": "eb67ea4da28b88358df0385358bad3a58b131317835b45b3ede85c61851335e4",
+          "target_sha256_after": "eb67ea4da28b88358df0385358bad3a58b131317835b45b3ede85c61851335e4",
+          "catalog_input_definition_utf8_bytes": 497641,
+          "evidence_ids": [
+            "ev_ea026a63bf6dce9218070ffb73eb4595adec1a521ba2a8c6de6ed91043a1d5eb"
+          ],
+          "source_evidence_ids": [
+            "ev_ea026a63bf6dce9218070ffb73eb4595adec1a521ba2a8c6de6ed91043a1d5eb"
+          ],
+          "calls": [
+            {
+              "name": "inspect_evm_interface",
+              "arguments": {
+                "path": "/home/yann/yann/rea-compatibility-first-lab-20261012/real-artifacts/weth-published.hex",
+                "encoding": "hex"
+              },
+              "elapsed_ms": 545.3136850000001,
+              "client_result_json_utf8_bytes": 26760,
+              "is_error": false
+            }
+          ],
+          "resource": {
+            "resource_scope": "rea-efficiency-9836c7f32cb84a579c5f37e6f799d8a5.scope",
+            "peak_cgroup_bytes_sampled": 473178112,
+            "elapsed_seconds": 4.55,
+            "abort": null,
+            "hard_memory_bytes": 4294967296,
+            "early_stop_bytes": 3221225472,
+            "cpu_quota_percent": 100,
+            "cpu_affinity": [15],
+            "task_ceiling": 192,
+            "peak_tasks_sampled": 21,
+            "resource_events_last_observed": {
+              "memory.events": {
+                "low": 0,
+                "high": 0,
+                "max": 0,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "pids.events": {
+                "max": 0
+              }
+            },
+            "cpu_stat_last_observed": {
+              "usage_usec": 4398272,
+              "user_usec": 3703304,
+              "system_usec": 694968,
+              "nr_periods": 44,
+              "nr_throttled": 0,
+              "throttled_usec": 0,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            }
+          },
+          "answer_json_canonical_sha256": "deccb4623fd62f2bf6acabdd9cc3d0cf8a4c9ce676731c68695231f2dc9ab623"
+        }
+      }
+    }
+  ],
+  "qualifications": [
+    "One paired observation per artifact; timing does not establish a statistical speedup. Full original replies and resource logs remain outside Git. Canonical answer digests retain traceability.",
+    "The comparator preserves both Binwalk-generated region UUIDs in preserved_run_specific_values and compares remaining physical-region facts. It does not rewrite original output or infer identity stability.",
+    "SQLite complete source Evidence exceeds the MCP frame in both revisions. Control exports the original record; candidate reads retained typed summary/exports views. Result JSON totals exclude exported-file bytes, so 1,987 versus 20,118 inline bytes is not a size-reduction comparison. Original transport errors remain counted.",
+    "NewPipe method/class evidence can include run-specific temporary diagnostics. Selected method signatures, null DEX descriptor and coverage agree; evidence identity stability is not inferred.",
+    "WETH bytes come from the official published historical JSON-RPC example, not a verified live-chain response. Deployment/network authenticity remains unverified.",
+    "These are Linux x64 real-provider observations. No real IDA, Hopper, macOS, Windows or Harmony claims are made."
+  ]
+}

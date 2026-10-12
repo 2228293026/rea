@@ -85,6 +85,21 @@
         "upstreamFile": "openwrt-25.12.5-ath79-generic-tplink_archer-c7-v5-squashfs-sysupgrade.bin",
         "url": "https://downloads.openwrt.org/releases/25.12.5/targets/ath79/generic/openwrt-25.12.5-ath79-generic-tplink_archer-c7-v5-squashfs-sysupgrade.bin"
       }
+    },
+    {
+      "id": "weth.hex",
+      "file": "weth-published.hex",
+      "bytes": 6251,
+      "sha256": "eb67ea4da28b88358df0385358bad3a58b131317835b45b3ede85c61851335e4",
+      "provenance": {
+        "project": "Published historical WETH runtime code example",
+        "url": "https://ethereum.org/developers/docs/apis/json-rpc/",
+        "contract_address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+        "published_block": "0x5daf3b",
+        "transport_sha256": "98c131a1bd99a0c2051dd6d6716fd306c36cdd45995d5ffd559bd9c690569c0f",
+        "derivation": "Parse the named eth_getCode JSON result from the official published example and preserve the hex carrier with one trailing LF",
+        "authority": "published historical RPC example; live retrieval returned HTTP 403; deployment authenticity remains unverified"
+      }
     }
   ]
 }

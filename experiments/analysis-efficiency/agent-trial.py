@@ -47,6 +47,7 @@ def main():
     parser.add_argument('--codex', default='/usr/bin/codex')
     parser.add_argument('--providers', type=Path)
     parser.add_argument('--enabled-tools', type=Path)
+    parser.add_argument('--authority', choices=['static', 'browser'], default='static')
     args = parser.parse_args()
     def terminate(signum, _frame):
         # The outer resource scope terminates descendants together. Ensure the
@@ -100,6 +101,15 @@ def main():
         'Prefer summary/focused views where appropriate. Do not invent successful facts '
         'after a tool error. No other agents. Stop once the requested facts are supported.'
     )
+    if args.authority == 'browser':
+        instruction = (
+            'Use the registered REA tools for the explicitly selected public browser scenario. '
+            'Launching the selected headless browser with a fresh empty profile and observing '
+            'the supplied public URL is authorized. Keep all actions within that scenario. '
+            'No injected code, credentials, unrelated targets, shell/file tools or other agents. '
+            'Preserve real Evidence IDs, observation completeness, failed captures and limitations. '
+            'Do not infer original source or global behavior from one observed session.'
+        )
     if args.mode == 'client-code':
         instruction += (
             ' Use the client JavaScript executor to compose registered MCP calls when '
@@ -139,6 +149,7 @@ def main():
                  'inspect_managed_members', 'inspect_managed_native_boundaries',
                  'inspect_artifact', 'inspect_wasm_artifact',
                  'inspect_evm_interface', 'get_evidence_bundle', 'export_evidence_bundle',
+                 'capture_browser_scenario',
                  'resolve_containing_procedure', 'analyze_function', 'close_binary']:
         config += '[mcp_servers.rea.tools.' + tool + ']\napproval_mode = "approve"\n'
     try:
@@ -163,6 +174,7 @@ def main():
             'runtime_revision': args.revision,
             'runtime_root': str(repository),
             'enabled_tools': enabled_tools,
+            'authority': args.authority,
             'runtime_files_sha256': runtime_digest,
             'runtime_dispatcher_sha256': file_digest(repository / 'scripts/rea.mjs'),
             'package_lock_sha256': file_digest(repository / 'package-lock.json'),
