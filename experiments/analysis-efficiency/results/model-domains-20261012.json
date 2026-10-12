@@ -1,0 +1,2760 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-12",
+  "issue": "https://github.com/morluto/rea/issues/2016",
+  "domain_groups": [
+    "native",
+    "managed",
+    "Android",
+    "firmware",
+    "Electron/JavaScript",
+    "WASM",
+    "EVM",
+    "browser"
+  ],
+  "requested_model": "gpt-5.6-terra",
+  "reasoning": "high",
+  "resolved_model_identity": "not inferred from requested alias",
+  "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+  "trials": [
+    {
+      "domain": "wasm",
+      "checks": {
+        "reported_evidence_ids_observed_in_responses": true,
+        "temporary_profile_removed": true,
+        "selected_artifact_bytes_unchanged": true,
+        "target_digest": true,
+        "validation": true,
+        "section_count": true,
+        "import_count": true,
+        "export_count": true,
+        "exports_first4": true,
+        "wat_sha256": true,
+        "wat_code_units": true,
+        "runtime_execution": true,
+        "network_fetch": true,
+        "wabt_release": true,
+        "wabt_source_commit": true,
+        "no_resource_abort": true,
+        "no_observed_oom_or_task_limit": true
+      },
+      "all_selected_checks_pass": true,
+      "differences": {},
+      "tool_errors": [
+        {
+          "tool": "inspect_wasm_artifact",
+          "arguments": {
+            "path": "/home/yann/yann/rea-codemode-lab-20261011/real-artifacts/sqlite3.wasm"
+          },
+          "response": {
+            "error": {
+              "code": "resource_constraint",
+              "category": "resource_constraint",
+              "message": "The operation completed, but its complete MCP response exceeds the stdio response budget. The analysis result was not truncated. Export retained evidence to consume the complete analysis, or use complete CLI JSON output.",
+              "retryable": false,
+              "remediation": {
+                "action": "Discover retained records with get_evidence_bundle and detail: summary, then inspect compatible records through inspect_analysis_view using an exact Evidence reference. Export complete retained session evidence through export_evidence_bundle to a caller-selected path, or use complete CLI JSON output. The connection remains usable."
+              },
+              "details": {
+                "operation": "inspect_wasm_artifact",
+                "resource": "transport",
+                "reason": "The operation completed, but its complete MCP response exceeds the stdio response budget. The analysis result was not truncated. Export retained evidence to consume the complete analysis, or use complete CLI JSON output.",
+                "reported_limits": {
+                  "boundary": "mcp-response",
+                  "default_receive_buffer_bytes": 10485760,
+                  "result_budget_bytes": 10484736,
+                  "max_string_code_units": 536869864,
+                  "response_bytes_at_least": 10537095,
+                  "response_code_units_at_least": 10537095,
+                  "constraint": "receive-buffer",
+                  "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140",
+                  "evidence_reference": {
+                    "kind": "retained-evidence",
+                    "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "summary": {
+        "mode": "direct",
+        "requested_model": "gpt-5.6-terra",
+        "reasoning": "high",
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": "2ee8f3dab694532afc8840e07703127287662d08b74e6ff50491ce63f00d5752",
+        "selected_artifact_sha256_after": "2ee8f3dab694532afc8840e07703127287662d08b74e6ff50491ce63f00d5752",
+        "selected_artifact_bytes_unchanged": true,
+        "model_identity_scope": "requested alias; resolved server-side model identity is not inferred",
+        "codex_version": "codex-cli 0.161.0",
+        "exit_code": 0,
+        "timeout": false,
+        "wall_seconds": 63.79,
+        "usage": [
+          {
+            "input_tokens": 74387,
+            "cached_input_tokens": 49408,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1814,
+            "reasoning_output_tokens": 759
+          }
+        ],
+        "completed_mcp_calls": [
+          {
+            "server": "rea",
+            "tool": "inspect_wasm_artifact",
+            "arguments": {
+              "path": "/home/yann/yann/rea-codemode-lab-20261011/real-artifacts/sqlite3.wasm"
+            },
+            "status": "failed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 1596
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "summary"
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 10410
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "exports",
+                "offset": 0,
+                "limit": 4
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 8125
+          }
+        ],
+        "event_types": {
+          "thread.started": 1,
+          "turn.started": 1,
+          "item.completed": 6,
+          "item.started": 3,
+          "turn.completed": 1
+        },
+        "factual_correctness": "not_assessed",
+        "scope": "real_cli_trial_requires_transcript_and_fact_review"
+      },
+      "fingerprints": {
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": "2ee8f3dab694532afc8840e07703127287662d08b74e6ff50491ce63f00d5752",
+        "enabled_tools": [
+          "inspect_wasm_artifact",
+          "inspect_analysis_view",
+          "get_evidence_bundle",
+          "export_evidence_bundle"
+        ],
+        "authority": "static",
+        "runtime_files_sha256": "c35e1d11fdfa4c93ce7600b247ebf44abbd27e514b1024ca948fdb33e82c1a3b",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "experiment_sources_sha256": {
+          "agent-trial.py": "6ecf7b2ecd98a1050935336d04d9f4b703e2d8519c837e7c987238456713bf1a"
+        },
+        "developer_instructions_sha256": "eaddc85aa5b141538ec280d640c62db799231b394679a17f2e6cc6bc2146a95c",
+        "prompt_sha256": "171215ecb0ee4882047b2140de00a2d9b201df168d4dc94138df98b06d96b54f",
+        "question_template_sha256": "9da43cc57bc62cf6ffaf84f4d8f2352ba71cc7678004f567c0cf4f70a3af4516",
+        "provider_settings_sha256": "1db4e19adcb32bb64a3baad58a1b4ef04b52ba648bab29678693f9ab8dbdabb4"
+      },
+      "answer_file_sha256": "aee8a9564334914293ce66daec8dd278cca13b3f992949179fb82ef0e7c41aa2",
+      "answer_had_json_fence": false,
+      "reported_evidence_ids": [
+        "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140",
+        "ev_8c039b1e4ecefb3619f50d2cc0b9b83086cc505fb0b8662fad7ba11b9cec8922",
+        "ev_f78393e6d8e2e6930e9bbb58d29105b2bac3676ad84a3dc772a9518391cbafa1"
+      ],
+      "resource": {
+        "resource_scope": "rea-efficiency-2b4e25296cf84dd4a3ddfb32ad167e6b.scope",
+        "peak_cgroup_bytes_sampled": 860647424,
+        "elapsed_seconds": 64.08,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 99,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 7975880,
+          "user_usec": 5739981,
+          "system_usec": 2235898,
+          "nr_periods": 574,
+          "nr_throttled": 7,
+          "throttled_usec": 9918,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "scope": "Fixed selected-fact review against actual public producer observations. Equivalent explicitly named answer representations are accepted; unknowns/nulls remain checked. Limitations, unsupported claims and broader behavior still require transcript review. Token usage and failed calls are retained; zero exit status is not a factual grade.",
+      "observed_completed_item_types": {
+        "agent_message": 3,
+        "mcp_tool_call": 3
+      },
+      "observed_mcp_tool_names": [
+        "inspect_wasm_artifact",
+        "inspect_analysis_view",
+        "inspect_analysis_view"
+      ],
+      "trial_name": "model-wasm-guidance-guidance-final"
+    },
+    {
+      "domain": "evm",
+      "checks": {
+        "reported_evidence_ids_observed_in_responses": true,
+        "temporary_profile_removed": true,
+        "selected_artifact_bytes_unchanged": true,
+        "target_digest": true,
+        "artifact_bytes": true,
+        "bytecode_sha256": true,
+        "bytecode_bytes": true,
+        "functions": true,
+        "evidence_kind": true,
+        "discovery_completeness": true,
+        "runtime_execution": true,
+        "bytecode_kind": true,
+        "hardfork": true,
+        "deployment_authenticity": true,
+        "no_resource_abort": true,
+        "no_observed_oom_or_task_limit": true
+      },
+      "all_selected_checks_pass": true,
+      "differences": {},
+      "tool_errors": [],
+      "summary": {
+        "mode": "direct",
+        "requested_model": "gpt-5.6-terra",
+        "reasoning": "high",
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": "eb67ea4da28b88358df0385358bad3a58b131317835b45b3ede85c61851335e4",
+        "selected_artifact_sha256_after": "eb67ea4da28b88358df0385358bad3a58b131317835b45b3ede85c61851335e4",
+        "selected_artifact_bytes_unchanged": true,
+        "model_identity_scope": "requested alias; resolved server-side model identity is not inferred",
+        "codex_version": "codex-cli 0.161.0",
+        "exit_code": 0,
+        "timeout": false,
+        "wall_seconds": 57.611,
+        "usage": [
+          {
+            "input_tokens": 52813,
+            "cached_input_tokens": 29184,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1690,
+            "reasoning_output_tokens": 290
+          }
+        ],
+        "completed_mcp_calls": [
+          {
+            "server": "rea",
+            "tool": "inspect_evm_interface",
+            "arguments": {
+              "path": "/home/yann/yann/rea-compatibility-first-lab-20261012/real-artifacts/weth-published.hex",
+              "encoding": "hex"
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 26761
+          }
+        ],
+        "event_types": {
+          "thread.started": 1,
+          "turn.started": 1,
+          "item.completed": 3,
+          "item.started": 1,
+          "turn.completed": 1
+        },
+        "factual_correctness": "not_assessed",
+        "scope": "real_cli_trial_requires_transcript_and_fact_review"
+      },
+      "fingerprints": {
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": "eb67ea4da28b88358df0385358bad3a58b131317835b45b3ede85c61851335e4",
+        "enabled_tools": ["inspect_evm_interface"],
+        "authority": "static",
+        "runtime_files_sha256": "c35e1d11fdfa4c93ce7600b247ebf44abbd27e514b1024ca948fdb33e82c1a3b",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "experiment_sources_sha256": {
+          "agent-trial.py": "6ecf7b2ecd98a1050935336d04d9f4b703e2d8519c837e7c987238456713bf1a"
+        },
+        "developer_instructions_sha256": "eaddc85aa5b141538ec280d640c62db799231b394679a17f2e6cc6bc2146a95c",
+        "prompt_sha256": "2e725eb2c4dcc64c05a4d623569df7226a89d81830b3b37711664ed5352c000b",
+        "question_template_sha256": "5cc503f52978b6748d434375d268ade1818d666b0dcfa7a17120159e4c072838",
+        "provider_settings_sha256": "1db4e19adcb32bb64a3baad58a1b4ef04b52ba648bab29678693f9ab8dbdabb4"
+      },
+      "answer_file_sha256": "de0e738394054d4b2285c25fb7f91d13f60d092f59ae61eb9f5e276e8a271f23",
+      "answer_had_json_fence": false,
+      "reported_evidence_ids": [
+        "ev_ea026a63bf6dce9218070ffb73eb4595adec1a521ba2a8c6de6ed91043a1d5eb"
+      ],
+      "resource": {
+        "resource_scope": "rea-efficiency-badb0353618f46a69d9a47fd59f840c5.scope",
+        "peak_cgroup_bytes_sampled": 667258880,
+        "elapsed_seconds": 57.934,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 105,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 6917756,
+          "user_usec": 5103886,
+          "system_usec": 1813870,
+          "nr_periods": 556,
+          "nr_throttled": 10,
+          "throttled_usec": 10232,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "scope": "Fixed selected-fact review against actual public producer observations. Equivalent explicitly named answer representations are accepted; unknowns/nulls remain checked. Limitations, unsupported claims and broader behavior still require transcript review. Token usage and failed calls are retained; zero exit status is not a factual grade.",
+      "observed_completed_item_types": {
+        "agent_message": 2,
+        "mcp_tool_call": 1
+      },
+      "observed_mcp_tool_names": ["inspect_evm_interface"],
+      "trial_name": "model-evm-guidance-final"
+    },
+    {
+      "domain": "firmware",
+      "checks": {
+        "reported_evidence_ids_observed_in_responses": true,
+        "temporary_profile_removed": true,
+        "selected_artifact_bytes_unchanged": true,
+        "target_digest": true,
+        "input_size": true,
+        "examined_coverage": true,
+        "all_original_region_records": true,
+        "engine.name": true,
+        "engine.version": true,
+        "engine_executable_digest": true,
+        "no_resource_abort": true,
+        "no_observed_oom_or_task_limit": true
+      },
+      "all_selected_checks_pass": true,
+      "differences": {},
+      "tool_errors": [],
+      "summary": {
+        "mode": "direct",
+        "requested_model": "gpt-5.6-terra",
+        "reasoning": "high",
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": "f15b16b36df7fce8a5cf1302320fdb428c3bb6fbc2949a4858afa257f4f364a2",
+        "selected_artifact_sha256_after": "f15b16b36df7fce8a5cf1302320fdb428c3bb6fbc2949a4858afa257f4f364a2",
+        "selected_artifact_bytes_unchanged": true,
+        "model_identity_scope": "requested alias; resolved server-side model identity is not inferred",
+        "codex_version": "codex-cli 0.161.0",
+        "exit_code": 0,
+        "timeout": false,
+        "wall_seconds": 58.111,
+        "usage": [
+          {
+            "input_tokens": 51485,
+            "cached_input_tokens": 29184,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1827,
+            "reasoning_output_tokens": 625
+          }
+        ],
+        "completed_mcp_calls": [
+          {
+            "server": "rea",
+            "tool": "inspect_firmware_regions",
+            "arguments": {
+              "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/openwrt-25.12.5-ath79-generic-tplink_archer-c7-v5-squashfs-sysupgrade.bin"
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 9868
+          }
+        ],
+        "event_types": {
+          "thread.started": 1,
+          "turn.started": 1,
+          "item.completed": 3,
+          "item.started": 1,
+          "turn.completed": 1
+        },
+        "factual_correctness": "not_assessed",
+        "scope": "real_cli_trial_requires_transcript_and_fact_review"
+      },
+      "fingerprints": {
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": "f15b16b36df7fce8a5cf1302320fdb428c3bb6fbc2949a4858afa257f4f364a2",
+        "enabled_tools": ["inspect_firmware_regions"],
+        "authority": "static",
+        "runtime_files_sha256": "c35e1d11fdfa4c93ce7600b247ebf44abbd27e514b1024ca948fdb33e82c1a3b",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "experiment_sources_sha256": {
+          "agent-trial.py": "6ecf7b2ecd98a1050935336d04d9f4b703e2d8519c837e7c987238456713bf1a"
+        },
+        "developer_instructions_sha256": "eaddc85aa5b141538ec280d640c62db799231b394679a17f2e6cc6bc2146a95c",
+        "prompt_sha256": "93c94e26dc4a4b1985b3f8c4246ca5aff886f75dc2349a717ee940243dc73b80",
+        "question_template_sha256": "facce7ace75b56dafa899000c2e086faadd5a528172016a1680b3b6c206b73d6",
+        "provider_settings_sha256": "1db4e19adcb32bb64a3baad58a1b4ef04b52ba648bab29678693f9ab8dbdabb4"
+      },
+      "answer_file_sha256": "271a097e02f484f1e7b3ab05808f3900b5e5ea49bde3b2f985f4dda6f005bc2f",
+      "answer_had_json_fence": false,
+      "reported_evidence_ids": [
+        "ev_3fc1e4fcc5cd09b28b8187cc73ce76203ce92687029d994d1d924debc88dd303"
+      ],
+      "resource": {
+        "resource_scope": "rea-efficiency-3502509ca818420c88842dc09ccf046e.scope",
+        "peak_cgroup_bytes_sampled": 684302336,
+        "elapsed_seconds": 58.43,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 98,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 6668127,
+          "user_usec": 4797547,
+          "system_usec": 1870579,
+          "nr_periods": 553,
+          "nr_throttled": 7,
+          "throttled_usec": 6623,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "scope": "Fixed selected-fact review against actual public producer observations. Equivalent explicitly named answer representations are accepted; unknowns/nulls remain checked. Limitations, unsupported claims and broader behavior still require transcript review. Token usage and failed calls are retained; zero exit status is not a factual grade.",
+      "observed_completed_item_types": {
+        "agent_message": 2,
+        "mcp_tool_call": 1
+      },
+      "observed_mcp_tool_names": ["inspect_firmware_regions"],
+      "trial_name": "model-firmware-guidance-final"
+    },
+    {
+      "domain": "managed",
+      "checks": {
+        "reported_evidence_ids_observed_in_responses": true,
+        "temporary_profile_removed": true,
+        "selected_artifact_bytes_unchanged": true,
+        "target_digest": true,
+        "assembly.name": true,
+        "assembly.version": true,
+        "module.name": true,
+        "module.mvid": true,
+        "classification": true,
+        "target_frameworks": true,
+        "module_refs": true,
+        "pinvoke_imports": true,
+        "artifact_coverage": true,
+        "native_boundaries_coverage": true,
+        "no_resource_abort": true,
+        "no_observed_oom_or_task_limit": true
+      },
+      "all_selected_checks_pass": true,
+      "differences": {},
+      "tool_errors": [],
+      "summary": {
+        "mode": "direct",
+        "requested_model": "gpt-5.6-terra",
+        "reasoning": "high",
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": "191a191be964e434daf0f9d76d1e0d8ddce90d7e248cba2a6b5ac9577f288d53",
+        "selected_artifact_sha256_after": "191a191be964e434daf0f9d76d1e0d8ddce90d7e248cba2a6b5ac9577f288d53",
+        "selected_artifact_bytes_unchanged": true,
+        "model_identity_scope": "requested alias; resolved server-side model identity is not inferred",
+        "codex_version": "codex-cli 0.161.0",
+        "exit_code": 0,
+        "timeout": false,
+        "wall_seconds": 74.996,
+        "usage": [
+          {
+            "input_tokens": 123255,
+            "cached_input_tokens": 93952,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2570,
+            "reasoning_output_tokens": 863
+          }
+        ],
+        "completed_mcp_calls": [
+          {
+            "server": "rea",
+            "tool": "inspect_managed_artifact",
+            "arguments": {
+              "path": "/home/yann/yann/rea-codemode-lab-20261011/real-artifacts/ShareX.dll"
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 1178723
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_managed_native_boundaries",
+            "arguments": {},
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 27681
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_managed_artifact",
+            "arguments": {
+              "path": "/home/yann/yann/rea-codemode-lab-20261011/real-artifacts/ShareX.dll"
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 1178723
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_managed_native_boundaries",
+            "arguments": {},
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 27681
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_managed_artifact",
+            "arguments": {
+              "path": "/home/yann/yann/rea-codemode-lab-20261011/real-artifacts/ShareX.dll"
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 1178723
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_managed_native_boundaries",
+            "arguments": {},
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 27681
+          }
+        ],
+        "event_types": {
+          "thread.started": 1,
+          "turn.started": 1,
+          "item.completed": 8,
+          "item.started": 6,
+          "turn.completed": 1
+        },
+        "factual_correctness": "not_assessed",
+        "scope": "real_cli_trial_requires_transcript_and_fact_review"
+      },
+      "fingerprints": {
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": "191a191be964e434daf0f9d76d1e0d8ddce90d7e248cba2a6b5ac9577f288d53",
+        "enabled_tools": [
+          "inspect_managed_artifact",
+          "inspect_managed_native_boundaries",
+          "inspect_managed_members"
+        ],
+        "authority": "static",
+        "runtime_files_sha256": "c35e1d11fdfa4c93ce7600b247ebf44abbd27e514b1024ca948fdb33e82c1a3b",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "experiment_sources_sha256": {
+          "agent-trial.py": "6ecf7b2ecd98a1050935336d04d9f4b703e2d8519c837e7c987238456713bf1a"
+        },
+        "developer_instructions_sha256": "eaddc85aa5b141538ec280d640c62db799231b394679a17f2e6cc6bc2146a95c",
+        "prompt_sha256": "fe5a74687126fca7aee78b3ba51f03401983ffeae593924b7c738d50d0f04e61",
+        "question_template_sha256": "7540a30e1e1afa0e85ebdf0bf8d61d284a04a7c57a4f4e0fa6407c37e56bb9c9",
+        "provider_settings_sha256": "1db4e19adcb32bb64a3baad58a1b4ef04b52ba648bab29678693f9ab8dbdabb4"
+      },
+      "answer_file_sha256": "321609dd2b32482fc383ca1d06a2735bc9deb9131bfb7c82a4da6f0f3b270b3c",
+      "answer_had_json_fence": false,
+      "reported_evidence_ids": [
+        "ev_6d66bc4167e8447cfa51086d1ef9cf5071571a9adf81c7d0c6a67db2d8018398",
+        "ev_b2385781af98ca89082366b7a7c3302dd2810a1feb8db231fae5d1eeca2e3eac"
+      ],
+      "resource": {
+        "resource_scope": "rea-efficiency-77af3e746bd64afda978a454dad5e650.scope",
+        "peak_cgroup_bytes_sampled": 684781568,
+        "elapsed_seconds": 75.241,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 105,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 7184058,
+          "user_usec": 5203053,
+          "system_usec": 1981005,
+          "nr_periods": 723,
+          "nr_throttled": 7,
+          "throttled_usec": 10489,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "scope": "Fixed selected-fact review against actual public producer observations. Equivalent explicitly named answer representations are accepted; unknowns/nulls remain checked. Limitations, unsupported claims and broader behavior still require transcript review. Token usage and failed calls are retained; zero exit status is not a factual grade.",
+      "observed_completed_item_types": {
+        "agent_message": 2,
+        "mcp_tool_call": 6
+      },
+      "observed_mcp_tool_names": [
+        "inspect_managed_artifact",
+        "inspect_managed_native_boundaries",
+        "inspect_managed_artifact",
+        "inspect_managed_native_boundaries",
+        "inspect_managed_artifact",
+        "inspect_managed_native_boundaries"
+      ],
+      "trial_name": "model-managed-guidance-final"
+    },
+    {
+      "domain": "android",
+      "checks": {
+        "reported_evidence_ids_observed_in_responses": true,
+        "temporary_profile_removed": true,
+        "selected_artifact_bytes_unchanged": true,
+        "target_digest": true,
+        "package_name": true,
+        "version_name": true,
+        "version_code": true,
+        "matches": true,
+        "onCreate_fields_present_including_explicit_null": true,
+        "all_onCreate_descriptors": true,
+        "no_resource_abort": true,
+        "no_observed_oom_or_task_limit": true
+      },
+      "all_selected_checks_pass": true,
+      "differences": {},
+      "tool_errors": [],
+      "summary": {
+        "mode": "direct",
+        "requested_model": "gpt-5.6-terra",
+        "reasoning": "high",
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": "18447bfb1e06d113edc88df93f471827280de06f6f3d4dc42f56f28b9c1bab79",
+        "selected_artifact_sha256_after": "18447bfb1e06d113edc88df93f471827280de06f6f3d4dc42f56f28b9c1bab79",
+        "selected_artifact_bytes_unchanged": true,
+        "model_identity_scope": "requested alias; resolved server-side model identity is not inferred",
+        "codex_version": "codex-cli 0.161.0",
+        "exit_code": 0,
+        "timeout": false,
+        "wall_seconds": 91.493,
+        "usage": [
+          {
+            "input_tokens": 52049,
+            "cached_input_tokens": 17920,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1404,
+            "reasoning_output_tokens": 470
+          }
+        ],
+        "completed_mcp_calls": [
+          {
+            "server": "rea",
+            "tool": "inspect_android_package",
+            "arguments": {
+              "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/NewPipe_v0.29.1.apk"
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 119451
+          },
+          {
+            "server": "rea",
+            "tool": "search_android_classes",
+            "arguments": {
+              "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/NewPipe_v0.29.1.apk",
+              "query": "MainActivity"
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 6669
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_android_class",
+            "arguments": {
+              "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/NewPipe_v0.29.1.apk",
+              "class_name": "org.schabi.newpipe.MainActivity"
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 23229
+          }
+        ],
+        "event_types": {
+          "thread.started": 1,
+          "turn.started": 1,
+          "item.completed": 5,
+          "item.started": 3,
+          "turn.completed": 1
+        },
+        "factual_correctness": "not_assessed",
+        "scope": "real_cli_trial_requires_transcript_and_fact_review"
+      },
+      "fingerprints": {
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": "18447bfb1e06d113edc88df93f471827280de06f6f3d4dc42f56f28b9c1bab79",
+        "enabled_tools": [
+          "inspect_android_package",
+          "search_android_classes",
+          "inspect_android_class",
+          "inspect_android_method"
+        ],
+        "authority": "static",
+        "runtime_files_sha256": "c35e1d11fdfa4c93ce7600b247ebf44abbd27e514b1024ca948fdb33e82c1a3b",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "experiment_sources_sha256": {
+          "agent-trial.py": "6ecf7b2ecd98a1050935336d04d9f4b703e2d8519c837e7c987238456713bf1a"
+        },
+        "developer_instructions_sha256": "eaddc85aa5b141538ec280d640c62db799231b394679a17f2e6cc6bc2146a95c",
+        "prompt_sha256": "7129418f2d4428d86cc737124b53636ba4a46de522e702e8861180fc175acb23",
+        "question_template_sha256": "627c9e3efb24147e1188ca115970625fe06c87f9235dbffa6f15f148bce15e91",
+        "provider_settings_sha256": "1db4e19adcb32bb64a3baad58a1b4ef04b52ba648bab29678693f9ab8dbdabb4"
+      },
+      "answer_file_sha256": "4364dfed81f5c5cee7b1f767c8bfab6d4187e6933ee8eed1af6cc59bee6fac73",
+      "answer_had_json_fence": false,
+      "reported_evidence_ids": [
+        "ev_29cc62e2e147aec9f1f83d1544b1274a6b44ed240b3572f316338bf540179d58",
+        "ev_4bbb8bc4e8b833d4f82363193bea9eb30d10e3d33a3e206a87dcbdcba3243442",
+        "ev_58e62b3c2624ca85c3a67c916f5803b730339bb7fda8041d05f062a494def63e"
+      ],
+      "resource": {
+        "resource_scope": "rea-efficiency-6e2d9ea17cbf4e8e8d61c9624be4d42c.scope",
+        "peak_cgroup_bytes_sampled": 1347993600,
+        "elapsed_seconds": 91.718,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 115,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 27187674,
+          "user_usec": 24347073,
+          "system_usec": 2840600,
+          "nr_periods": 900,
+          "nr_throttled": 56,
+          "throttled_usec": 90521,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "scope": "Fixed selected-fact review against actual public producer observations. Equivalent explicitly named answer representations are accepted; unknowns/nulls remain checked. Limitations, unsupported claims and broader behavior still require transcript review. Token usage and failed calls are retained; zero exit status is not a factual grade.",
+      "observed_completed_item_types": {
+        "agent_message": 2,
+        "mcp_tool_call": 3
+      },
+      "observed_mcp_tool_names": [
+        "inspect_android_package",
+        "search_android_classes",
+        "inspect_android_class"
+      ],
+      "trial_name": "model-android-guidance-final"
+    },
+    {
+      "domain": "javascript",
+      "checks": {
+        "reported_evidence_ids_observed_in_responses": true,
+        "temporary_profile_removed": true,
+        "selected_artifact_bytes_unchanged": true,
+        "target_digest": true,
+        "input_path": true,
+        "source_selection": true,
+        "statistics": true,
+        "electron": true,
+        "coverage.application_unknowns": true,
+        "coverage.semantic_unknowns": true,
+        "coverage.application.status": true,
+        "coverage.application.truncated": true,
+        "coverage.application.omitted_count": true,
+        "coverage.semantic.status": true,
+        "coverage.semantic.truncated": true,
+        "coverage.semantic.omitted_nodes": true,
+        "coverage.semantic.omitted_relations": true,
+        "full_coverage_provenance": false,
+        "all_selected_module_identities": true,
+        "no_resource_abort": true,
+        "no_observed_oom_or_task_limit": true
+      },
+      "all_selected_checks_pass": false,
+      "differences": {
+        "full_coverage_provenance": {
+          "answer": {
+            "application": {
+              "status": "partial",
+              "truncated": false,
+              "omitted_count": null
+            },
+            "semantic": {
+              "status": "partial",
+              "truncated": true,
+              "omitted_nodes": null,
+              "omitted_relations": null
+            },
+            "application_unknowns": 37,
+            "semantic_unknowns": 384
+          },
+          "producer": {
+            "application": {
+              "status": "partial",
+              "truncated": false,
+              "omitted_count": null,
+              "limits": [
+                {
+                  "name": "javascript_analysis_parent_available_result_budget_bytes",
+                  "value": 176091746,
+                  "unit": "bytes"
+                },
+                {
+                  "name": "javascript_analysis_parent_result_budget_bytes",
+                  "value": 186716668,
+                  "unit": "bytes"
+                },
+                {
+                  "name": "javascript_analysis_worker_heap_limit_bytes",
+                  "value": 1098907648,
+                  "unit": "bytes"
+                },
+                {
+                  "name": "javascript_analysis_worker_timeout_ms",
+                  "value": 300000,
+                  "unit": "milliseconds"
+                }
+              ]
+            },
+            "semantic": {
+              "status": "partial",
+              "truncated": true,
+              "omitted_nodes": null,
+              "omitted_relations": null,
+              "limits": [
+                {
+                  "name": "javascript_analysis_parent_available_result_budget_bytes",
+                  "value": 176091746,
+                  "unit": "bytes"
+                },
+                {
+                  "name": "javascript_analysis_parent_result_budget_bytes",
+                  "value": 186716668,
+                  "unit": "bytes"
+                },
+                {
+                  "name": "javascript_analysis_worker_heap_limit_bytes",
+                  "value": 1098907648,
+                  "unit": "bytes"
+                },
+                {
+                  "name": "javascript_analysis_worker_timeout_ms",
+                  "value": 300000,
+                  "unit": "milliseconds"
+                }
+              ],
+              "families": [
+                {
+                  "family": "boundary",
+                  "status": "partial",
+                  "retained_relations": 0,
+                  "omitted_relations": null,
+                  "unknown_count": 32
+                },
+                {
+                  "family": "call-flow",
+                  "status": "partial",
+                  "retained_relations": 0,
+                  "omitted_relations": null,
+                  "unknown_count": 32
+                },
+                {
+                  "family": "child-process",
+                  "status": "partial",
+                  "retained_relations": 0,
+                  "omitted_relations": null,
+                  "unknown_count": 32
+                },
+                {
+                  "family": "closure",
+                  "status": "partial",
+                  "retained_relations": 0,
+                  "omitted_relations": null,
+                  "unknown_count": 32
+                },
+                {
+                  "family": "configuration",
+                  "status": "partial",
+                  "retained_relations": 0,
+                  "omitted_relations": null,
+                  "unknown_count": 32
+                },
+                {
+                  "family": "data-flow",
+                  "status": "partial",
+                  "retained_relations": 0,
+                  "omitted_relations": null,
+                  "unknown_count": 32
+                },
+                {
+                  "family": "event",
+                  "status": "partial",
+                  "retained_relations": 0,
+                  "omitted_relations": null,
+                  "unknown_count": 32
+                },
+                {
+                  "family": "object-flow",
+                  "status": "partial",
+                  "retained_relations": 0,
+                  "omitted_relations": null,
+                  "unknown_count": 32
+                },
+                {
+                  "family": "promise-ownership",
+                  "status": "partial",
+                  "retained_relations": 0,
+                  "omitted_relations": null,
+                  "unknown_count": 32
+                },
+                {
+                  "family": "request",
+                  "status": "partial",
+                  "retained_relations": 0,
+                  "omitted_relations": null,
+                  "unknown_count": 32
+                },
+                {
+                  "family": "resource-lifecycle",
+                  "status": "partial",
+                  "retained_relations": 0,
+                  "omitted_relations": null,
+                  "unknown_count": 32
+                },
+                {
+                  "family": "timer",
+                  "status": "partial",
+                  "retained_relations": 0,
+                  "omitted_relations": null,
+                  "unknown_count": 32
+                }
+              ]
+            },
+            "application_unknowns": 37,
+            "semantic_unknowns": 384
+          }
+        }
+      },
+      "tool_errors": [
+        {
+          "tool": "inspect_analysis_view",
+          "arguments": {
+            "source": {
+              "kind": "retained-evidence",
+              "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+            },
+            "view": {
+              "kind": "module",
+              "path": "main.js"
+            }
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "Input validation error: Invalid arguments for tool inspect_analysis_view: view.kind: Invalid discriminator value. Expected 'summary' | 'facet' | 'item' | 'page' | 'native' | 'inventory' | 'wasm'"
+              }
+            ],
+            "structured_content": null
+          }
+        },
+        {
+          "tool": "inspect_analysis_view",
+          "arguments": {
+            "source": {
+              "kind": "retained-evidence",
+              "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+            },
+            "view": {
+              "kind": "item",
+              "collection": "modules",
+              "path": "main.js"
+            }
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "Input validation error: Invalid arguments for tool inspect_analysis_view: view.selector: Invalid input, view: Unrecognized key: \"path\""
+              }
+            ],
+            "structured_content": null
+          }
+        },
+        {
+          "tool": "inspect_analysis_view",
+          "arguments": {
+            "source": {
+              "kind": "retained-evidence",
+              "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+            },
+            "view": {
+              "kind": "item",
+              "selector": {
+                "kind": "module",
+                "path": "main.js"
+              }
+            }
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "Input validation error: Invalid arguments for tool inspect_analysis_view: view.collection: Invalid discriminator value. Expected 'modules' | 'sections' | 'symbols'"
+              }
+            ],
+            "structured_content": null
+          }
+        },
+        {
+          "tool": "inspect_analysis_view",
+          "arguments": {
+            "source": {
+              "kind": "retained-evidence",
+              "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+            },
+            "view": {
+              "kind": "item",
+              "collection": "modules",
+              "selector": {
+                "path": "main.js"
+              }
+            }
+          },
+          "response": {
+            "error": {
+              "code": "invalid_request",
+              "category": "invalid_input",
+              "message": "Analysis input is invalid. Check the arguments and try again.",
+              "retryable": true,
+              "remediation": {
+                "action": "Correct the listed arguments and retry."
+              },
+              "details": {
+                "operation": "inspect_analysis_view",
+                "issues": [
+                  {
+                    "path": ["view", "selector", "path"],
+                    "reason": "invalid_value",
+                    "message": "Multiple modules have path \"main.js\"; select one by node_id.",
+                    "expected": [
+                      {
+                        "node_id": "jag_node_15b5b46dfcbc20cac7c7a9c7b2d2efe21d39cecc77bb3a42e86506ac480c6cd0"
+                      },
+                      {
+                        "node_id": "jag_node_205f7beec1e6b5efa4ff4928ea25da1e87be912fe4b597ff4ec40b0c1f7d956d"
+                      },
+                      {
+                        "node_id": "jag_node_288149271a58cce3ef8ca8fcadfc24618bb0a4255724e5440605400bbbd61afb"
+                      },
+                      {
+                        "node_id": "jag_node_3b78134c949c0ddae48a6c44419bfad0e1820ac0e2807bc433e14fe553e9bf33"
+                      },
+                      {
+                        "node_id": "jag_node_42f0ba1369248f1d0ee7dc7e5deccdb6d03b34696d7c9b587b29561b055a0e2c"
+                      },
+                      {
+                        "node_id": "jag_node_61561f95fa66efe6525b31567954c8a58bd0f3667b208e85d3c7d760ec396cdd"
+                      },
+                      {
+                        "node_id": "jag_node_6728bd2855597b2b521020668ce9f4e1578b1769ad6b07cb516e142811ba3015"
+                      },
+                      {
+                        "node_id": "jag_node_7290cf330a4c464680051bf158a11737c88d9b658d12b8ca33dad9d9ed5bbd43"
+                      },
+                      {
+                        "node_id": "jag_node_72933fe5ad0b3d02bc689bbec5b98e57781a9e0642402e79d29dd84a40c4add3"
+                      },
+                      {
+                        "node_id": "jag_node_74570cc130ee00964df34197958ce329e59db8b64add4f152b4c9dbaa459c620"
+                      },
+                      {
+                        "node_id": "jag_node_82249640deb32652d0071229456acdeae30c3713f8cee3fb82d70352dbea476f"
+                      },
+                      {
+                        "node_id": "jag_node_842abef9a77ef072b5bc55e00dda19a5b6039ae08288fb1c66240fa6c0321588"
+                      },
+                      {
+                        "node_id": "jag_node_a15518c53e559509aa493fc7a059a511b8aec92d52aa9035a505fe2c42060ada"
+                      },
+                      {
+                        "node_id": "jag_node_a2953a5694265708ca5deaa4162924db5aa6ec0fe23179473703e2415da6f20d"
+                      },
+                      {
+                        "node_id": "jag_node_a304199f3cdfbb132783f2ef19661c97cf6538f6f9e0d2241ebd38a905fa03f5"
+                      },
+                      {
+                        "node_id": "jag_node_a7c8f694bd07b5387690de4a25f3dff858865973ff593bb314159b8932c86c15"
+                      },
+                      {
+                        "node_id": "jag_node_bc3fca896e4b81c6783517a7fe5c51c8e2c9e5d88eef9bd4f571f9230b5e544b"
+                      },
+                      {
+                        "node_id": "jag_node_c74ef2b3509a9072fea733eb720e062f258b2ba13a163c5e50134f76ca8a1030"
+                      },
+                      {
+                        "node_id": "jag_node_d678d9ad35db0904fa9af07f745d833b1fd0795211a29e6386551441701f1ea0"
+                      },
+                      {
+                        "node_id": "jag_node_e0c8fcd14b723dfb42a5fcabf4ddc6c596d37cc1704c34f1d09456857afaa1a4"
+                      },
+                      {
+                        "node_id": "jag_node_e74390bbf11499840fd0d861d90d1e0a9ca4edf57b8eb81dd13287e040979f5b"
+                      },
+                      {
+                        "node_id": "jag_node_eaf187fce5c5c6b53bc0f391e658c3a63d73572bc4203b1f221652689777744e"
+                      },
+                      {
+                        "node_id": "jag_node_fafc7c8e6c5aa1793108013819c957c7cc427d09fb0ad72f5311fdedb77ca1b2"
+                      },
+                      {
+                        "node_id": "jag_node_fe6988c196f390298badd9cd9530548d189f2a76953fbe4898fd5a652e300db4"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "summary": {
+        "mode": "direct",
+        "requested_model": "gpt-5.6-terra",
+        "reasoning": "high",
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+        "selected_artifact_sha256_after": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+        "selected_artifact_bytes_unchanged": true,
+        "model_identity_scope": "requested alias; resolved server-side model identity is not inferred",
+        "codex_version": "codex-cli 0.161.0",
+        "exit_code": 0,
+        "timeout": false,
+        "wall_seconds": 281.26,
+        "usage": [
+          {
+            "input_tokens": 274790,
+            "cached_input_tokens": 232960,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 9527,
+            "reasoning_output_tokens": 1597
+          }
+        ],
+        "completed_mcp_calls": [
+          {
+            "server": "rea",
+            "tool": "analyze_javascript_application",
+            "arguments": {
+              "input_path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/obsidian-1.14.4.asar",
+              "format": "asar",
+              "source_paths": ["package.json", "main.js"],
+              "detail": "summary"
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 29163
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "module",
+                "path": "main.js"
+              }
+            },
+            "status": "failed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 259
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "path": "main.js"
+              }
+            },
+            "status": "failed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 201
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "selector": {
+                  "kind": "module",
+                  "path": "main.js"
+                }
+              }
+            },
+            "status": "failed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 228
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "path": "main.js"
+                }
+              }
+            },
+            "status": "failed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 2754
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_15b5b46dfcbc20cac7c7a9c7b2d2efe21d39cecc77bb3a42e86506ac480c6cd0"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 30151
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_15b5b46dfcbc20cac7c7a9c7b2d2efe21d39cecc77bb3a42e86506ac480c6cd0"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 30151
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_205f7beec1e6b5efa4ff4928ea25da1e87be912fe4b597ff4ec40b0c1f7d956d"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 28481
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_288149271a58cce3ef8ca8fcadfc24618bb0a4255724e5440605400bbbd61afb"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 26709
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_3b78134c949c0ddae48a6c44419bfad0e1820ac0e2807bc433e14fe553e9bf33"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 32579
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_42f0ba1369248f1d0ee7dc7e5deccdb6d03b34696d7c9b587b29561b055a0e2c"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 27179
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_61561f95fa66efe6525b31567954c8a58bd0f3667b208e85d3c7d760ec396cdd"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 28347
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_6728bd2855597b2b521020668ce9f4e1578b1769ad6b07cb516e142811ba3015"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 25843
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_7290cf330a4c464680051bf158a11737c88d9b658d12b8ca33dad9d9ed5bbd43"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 26763
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_72933fe5ad0b3d02bc689bbec5b98e57781a9e0642402e79d29dd84a40c4add3"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 26733
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_74570cc130ee00964df34197958ce329e59db8b64add4f152b4c9dbaa459c620"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 26703
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_82249640deb32652d0071229456acdeae30c3713f8cee3fb82d70352dbea476f"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 25813
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_842abef9a77ef072b5bc55e00dda19a5b6039ae08288fb1c66240fa6c0321588"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 33421
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_a15518c53e559509aa493fc7a059a511b8aec92d52aa9035a505fe2c42060ada"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 33393
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_a2953a5694265708ca5deaa4162924db5aa6ec0fe23179473703e2415da6f20d"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 30751
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_a304199f3cdfbb132783f2ef19661c97cf6538f6f9e0d2241ebd38a905fa03f5"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 30037
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_a7c8f694bd07b5387690de4a25f3dff858865973ff593bb314159b8932c86c15"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 25813
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_bc3fca896e4b81c6783517a7fe5c51c8e2c9e5d88eef9bd4f571f9230b5e544b"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 30113
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_c74ef2b3509a9072fea733eb720e062f258b2ba13a163c5e50134f76ca8a1030"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 25873
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_d678d9ad35db0904fa9af07f745d833b1fd0795211a29e6386551441701f1ea0"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 26703
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_e0c8fcd14b723dfb42a5fcabf4ddc6c596d37cc1704c34f1d09456857afaa1a4"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 28271
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_e74390bbf11499840fd0d861d90d1e0a9ca4edf57b8eb81dd13287e040979f5b"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 28385
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_eaf187fce5c5c6b53bc0f391e658c3a63d73572bc4203b1f221652689777744e"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 30779
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_fafc7c8e6c5aa1793108013819c957c7cc427d09fb0ad72f5311fdedb77ca1b2"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 26005
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_fe6988c196f390298badd9cd9530548d189f2a76953fbe4898fd5a652e300db4"
+                }
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 25819
+          }
+        ],
+        "event_types": {
+          "thread.started": 1,
+          "turn.started": 1,
+          "item.completed": 33,
+          "item.started": 30,
+          "turn.completed": 1
+        },
+        "factual_correctness": "not_assessed",
+        "scope": "real_cli_trial_requires_transcript_and_fact_review"
+      },
+      "fingerprints": {
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+        "enabled_tools": [
+          "analyze_javascript_application",
+          "inspect_analysis_view",
+          "get_evidence_bundle"
+        ],
+        "authority": "static",
+        "runtime_files_sha256": "c35e1d11fdfa4c93ce7600b247ebf44abbd27e514b1024ca948fdb33e82c1a3b",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "experiment_sources_sha256": {
+          "agent-trial.py": "6ecf7b2ecd98a1050935336d04d9f4b703e2d8519c837e7c987238456713bf1a"
+        },
+        "developer_instructions_sha256": "eaddc85aa5b141538ec280d640c62db799231b394679a17f2e6cc6bc2146a95c",
+        "prompt_sha256": "79ae5add3e7bb5584371e48658ddd4d0131d40e59b613c61aa5e991a2bb057be",
+        "question_template_sha256": "fe516b279bf8e60587456d4ecf859723787e7d8fc0b3971c79535c609825dfdf",
+        "provider_settings_sha256": "1db4e19adcb32bb64a3baad58a1b4ef04b52ba648bab29678693f9ab8dbdabb4"
+      },
+      "answer_file_sha256": "d65c0ce10d8118057f3d3c5c14c4d211d0f6c66fc56c7ac504390447ee0b313b",
+      "answer_had_json_fence": false,
+      "reported_evidence_ids": [
+        "ev_5e55ab719c67a908a85bd1275b433cedc4dee8ea241144d531e00c4d32228bc7",
+        "ev_d44079d9d2cf469184816ab013b54ac16527da4d0da15db3baaf65bbb2d1b65b"
+      ],
+      "resource": {
+        "resource_scope": "rea-efficiency-ec75e31b57d74eeeb66c684beb5ecf00.scope",
+        "peak_cgroup_bytes_sampled": 853569536,
+        "elapsed_seconds": 281.514,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 117,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 17885279,
+          "user_usec": 14760911,
+          "system_usec": 3124368,
+          "nr_periods": 2662,
+          "nr_throttled": 25,
+          "throttled_usec": 32323,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "scope": "Fixed selected-fact review against actual public producer observations. Equivalent explicitly named answer representations are accepted; unknowns/nulls remain checked. Limitations, unsupported claims and broader behavior still require transcript review. Token usage and failed calls are retained; zero exit status is not a factual grade.",
+      "observed_completed_item_types": {
+        "agent_message": 3,
+        "mcp_tool_call": 30
+      },
+      "observed_mcp_tool_names": [
+        "analyze_javascript_application",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "inspect_analysis_view"
+      ],
+      "trial_name": "model-javascript-guidance-final",
+      "review_qualification": "All 24 selected module identities/types/digests, requested paths/root digest, statistics, Electron facts, coarse partial coverage and unknown counts agree. Exact full coverage provenance fails because the answer omits source budget and per-family rows. Original producer output preserves them."
+    },
+    {
+      "domain": "inventory",
+      "checks": {
+        "reported_evidence_ids_observed_in_responses": true,
+        "temporary_profile_removed": true,
+        "selected_artifact_bytes_unchanged": true,
+        "target_digest": true,
+        "manifest": true,
+        "entry_kind_counts": true,
+        "integrity_contradictions": true,
+        "unexplored_branches_with_original_ids": true,
+        "inspection_coverage": true,
+        "original_selected_path_records": true,
+        "no_resource_abort": true,
+        "no_observed_oom_or_task_limit": true
+      },
+      "all_selected_checks_pass": true,
+      "differences": {},
+      "tool_errors": [],
+      "summary": {
+        "mode": "direct",
+        "requested_model": "gpt-5.6-terra",
+        "reasoning": "high",
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+        "selected_artifact_sha256_after": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+        "selected_artifact_bytes_unchanged": true,
+        "model_identity_scope": "requested alias; resolved server-side model identity is not inferred",
+        "codex_version": "codex-cli 0.161.0",
+        "exit_code": 0,
+        "timeout": false,
+        "wall_seconds": 109.733,
+        "usage": [
+          {
+            "input_tokens": 129174,
+            "cached_input_tokens": 107008,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 3798,
+            "reasoning_output_tokens": 1875
+          }
+        ],
+        "completed_mcp_calls": [
+          {
+            "server": "rea",
+            "tool": "open_binary",
+            "arguments": {
+              "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/obsidian-1.14.4.asar"
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 539
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_artifact",
+            "arguments": {
+              "detail": "summary",
+              "integrity_policy": "record-and-continue"
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 7625
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_a9a13036a8e031749be91f85160fd776109bf5b74a3330867a8420bc603eefe2"
+              },
+              "view": {
+                "kind": "inventory",
+                "collection": "occurrences",
+                "logical_paths": ["package.json", "main.js", "preload.js"],
+                "offset": 0,
+                "limit": 64
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 8069
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_a9a13036a8e031749be91f85160fd776109bf5b74a3330867a8420bc603eefe2"
+              },
+              "view": {
+                "kind": "inventory",
+                "collection": "integrity_contradictions",
+                "offset": 0,
+                "limit": 64
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 5711
+          },
+          {
+            "server": "rea",
+            "tool": "close_binary",
+            "arguments": {},
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 93
+          }
+        ],
+        "event_types": {
+          "thread.started": 1,
+          "turn.started": 1,
+          "item.completed": 8,
+          "item.started": 5,
+          "turn.completed": 1
+        },
+        "factual_correctness": "not_assessed",
+        "scope": "real_cli_trial_requires_transcript_and_fact_review"
+      },
+      "fingerprints": {
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+        "enabled_tools": [
+          "open_binary",
+          "inspect_artifact",
+          "inspect_analysis_view",
+          "get_evidence_bundle",
+          "export_evidence_bundle",
+          "close_binary"
+        ],
+        "authority": "static",
+        "runtime_files_sha256": "c35e1d11fdfa4c93ce7600b247ebf44abbd27e514b1024ca948fdb33e82c1a3b",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "experiment_sources_sha256": {
+          "agent-trial.py": "6ecf7b2ecd98a1050935336d04d9f4b703e2d8519c837e7c987238456713bf1a"
+        },
+        "developer_instructions_sha256": "eaddc85aa5b141538ec280d640c62db799231b394679a17f2e6cc6bc2146a95c",
+        "prompt_sha256": "22941dc5d77ce06824e40b01abd3f725aa773d131648d7bba2e607b410ccbef9",
+        "question_template_sha256": "d1bc6ee6427afa80c20af61c14fb337b4d2caeadfe4c4daf4aef9ac809f11b0d",
+        "provider_settings_sha256": "1db4e19adcb32bb64a3baad58a1b4ef04b52ba648bab29678693f9ab8dbdabb4"
+      },
+      "answer_file_sha256": "ac94748d1855a3420b7ce3370ba0a5d89087d425721c03d980b7390391b737d1",
+      "answer_had_json_fence": false,
+      "reported_evidence_ids": [
+        "ev_a9a13036a8e031749be91f85160fd776109bf5b74a3330867a8420bc603eefe2",
+        "ev_c32a5d52272432bd93876278ec92046fadb52db6b8b0a25d27270621ce690d46"
+      ],
+      "resource": {
+        "resource_scope": "rea-efficiency-3678207dbef441cc8c71fc6373c5a2e1.scope",
+        "peak_cgroup_bytes_sampled": 720539648,
+        "elapsed_seconds": 109.982,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 106,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 8662574,
+          "user_usec": 6629178,
+          "system_usec": 2033395,
+          "nr_periods": 1063,
+          "nr_throttled": 13,
+          "throttled_usec": 13787,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "scope": "Fixed selected-fact review against actual public producer observations. Equivalent explicitly named answer representations are accepted; unknowns/nulls remain checked. Limitations, unsupported claims and broader behavior still require transcript review. Token usage and failed calls are retained; zero exit status is not a factual grade.",
+      "observed_completed_item_types": {
+        "agent_message": 3,
+        "mcp_tool_call": 5
+      },
+      "observed_mcp_tool_names": [
+        "open_binary",
+        "inspect_artifact",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "close_binary"
+      ],
+      "trial_name": "model-inventory-guidance-final"
+    },
+    {
+      "domain": "native",
+      "checks": {
+        "reported_evidence_ids_observed_in_responses": true,
+        "temporary_profile_removed": true,
+        "selected_artifact_bytes_unchanged": true,
+        "target_digest": true,
+        "entry_address": true,
+        "pseudocode_prefix": true,
+        "caller_count": true,
+        "callee_count": true,
+        "containing_procedure.address": true,
+        "containing_procedure.name": true,
+        "procedure.address": true,
+        "procedure.name": true,
+        "procedure.classification": true,
+        "procedure.signature": true,
+        "procedure.locals": true,
+        "procedure.body_ranges": true,
+        "procedure.total_bytes": true,
+        "default_analysis_not_disabled": true,
+        "session_close_completed": true,
+        "no_resource_abort": true,
+        "no_observed_oom_or_task_limit": true
+      },
+      "all_selected_checks_pass": true,
+      "differences": {},
+      "tool_errors": [
+        {
+          "tool": "inspect_analysis_view",
+          "arguments": {
+            "source": {
+              "kind": "retained-evidence",
+              "evidence_id": "ev_75524e29a645561862fe08119982fecf3f231ca831a112803dc3ae6731d65bae"
+            },
+            "view": {
+              "kind": "summary"
+            }
+          },
+          "response": {
+            "error": {
+              "code": "invalid_request",
+              "category": "invalid_input",
+              "message": "Analysis input is invalid. Check the arguments and try again.",
+              "retryable": true,
+              "remediation": {
+                "action": "Correct the listed arguments and retry."
+              },
+              "details": {
+                "operation": "inspect_analysis_view",
+                "issues": [
+                  {
+                    "path": ["view"],
+                    "reason": "invalid_value",
+                    "message": "analyze_function Evidence requires a native view."
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "summary": {
+        "mode": "direct",
+        "requested_model": "gpt-5.6-terra",
+        "reasoning": "high",
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": "b1c22172dd303f3be49e935aa56aa48a8b7a46e0bc838b4997d3bb451495870f",
+        "selected_artifact_sha256_after": "b1c22172dd303f3be49e935aa56aa48a8b7a46e0bc838b4997d3bb451495870f",
+        "selected_artifact_bytes_unchanged": true,
+        "model_identity_scope": "requested alias; resolved server-side model identity is not inferred",
+        "codex_version": "codex-cli 0.161.0",
+        "exit_code": 0,
+        "timeout": false,
+        "wall_seconds": 403.776,
+        "usage": [
+          {
+            "input_tokens": 125427,
+            "cached_input_tokens": 102912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 3253,
+            "reasoning_output_tokens": 1673
+          }
+        ],
+        "completed_mcp_calls": [
+          {
+            "server": "rea",
+            "tool": "open_binary",
+            "arguments": {
+              "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/jq-linux-amd64",
+              "provider_id": "ghidra"
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 541
+          },
+          {
+            "server": "rea",
+            "tool": "resolve_containing_procedure",
+            "arguments": {
+              "address": "0x403a50"
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 7565
+          },
+          {
+            "server": "rea",
+            "tool": "analyze_function",
+            "arguments": {
+              "procedure": "0x403a50"
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 71465
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_75524e29a645561862fe08119982fecf3f231ca831a112803dc3ae6731d65bae"
+              },
+              "view": {
+                "kind": "summary"
+              }
+            },
+            "status": "failed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 492
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_75524e29a645561862fe08119982fecf3f231ca831a112803dc3ae6731d65bae"
+              },
+              "view": {
+                "kind": "native",
+                "facet": "pseudocode",
+                "offset": 0,
+                "limit": 512
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 16043
+          },
+          {
+            "server": "rea",
+            "tool": "close_binary",
+            "arguments": {},
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 93
+          }
+        ],
+        "event_types": {
+          "thread.started": 1,
+          "turn.started": 1,
+          "item.completed": 9,
+          "item.started": 6,
+          "turn.completed": 1
+        },
+        "factual_correctness": "not_assessed",
+        "scope": "real_cli_trial_requires_transcript_and_fact_review"
+      },
+      "fingerprints": {
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": "b1c22172dd303f3be49e935aa56aa48a8b7a46e0bc838b4997d3bb451495870f",
+        "enabled_tools": [
+          "open_binary",
+          "resolve_containing_procedure",
+          "analyze_function",
+          "inspect_analysis_view",
+          "close_binary"
+        ],
+        "authority": "static",
+        "runtime_files_sha256": "c35e1d11fdfa4c93ce7600b247ebf44abbd27e514b1024ca948fdb33e82c1a3b",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "experiment_sources_sha256": {
+          "agent-trial.py": "6ecf7b2ecd98a1050935336d04d9f4b703e2d8519c837e7c987238456713bf1a"
+        },
+        "developer_instructions_sha256": "eaddc85aa5b141538ec280d640c62db799231b394679a17f2e6cc6bc2146a95c",
+        "prompt_sha256": "234bfe93d09f9c76c1a64383c11cf7c174eafa4e4ad563124f705a7d5c8920aa",
+        "question_template_sha256": "850fcbdc04f6a7a4ffe3e28eb5edfc9798c12ae3d6caaedf2864fe319d589821",
+        "provider_settings_sha256": "1db4e19adcb32bb64a3baad58a1b4ef04b52ba648bab29678693f9ab8dbdabb4"
+      },
+      "answer_file_sha256": "c75b4fb1524c42a743c6c4333d2faf87f485a729ed0ac48584fc3cde04d9993d",
+      "answer_had_json_fence": false,
+      "reported_evidence_ids": [
+        "ev_573de2f0a9a9b9df983d797b040dade947dd8734e7c8edc4b103676a4fd7ce31",
+        "ev_75524e29a645561862fe08119982fecf3f231ca831a112803dc3ae6731d65bae",
+        "ev_e0de2cceaec69fc2f4e49b90349ea1f2e4e0e6bfcb38213f00f682c185e70d95"
+      ],
+      "resource": {
+        "resource_scope": "rea-efficiency-1d3fad50a0104bfaaf36eb172178f5c1.scope",
+        "peak_cgroup_bytes_sampled": 1190518784,
+        "elapsed_seconds": 404.103,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 105,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 274446994,
+          "user_usec": 266336133,
+          "system_usec": 8110861,
+          "nr_periods": 3850,
+          "nr_throttled": 525,
+          "throttled_usec": 845035,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "scope": "Fixed selected-fact review against actual public producer observations. Equivalent explicitly named answer representations are accepted; unknowns/nulls remain checked. Limitations, unsupported claims and broader behavior still require transcript review. Token usage and failed calls are retained; zero exit status is not a factual grade.",
+      "observed_completed_item_types": {
+        "agent_message": 3,
+        "mcp_tool_call": 6
+      },
+      "observed_mcp_tool_names": [
+        "open_binary",
+        "resolve_containing_procedure",
+        "analyze_function",
+        "inspect_analysis_view",
+        "inspect_analysis_view",
+        "close_binary"
+      ],
+      "trial_name": "model-native-guidance-final"
+    },
+    {
+      "domain": "browser",
+      "checks": {
+        "reported_evidence_ids_observed_in_responses": true,
+        "temporary_profile_removed": true,
+        "browser": true,
+        "completeness": true,
+        "start_origin": true,
+        "step_count": true,
+        "final_url": true,
+        "dom.sha256": true,
+        "dom.bytes": true,
+        "accessibility.sha256": false,
+        "accessibility.bytes": false,
+        "owned_browser_terminated": true,
+        "page_error_count": true,
+        "network_transaction_count": true,
+        "network_response_statuses": true,
+        "no_resource_abort": true,
+        "no_observed_oom_or_task_limit": true
+      },
+      "all_selected_checks_pass": false,
+      "differences": {
+        "accessibility.sha256": {
+          "answer": null,
+          "producer": "826dc928d3334bad9b0f89cd60c6d5b568ba2822315919582e0defbf11a2092b"
+        },
+        "accessibility.bytes": {
+          "answer": null,
+          "producer": 1620
+        }
+      },
+      "tool_errors": [],
+      "summary": {
+        "mode": "direct",
+        "requested_model": "gpt-5.6-terra",
+        "reasoning": "high",
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": null,
+        "selected_artifact_sha256_after": null,
+        "selected_artifact_bytes_unchanged": null,
+        "model_identity_scope": "requested alias; resolved server-side model identity is not inferred",
+        "codex_version": "codex-cli 0.161.0",
+        "exit_code": 0,
+        "timeout": false,
+        "wall_seconds": 106.431,
+        "usage": [
+          {
+            "input_tokens": 185244,
+            "cached_input_tokens": 139776,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2338,
+            "reasoning_output_tokens": 1384
+          }
+        ],
+        "completed_mcp_calls": [
+          {
+            "server": "rea",
+            "tool": "capture_browser_scenario",
+            "arguments": {
+              "browser": {
+                "mode": "launch",
+                "executable_path": "/home/yann/.cache/ms-playwright/chromium-1234/chrome-linux64/chrome",
+                "headless": true
+              },
+              "start_url": {
+                "url": "https://excalidraw.com/",
+                "query": []
+              },
+              "actions": [
+                {
+                  "step_id": "settled",
+                  "action": "wait_for_timeout",
+                  "duration_ms": 2000
+                }
+              ],
+              "capture": {
+                "at_end": ["url", "dom", "accessibility"],
+                "events": ["network", "page-errors"]
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 215698
+          }
+        ],
+        "event_types": {
+          "thread.started": 1,
+          "turn.started": 1,
+          "item.completed": 4,
+          "item.started": 1,
+          "turn.completed": 1
+        },
+        "factual_correctness": "not_assessed",
+        "scope": "real_cli_trial_requires_transcript_and_fact_review"
+      },
+      "fingerprints": {
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": null,
+        "enabled_tools": ["capture_browser_scenario"],
+        "authority": "browser",
+        "runtime_files_sha256": "c35e1d11fdfa4c93ce7600b247ebf44abbd27e514b1024ca948fdb33e82c1a3b",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "experiment_sources_sha256": {
+          "agent-trial.py": "6ecf7b2ecd98a1050935336d04d9f4b703e2d8519c837e7c987238456713bf1a"
+        },
+        "developer_instructions_sha256": "3ef975ce7e2e9f3fffafd3e0075be34953a00a548f68f73e37e335f4bc27b8d1",
+        "prompt_sha256": "02c045f1880f816125030d3b3a506b09f96f82fd61b80a3d1c22e381abcd1ca0",
+        "question_template_sha256": "02c045f1880f816125030d3b3a506b09f96f82fd61b80a3d1c22e381abcd1ca0",
+        "provider_settings_sha256": "1db4e19adcb32bb64a3baad58a1b4ef04b52ba648bab29678693f9ab8dbdabb4"
+      },
+      "answer_file_sha256": "fc9a11ce603ec47482cb1d7c971b78756b0052bc09d2e7dde2efe64285c08516",
+      "answer_had_json_fence": false,
+      "reported_evidence_ids": [
+        "ev_43e0a34dba8c93882c2d8dd0930498f41d384c5fedb7a8ebc7787fe789d8a68d"
+      ],
+      "resource": {
+        "resource_scope": "rea-efficiency-6f6b3e94b4014fa1b6ee2874ea168ce6.scope",
+        "peak_cgroup_bytes_sampled": 957173760,
+        "elapsed_seconds": 107.021,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 256,
+        "peak_tasks_sampled": 161,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 17886260,
+          "user_usec": 12207915,
+          "system_usec": 5678344,
+          "nr_periods": 1003,
+          "nr_throttled": 3,
+          "throttled_usec": 15539,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "scope": "Fixed selected-fact review against actual public producer observations. Equivalent explicitly named answer representations are accepted; unknowns/nulls remain checked. Limitations, unsupported claims and broader behavior still require transcript review. Token usage and failed calls are retained; zero exit status is not a factual grade.",
+      "observed_completed_item_types": {
+        "agent_message": 3,
+        "mcp_tool_call": 1
+      },
+      "observed_mcp_tool_names": ["capture_browser_scenario"],
+      "trial_name": "model-browser-capacity-final",
+      "review_qualification": "Raw REA capture is complete and owned browser cleanup succeeds. The model explicitly reports accessibility SHA-256 and byte count unknown after client context clipping; the complete original response includes them. This is a partial answer, not a REA capture failure."
+    },
+    {
+      "domain": "browser",
+      "checks": {
+        "reported_evidence_ids_observed_in_responses": true,
+        "temporary_profile_removed": true,
+        "browser": true,
+        "completeness": true,
+        "start_origin": true,
+        "step_count": true,
+        "final_url": true,
+        "dom.sha256": true,
+        "dom.bytes": true,
+        "accessibility.sha256": false,
+        "accessibility.bytes": false,
+        "owned_browser_terminated": true,
+        "page_error_count": false,
+        "no_resource_abort": true,
+        "no_observed_oom_or_task_limit": true
+      },
+      "all_selected_checks_pass": false,
+      "differences": {
+        "accessibility.sha256": {
+          "answer": null,
+          "producer": "826dc928d3334bad9b0f89cd60c6d5b568ba2822315919582e0defbf11a2092b"
+        },
+        "accessibility.bytes": {
+          "answer": null,
+          "producer": 1620
+        },
+        "page_error_count": {
+          "answer": null,
+          "producer": 0
+        }
+      },
+      "tool_errors": [],
+      "summary": {
+        "mode": "client-code",
+        "requested_model": "gpt-5.6-terra",
+        "reasoning": "high",
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": null,
+        "selected_artifact_sha256_after": null,
+        "selected_artifact_bytes_unchanged": null,
+        "model_identity_scope": "requested alias; resolved server-side model identity is not inferred",
+        "codex_version": "codex-cli 0.161.0",
+        "exit_code": 0,
+        "timeout": false,
+        "wall_seconds": 94.403,
+        "usage": [
+          {
+            "input_tokens": 102303,
+            "cached_input_tokens": 63744,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2198,
+            "reasoning_output_tokens": 1312
+          }
+        ],
+        "completed_mcp_calls": [
+          {
+            "server": "rea",
+            "tool": "capture_browser_scenario",
+            "arguments": {
+              "browser": {
+                "mode": "launch",
+                "executable_path": "/home/yann/.cache/ms-playwright/chromium-1234/chrome-linux64/chrome",
+                "headless": true
+              },
+              "start_url": {
+                "url": "https://excalidraw.com/",
+                "query": []
+              },
+              "actions": [
+                {
+                  "step_id": "settled",
+                  "action": "wait_for_timeout",
+                  "duration_ms": 2000
+                }
+              ],
+              "capture": {
+                "at_end": ["url", "dom", "accessibility"],
+                "events": ["network", "page-errors"]
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 215698
+          }
+        ],
+        "event_types": {
+          "thread.started": 1,
+          "item.completed": 4,
+          "turn.started": 1,
+          "item.started": 1,
+          "turn.completed": 1
+        },
+        "factual_correctness": "not_assessed",
+        "scope": "real_cli_trial_requires_transcript_and_fact_review"
+      },
+      "fingerprints": {
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": null,
+        "enabled_tools": ["capture_browser_scenario"],
+        "authority": "browser",
+        "runtime_files_sha256": "c35e1d11fdfa4c93ce7600b247ebf44abbd27e514b1024ca948fdb33e82c1a3b",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "experiment_sources_sha256": {
+          "agent-trial.py": "6ecf7b2ecd98a1050935336d04d9f4b703e2d8519c837e7c987238456713bf1a"
+        },
+        "developer_instructions_sha256": "09a541aa30f69c41533783dee4b401ca2682e0b25573fd925804a1ee7d678fce",
+        "prompt_sha256": "02c045f1880f816125030d3b3a506b09f96f82fd61b80a3d1c22e381abcd1ca0",
+        "question_template_sha256": "02c045f1880f816125030d3b3a506b09f96f82fd61b80a3d1c22e381abcd1ca0",
+        "provider_settings_sha256": "1db4e19adcb32bb64a3baad58a1b4ef04b52ba648bab29678693f9ab8dbdabb4"
+      },
+      "answer_file_sha256": "323fd2e48bf7bb196a030bb28c4909bcadde5d95e502e5a15b7a46859513b614",
+      "answer_had_json_fence": false,
+      "reported_evidence_ids": [
+        "ev_4af4dd86cb2154fd67c43a64f289a746f82c52e9b4f1be965f4a4bed00dad791"
+      ],
+      "resource": {
+        "resource_scope": "rea-efficiency-3cd0b3321e3445ab96c3171e43145a53.scope",
+        "peak_cgroup_bytes_sampled": 921788416,
+        "elapsed_seconds": 94.704,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 256,
+        "peak_tasks_sampled": 166,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 8941026,
+          "user_usec": 6422295,
+          "system_usec": 2518731,
+          "nr_periods": 885,
+          "nr_throttled": 10,
+          "throttled_usec": 22758,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "scope": "Fixed selected-fact review against actual public producer observations. Equivalent explicitly named answer representations are accepted; unknowns/nulls remain checked. Limitations, unsupported claims and broader behavior still require transcript review. Token usage and failed calls are retained; zero exit status is not a factual grade.",
+      "observed_completed_item_types": {
+        "error": 1,
+        "agent_message": 2,
+        "mcp_tool_call": 1
+      },
+      "observed_mcp_tool_names": ["capture_browser_scenario"],
+      "trial_name": "model-browser-client-code-final",
+      "review_qualification": "Raw REA capture is complete and owned browser cleanup succeeds. The model explicitly reports accessibility SHA-256 and byte count unknown after client context clipping; the complete original response includes them. This is a partial answer, not a REA capture failure. Config flags requested under-development code mode, but actual execution still used one direct MCP call and no JavaScript executor; no composition or efficiency win is claimed."
+    }
+  ],
+  "aborted_experiment": {
+    "domain": "browser",
+    "resource": {
+      "resource_scope": "rea-efficiency-4ae4959710924e87934105e2e6da0158.scope",
+      "peak_cgroup_bytes_sampled": 924004352,
+      "elapsed_seconds": 24.819,
+      "abort": "scope_task_limit_observed",
+      "hard_memory_bytes": 4294967296,
+      "early_stop_bytes": 3221225472,
+      "cpu_quota_percent": 100,
+      "cpu_affinity": [15],
+      "task_ceiling": 192,
+      "peak_tasks_sampled": 192,
+      "resource_events_last_observed": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 3
+        }
+      },
+      "cpu_stat_last_observed": {
+        "usage_usec": 6751718,
+        "user_usec": 4643946,
+        "system_usec": 2107771,
+        "nr_periods": 239,
+        "nr_throttled": 8,
+        "throttled_usec": 12246,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    },
+    "profile_cleanup": {
+      "profile_removed": true
+    },
+    "qualification": "The initial 192-task experimental allowance was insufficient for combined Codex + Chromium. Scope was stopped before OOM, ownership cleanup was verified and copied profile removed. Only the separate browser retries use 256 tasks; CPU/memory/swap controls stay identical."
+  },
+  "scope": [
+    "Real Codex CLI tasks against actual shipped public artifacts and a fresh-profile public Excalidraw runtime; production provider results and observed Evidence IDs are checked, not just exit status.",
+    "Only Linux x64 real-provider behavior is established. IDA/Hopper/macOS/Windows/Harmony and device Android runtime remain unverified.",
+    "Model-selected record-and-continue inventory policy legitimately changes atomic/branch identities; those exact values are verified against its own original producer response, with physical facts independently compared to the default-policy SDK reference.",
+    "The EVM carrier is a published historical official WETH RPC example, not verified live deployment authenticity.",
+    "Raw transcripts, binaries, credentials and full browser snapshots remain outside Git. No newly discovered REA defect is repaired after the user requested separate /tmp tracking."
+  ]
+}

@@ -1,0 +1,2670 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-12",
+  "comparison": {
+    "artifact": "obsidian.asar",
+    "artifact_sha256": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+    "settings_match": true,
+    "setting_differences": [],
+    "facts_match": true,
+    "fact_differences": [],
+    "preserved_run_specific_values": [
+      {
+        "side": "left",
+        "path": ["coverage", "application", "limits", 0, "value"],
+        "name": "javascript_analysis_parent_available_result_budget_bytes",
+        "unit": "bytes",
+        "value": 176155066
+      },
+      {
+        "side": "left",
+        "path": ["coverage", "application", "limits", 1, "value"],
+        "name": "javascript_analysis_parent_result_budget_bytes",
+        "unit": "bytes",
+        "value": 186779988
+      },
+      {
+        "side": "left",
+        "path": ["coverage", "semantic", "limits", 0, "value"],
+        "name": "javascript_analysis_parent_available_result_budget_bytes",
+        "unit": "bytes",
+        "value": 176155066
+      },
+      {
+        "side": "left",
+        "path": ["coverage", "semantic", "limits", 1, "value"],
+        "name": "javascript_analysis_parent_result_budget_bytes",
+        "unit": "bytes",
+        "value": 186779988
+      },
+      {
+        "side": "right",
+        "path": ["coverage", "application", "limits", 0, "value"],
+        "name": "javascript_analysis_parent_available_result_budget_bytes",
+        "unit": "bytes",
+        "value": 175687674
+      },
+      {
+        "side": "right",
+        "path": ["coverage", "application", "limits", 1, "value"],
+        "name": "javascript_analysis_parent_result_budget_bytes",
+        "unit": "bytes",
+        "value": 186312596
+      },
+      {
+        "side": "right",
+        "path": ["coverage", "semantic", "limits", 0, "value"],
+        "name": "javascript_analysis_parent_available_result_budget_bytes",
+        "unit": "bytes",
+        "value": 175687674
+      },
+      {
+        "side": "right",
+        "path": ["coverage", "semantic", "limits", 1, "value"],
+        "name": "javascript_analysis_parent_result_budget_bytes",
+        "unit": "bytes",
+        "value": 186312596
+      }
+    ],
+    "workflow_failures": [null, null],
+    "left": {
+      "revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+      "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+      "delivery": "complete",
+      "sdk_schema_mode": "selected",
+      "elapsed_ms": 55135.027272,
+      "catalog_json_utf8_bytes": 2326609,
+      "calls": 26,
+      "observed_tool_errors": 0,
+      "client_result_json_utf8_bytes": 747816,
+      "client_before_send_ms": 1640.788244999996,
+      "transport_roundtrip_ms": 40624.55877399998,
+      "client_after_receive_ms": 104.9708570000148
+    },
+    "right": {
+      "revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+      "runtime_files_sha256": "c35e1d11fdfa4c93ce7600b247ebf44abbd27e514b1024ca948fdb33e82c1a3b",
+      "delivery": "complete",
+      "sdk_schema_mode": "selected",
+      "elapsed_ms": 41497.897035999995,
+      "catalog_json_utf8_bytes": 2387588,
+      "calls": 26,
+      "observed_tool_errors": 0,
+      "client_result_json_utf8_bytes": 747816,
+      "client_before_send_ms": 2408.2801290000025,
+      "transport_roundtrip_ms": 27923.704232999997,
+      "client_after_receive_ms": 208.14531500000157
+    },
+    "scope": "Same selected analyst facts; includes extra view calls and preserves observed tool errors. Result JSON bytes exclude file exports, catalog responses and raw wire framing. This is one paired observation, not a statistical speedup or independent ground-truth proof."
+  },
+  "runs": {
+    "control": {
+      "summary": {
+        "revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+        "runtime_root": "/home/yann/yann/rea-compatibility-first-lab-20261012/baseline-runtime",
+        "artifact": "obsidian.asar",
+        "artifact_sha256": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+        "artifact_sha256_after": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+        "delivery": "complete",
+        "sdk_schema_mode": "selected",
+        "native_question": null,
+        "javascript_question": "selected",
+        "provider_settings_sha256": "8f391e4f78bad489477f8b5e7f6cb156d49e8cecf94671bbc4088f35d97488c2",
+        "measure_source_sha256": "dfc71b088f3bfc7539565d478d3b6509513e0d984bfbb12998dee6d0e02701c8",
+        "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "node_version": "v24.18.0",
+        "sdk_client_version": "2.3.1",
+        "sdk_server_version": "2.3.1",
+        "platform": "linux",
+        "architecture": "x64",
+        "connected_ms": 9370.048261,
+        "catalog_ms": 2679.277903,
+        "catalog_json_utf8_bytes": 2326609,
+        "catalog_input_definition_utf8_bytes": 494207,
+        "elapsed_ms": 55135.027272,
+        "calls": [
+          {
+            "name": "analyze_javascript_application",
+            "arguments": {
+              "input_path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/obsidian-1.14.4.asar",
+              "source_paths": ["package.json", "main.js"],
+              "detail": "summary"
+            },
+            "elapsed_ms": 41639.144708,
+            "client_before_send_ms": 1322.932961999999,
+            "transport_roundtrip_ms": 40269.682626,
+            "client_after_receive_ms": 46.52911999999924,
+            "client_result_json_utf8_bytes": 29162,
+            "runner_encoding_ms": 0.5677799999975832,
+            "producer_evidence_id": "ev_567264dc2eb43f055ea7d893e67d0e21a7dc1ea021c2e08a115702ab8cc6ce04",
+            "is_error": false,
+            "progress": [
+              {
+                "elapsed_ms": 1406.6136800000022,
+                "progress": 1,
+                "message": "analyze_javascript_application: Inventorying and parsing application artifacts"
+              },
+              {
+                "elapsed_ms": 5523.940874,
+                "progress": 2,
+                "message": "read_javascript_artifacts: Reading inventoried JavaScript application sources"
+              },
+              {
+                "elapsed_ms": 7078.324783,
+                "progress": 3,
+                "message": "parse_javascript_sources: Parsing and projecting 2 selected application source files"
+              },
+              {
+                "elapsed_ms": 40589.588571,
+                "progress": 4,
+                "message": "build_javascript_application_graph: Constructing application and Electron boundary relationships"
+              },
+              {
+                "elapsed_ms": 41160.050704,
+                "progress": 5,
+                "message": "build_javascript_semantic_graph: Binding and validating static semantic relationships"
+              },
+              {
+                "elapsed_ms": 41319.236281,
+                "progress": 6,
+                "message": "validate_javascript_application_result: Validating result metadata and cross-graph bindings"
+              },
+              {
+                "elapsed_ms": 41427.06092,
+                "progress": 7,
+                "message": "hash_javascript_application_evidence: Hashing the complete application analysis Evidence"
+              },
+              {
+                "elapsed_ms": 41558.439908,
+                "progress": 8,
+                "message": "analyze_javascript_application: Application graph and Electron boundaries reconstructed"
+              }
+            ]
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "page",
+                "collection": "modules",
+                "offset": 0,
+                "limit": 64
+              }
+            },
+            "elapsed_ms": 359.94048499999917,
+            "client_before_send_ms": 302.6003159999964,
+            "transport_roundtrip_ms": 30.250800000001618,
+            "client_after_receive_ms": 27.08936900000117,
+            "client_result_json_utf8_bytes": 38014,
+            "runner_encoding_ms": 0.146351000003051,
+            "producer_evidence_id": "ev_e2809f7236674c2336e540fe2729b8313954868caa2c3ab5d885f98ead29ab6a",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_15b5b46dfcbc20cac7c7a9c7b2d2efe21d39cecc77bb3a42e86506ac480c6cd0"
+                }
+              }
+            },
+            "elapsed_ms": 30.83671999999933,
+            "client_before_send_ms": 0.9607000000032713,
+            "transport_roundtrip_ms": 26.690080000000307,
+            "client_after_receive_ms": 3.185939999995753,
+            "client_result_json_utf8_bytes": 30150,
+            "runner_encoding_ms": 0.16530000000057044,
+            "producer_evidence_id": "ev_c4b04e330802e56f7636d51242bb38580276eb12ea255541de755d2a5141b4ac",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_205f7beec1e6b5efa4ff4928ea25da1e87be912fe4b597ff4ec40b0c1f7d956d"
+                }
+              }
+            },
+            "elapsed_ms": 12.387968999995792,
+            "client_before_send_ms": 0.5227099999974598,
+            "transport_roundtrip_ms": 10.743410000002768,
+            "client_after_receive_ms": 1.1218489999955636,
+            "client_result_json_utf8_bytes": 28480,
+            "runner_encoding_ms": 0.18636100000003353,
+            "producer_evidence_id": "ev_b469247e5d636a425b47917f761eae279f1d7e86c43cd86e3fce44988a5f0598",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_288149271a58cce3ef8ca8fcadfc24618bb0a4255724e5440605400bbbd61afb"
+                }
+              }
+            },
+            "elapsed_ms": 23.604599999998754,
+            "client_before_send_ms": 1.1049700000003213,
+            "transport_roundtrip_ms": 14.906969999996363,
+            "client_after_receive_ms": 7.59266000000207,
+            "client_result_json_utf8_bytes": 26708,
+            "runner_encoding_ms": 0.1663200000039069,
+            "producer_evidence_id": "ev_93cbfc24e386077948a61dc1157959417a6c5377e9f54375c03ba15365e23173",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_3b78134c949c0ddae48a6c44419bfad0e1820ac0e2807bc433e14fe553e9bf33"
+                }
+              }
+            },
+            "elapsed_ms": 16.254540000001725,
+            "client_before_send_ms": 0.5572700000047917,
+            "transport_roundtrip_ms": 14.374919999994745,
+            "client_after_receive_ms": 1.3223500000021886,
+            "client_result_json_utf8_bytes": 32578,
+            "runner_encoding_ms": 0.23536000000603963,
+            "producer_evidence_id": "ev_7432a0dde4182b070ad12f1cf151308172395964652971ff8e1565518cd1ad23",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_42f0ba1369248f1d0ee7dc7e5deccdb6d03b34696d7c9b587b29561b055a0e2c"
+                }
+              }
+            },
+            "elapsed_ms": 9.80746999999974,
+            "client_before_send_ms": 0.49711999999999534,
+            "transport_roundtrip_ms": 8.478379999993194,
+            "client_after_receive_ms": 0.8319700000065495,
+            "client_result_json_utf8_bytes": 27178,
+            "runner_encoding_ms": 0.16071000000374625,
+            "producer_evidence_id": "ev_a005dd8d3ceca77b24c9a5aa146942ab3f34a48162e614bfff16a958684d8a6e",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_61561f95fa66efe6525b31567954c8a58bd0f3667b208e85d3c7d760ec396cdd"
+                }
+              }
+            },
+            "elapsed_ms": 8.940850000006321,
+            "client_before_send_ms": 0.7146600000050967,
+            "transport_roundtrip_ms": 7.4829499999978,
+            "client_after_receive_ms": 0.7432400000034249,
+            "client_result_json_utf8_bytes": 28346,
+            "runner_encoding_ms": 0.1182699999990291,
+            "producer_evidence_id": "ev_3580e133a1de7a09380d4687c129d443331b6d38c98c99f6428e0f466ac93dbf",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_6728bd2855597b2b521020668ce9f4e1578b1769ad6b07cb516e142811ba3015"
+                }
+              }
+            },
+            "elapsed_ms": 9.900190000000293,
+            "client_before_send_ms": 0.34578999999939697,
+            "transport_roundtrip_ms": 8.50738999999885,
+            "client_after_receive_ms": 1.0470100000020466,
+            "client_result_json_utf8_bytes": 25842,
+            "runner_encoding_ms": 0.18959999999788124,
+            "producer_evidence_id": "ev_a6e087ed609abae3bdf0dc77aeaf4abdcea870468aeaddb3a6a0e1b646df8685",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_7290cf330a4c464680051bf158a11737c88d9b658d12b8ca33dad9d9ed5bbd43"
+                }
+              }
+            },
+            "elapsed_ms": 10.647109999998065,
+            "client_before_send_ms": 0.41843999999400694,
+            "transport_roundtrip_ms": 9.34092000000237,
+            "client_after_receive_ms": 0.887750000001688,
+            "client_result_json_utf8_bytes": 26762,
+            "runner_encoding_ms": 0.16242000000056578,
+            "producer_evidence_id": "ev_7b31bc7b49d8da26f65d808244db614aa2d8744247d4f20da34ed8735b94eac0",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_72933fe5ad0b3d02bc689bbec5b98e57781a9e0642402e79d29dd84a40c4add3"
+                }
+              }
+            },
+            "elapsed_ms": 7.81195999999909,
+            "client_before_send_ms": 0.18255900000076508,
+            "transport_roundtrip_ms": 7.077430999997887,
+            "client_after_receive_ms": 0.5519700000004377,
+            "client_result_json_utf8_bytes": 26732,
+            "runner_encoding_ms": 0.10798000000067987,
+            "producer_evidence_id": "ev_2afe9014704ae2bc5a93c6c88e8cfb23cd148547953042dbdcf637a06af84b56",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_74570cc130ee00964df34197958ce329e59db8b64add4f152b4c9dbaa459c620"
+                }
+              }
+            },
+            "elapsed_ms": 7.870339000000968,
+            "client_before_send_ms": 0.19417999999859603,
+            "transport_roundtrip_ms": 6.787178999999014,
+            "client_after_receive_ms": 0.8889800000033574,
+            "client_result_json_utf8_bytes": 26702,
+            "runner_encoding_ms": 0.15684000000328524,
+            "producer_evidence_id": "ev_8fdaf63a37e42868d44d6fc89a23cd006bf37df5e5f424d7acdc97d1478b8f04",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_82249640deb32652d0071229456acdeae30c3713f8cee3fb82d70352dbea476f"
+                }
+              }
+            },
+            "elapsed_ms": 14.696578999995836,
+            "client_before_send_ms": 1.3792199999952572,
+            "transport_roundtrip_ms": 12.471180000000459,
+            "client_after_receive_ms": 0.8461790000001201,
+            "client_result_json_utf8_bytes": 25812,
+            "runner_encoding_ms": 0.2012100000065402,
+            "producer_evidence_id": "ev_e6e641238fc4ece5d13eafd8e9a4fcc9984b56669b76ca1bda52870a861941c1",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_842abef9a77ef072b5bc55e00dda19a5b6039ae08288fb1c66240fa6c0321588"
+                }
+              }
+            },
+            "elapsed_ms": 16.69969900000433,
+            "client_before_send_ms": 0.4188090000025113,
+            "transport_roundtrip_ms": 15.58400999999867,
+            "client_after_receive_ms": 0.6968800000031479,
+            "client_result_json_utf8_bytes": 33420,
+            "runner_encoding_ms": 0.18553999999858206,
+            "producer_evidence_id": "ev_1771b46f3285c0f9e9a73d530fc281aba43b0caec95a8ee87d60d96e5dd373d2",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_a15518c53e559509aa493fc7a059a511b8aec92d52aa9035a505fe2c42060ada"
+                }
+              }
+            },
+            "elapsed_ms": 32.9781690000018,
+            "client_before_send_ms": 1.95962999999756,
+            "transport_roundtrip_ms": 30.30018000000564,
+            "client_after_receive_ms": 0.7183589999985998,
+            "client_result_json_utf8_bytes": 33392,
+            "runner_encoding_ms": 0.174791000004916,
+            "producer_evidence_id": "ev_0b0cc381727a520ce0448045c48f2d8823580b22a53f9f5a631dafb266fd6d79",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_a2953a5694265708ca5deaa4162924db5aa6ec0fe23179473703e2415da6f20d"
+                }
+              }
+            },
+            "elapsed_ms": 18.9671490000037,
+            "client_before_send_ms": 0.2768399999986286,
+            "transport_roundtrip_ms": 16.229599000005692,
+            "client_after_receive_ms": 2.4607099999993807,
+            "client_result_json_utf8_bytes": 30750,
+            "runner_encoding_ms": 0.18456000000151107,
+            "producer_evidence_id": "ev_6362631fb5460e86c50d1ef5f4b9300946cd5b41db6709d876632e8f50cb40da",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_a304199f3cdfbb132783f2ef19661c97cf6538f6f9e0d2241ebd38a905fa03f5"
+                }
+              }
+            },
+            "elapsed_ms": 14.267679999997199,
+            "client_before_send_ms": 0.4301500000001397,
+            "transport_roundtrip_ms": 13.200059999995574,
+            "client_after_receive_ms": 0.6374700000014855,
+            "client_result_json_utf8_bytes": 30036,
+            "runner_encoding_ms": 0.18569999999454012,
+            "producer_evidence_id": "ev_2494811f5b47edb5b64d1514ea113206a0cf33c7e47cd90d97487b5d7183addb",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_a7c8f694bd07b5387690de4a25f3dff858865973ff593bb314159b8932c86c15"
+                }
+              }
+            },
+            "elapsed_ms": 24.358469999999215,
+            "client_before_send_ms": 0.4085400000039954,
+            "transport_roundtrip_ms": 23.174419999995735,
+            "client_after_receive_ms": 0.7755099999994854,
+            "client_result_json_utf8_bytes": 25812,
+            "runner_encoding_ms": 0.12447000000247499,
+            "producer_evidence_id": "ev_d0c5bb23f7219fd47681c41cfc0b8ad8ce3017ab9e6120318b905eaa8d616b48",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_bc3fca896e4b81c6783517a7fe5c51c8e2c9e5d88eef9bd4f571f9230b5e544b"
+                }
+              }
+            },
+            "elapsed_ms": 14.281220000004396,
+            "client_before_send_ms": 2.0201300000044284,
+            "transport_roundtrip_ms": 11.542209999999614,
+            "client_after_receive_ms": 0.7188800000003539,
+            "client_result_json_utf8_bytes": 30112,
+            "runner_encoding_ms": 0.13462000000436092,
+            "producer_evidence_id": "ev_b01a365566ca55606e27d15a530126748ff6c4d9fd0b26fc70f4412aee9880ea",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_c74ef2b3509a9072fea733eb720e062f258b2ba13a163c5e50134f76ca8a1030"
+                }
+              }
+            },
+            "elapsed_ms": 9.165600000000268,
+            "client_before_send_ms": 0.5070009999981266,
+            "transport_roundtrip_ms": 7.9920490000004065,
+            "client_after_receive_ms": 0.6665500000017346,
+            "client_result_json_utf8_bytes": 25872,
+            "runner_encoding_ms": 0.09928100000252016,
+            "producer_evidence_id": "ev_9349be4c28ddd6a0e0a38de0722bd29a8aa3a025d91b764f414b9d81e17df3d1",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_d678d9ad35db0904fa9af07f745d833b1fd0795211a29e6386551441701f1ea0"
+                }
+              }
+            },
+            "elapsed_ms": 11.854159999995318,
+            "client_before_send_ms": 0.2873699999981909,
+            "transport_roundtrip_ms": 9.0483000000022,
+            "client_after_receive_ms": 2.5184899999949266,
+            "client_result_json_utf8_bytes": 26702,
+            "runner_encoding_ms": 0.12284999999974389,
+            "producer_evidence_id": "ev_33f1514f2cea1aea6623e7b8e19d92ed9ab4b9204202b77ec2926051d4242076",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_e0c8fcd14b723dfb42a5fcabf4ddc6c596d37cc1704c34f1d09456857afaa1a4"
+                }
+              }
+            },
+            "elapsed_ms": 13.244780000000901,
+            "client_before_send_ms": 0.6127400000041234,
+            "transport_roundtrip_ms": 12.127099999997881,
+            "client_after_receive_ms": 0.5049399999988964,
+            "client_result_json_utf8_bytes": 28270,
+            "runner_encoding_ms": 0.1603499999982887,
+            "producer_evidence_id": "ev_f3f799745dc0307faeb2583b1e9809d36aabecac0ae225c638e0277c0534812d",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_e74390bbf11499840fd0d861d90d1e0a9ca4edf57b8eb81dd13287e040979f5b"
+                }
+              }
+            },
+            "elapsed_ms": 11.855819999997038,
+            "client_before_send_ms": 0.31904999999824213,
+            "transport_roundtrip_ms": 10.617359999996552,
+            "client_after_receive_ms": 0.9194100000022445,
+            "client_result_json_utf8_bytes": 28384,
+            "runner_encoding_ms": 0.18536999999923864,
+            "producer_evidence_id": "ev_74719b7d318c48bf1e4c99697117c87d9285aa3461459b267c41ccdf2846a7a7",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_eaf187fce5c5c6b53bc0f391e658c3a63d73572bc4203b1f221652689777744e"
+                }
+              }
+            },
+            "elapsed_ms": 29.958279999998922,
+            "client_before_send_ms": 0.4131390000038664,
+            "transport_roundtrip_ms": 28.922439999994822,
+            "client_after_receive_ms": 0.6227010000002338,
+            "client_result_json_utf8_bytes": 30778,
+            "runner_encoding_ms": 0.15204000000085216,
+            "producer_evidence_id": "ev_bbba71e32ba77eff0c8d26bc00bade45ab5cf5381240687f77a6bbf8c5b09c7a",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_fafc7c8e6c5aa1793108013819c957c7cc427d09fb0ad72f5311fdedb77ca1b2"
+                }
+              }
+            },
+            "elapsed_ms": 11.00648899999942,
+            "client_before_send_ms": 0.39568899999721907,
+            "transport_roundtrip_ms": 9.93934000000445,
+            "client_after_receive_ms": 0.6714599999977509,
+            "client_result_json_utf8_bytes": 26004,
+            "runner_encoding_ms": 0.16806999999971595,
+            "producer_evidence_id": "ev_d1cd2f1c09da3d43518e2b7a81c0265303db24ecdfdf34c6a19b4c158a397a18",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_fe6988c196f390298badd9cd9530548d189f2a76953fbe4898fd5a652e300db4"
+                }
+              }
+            },
+            "elapsed_ms": 9.8368399999963,
+            "client_before_send_ms": 0.3282599999947706,
+            "transport_roundtrip_ms": 9.087469999998575,
+            "client_after_receive_ms": 0.4211100000029546,
+            "client_result_json_utf8_bytes": 25818,
+            "runner_encoding_ms": 0.11320999999588821,
+            "producer_evidence_id": "ev_2f9b32442e5252da5ef10474ef5890f951007e56324e1fed442286dd7b77ce05",
+            "is_error": false,
+            "progress": []
+          }
+        ],
+        "failure": null,
+        "measurement_scope": "Public SDK Transport timestamps split client work from the transport/server roundtrip; parsed result JSON bytes are not raw wire bytes; runner encoding and writes are outside each call; engine-stage durations and independent producer truth are not inferred"
+      },
+      "resource": {
+        "resource_scope": "rea-efficiency-b57ff7c9f6ba4b329c2338beb3ca367e.scope",
+        "peak_cgroup_bytes_sampled": 708673536,
+        "elapsed_seconds": 59.369,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 22,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 40903167,
+          "user_usec": 35334673,
+          "system_usec": 5568493,
+          "nr_periods": 592,
+          "nr_throttled": 0,
+          "throttled_usec": 0,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "selected_facts": {
+        "artifact_sha256": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+        "input_path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/obsidian-1.14.4.asar",
+        "source_selection": {
+          "requested_paths": ["package.json", "main.js"],
+          "unselected_files": 36
+        },
+        "statistics": {
+          "relevant_files": 38,
+          "nested_asar_containers": 0,
+          "text_bytes_read": 203962,
+          "invalid_utf8_files": 0,
+          "parsed_javascript_files": 1,
+          "visited_ast_nodes": 28792,
+          "findings": 87,
+          "modules": 0,
+          "parse_failures": 0
+        },
+        "electron": {
+          "browser_windows": 2,
+          "explicit_web_preferences": 0,
+          "preload_entrypoints": 0,
+          "context_bridge_apis": 0,
+          "exposed_api_members": 0,
+          "ipc": {
+            "operations": 47,
+            "literal_channels": 47,
+            "dynamic_channel_operations": 0,
+            "renderer_transmissions": 0,
+            "renderer_listeners": 0,
+            "main_handlers": 47,
+            "paired_renderer_transmissions": 0,
+            "ambiguous_renderer_transmissions": 0,
+            "unpaired_literal_renderer_transmissions": 0
+          },
+          "sender_validation_observations": 1,
+          "utility_processes": 0,
+          "resolved_utility_entrypoints": 0,
+          "native_addon_bindings": 0,
+          "resolved_native_addon_bindings": 0
+        },
+        "coverage": {
+          "application": {
+            "status": "partial",
+            "truncated": false,
+            "omitted_count": null,
+            "limits": [
+              {
+                "name": "javascript_analysis_parent_available_result_budget_bytes",
+                "value": 176155066,
+                "unit": "bytes"
+              },
+              {
+                "name": "javascript_analysis_parent_result_budget_bytes",
+                "value": 186779988,
+                "unit": "bytes"
+              },
+              {
+                "name": "javascript_analysis_worker_heap_limit_bytes",
+                "value": 1098907648,
+                "unit": "bytes"
+              },
+              {
+                "name": "javascript_analysis_worker_timeout_ms",
+                "value": 300000,
+                "unit": "milliseconds"
+              }
+            ]
+          },
+          "semantic": {
+            "status": "partial",
+            "truncated": true,
+            "omitted_nodes": null,
+            "omitted_relations": null,
+            "limits": [
+              {
+                "name": "javascript_analysis_parent_available_result_budget_bytes",
+                "value": 176155066,
+                "unit": "bytes"
+              },
+              {
+                "name": "javascript_analysis_parent_result_budget_bytes",
+                "value": 186779988,
+                "unit": "bytes"
+              },
+              {
+                "name": "javascript_analysis_worker_heap_limit_bytes",
+                "value": 1098907648,
+                "unit": "bytes"
+              },
+              {
+                "name": "javascript_analysis_worker_timeout_ms",
+                "value": 300000,
+                "unit": "milliseconds"
+              }
+            ],
+            "families": [
+              {
+                "family": "boundary",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "call-flow",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "child-process",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "closure",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "configuration",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "data-flow",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "event",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "object-flow",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "promise-ownership",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "request",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "resource-lifecycle",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "timer",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              }
+            ]
+          },
+          "application_unknowns": 37,
+          "semantic_unknowns": 384
+        }
+      },
+      "modules": [
+        {
+          "node_id": "jag_node_15b5b46dfcbc20cac7c7a9c7b2d2efe21d39cecc77bb3a42e86506ac480c6cd0",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-semantic-module",
+            "key": "external:original-fs"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_205f7beec1e6b5efa4ff4928ea25da1e87be912fe4b597ff4ec40b0c1f7d956d",
+          "kind": "javascript-asset",
+          "path": "main.js",
+          "identity": {
+            "strategy": "content-digest",
+            "stability": "global-exact",
+            "sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba"
+          },
+          "hashes": [
+            "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba"
+          ]
+        },
+        {
+          "node_id": "jag_node_288149271a58cce3ef8ca8fcadfc24618bb0a4255724e5440605400bbbd61afb",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-semantic-module",
+            "key": "external:util"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_3b78134c949c0ddae48a6c44419bfad0e1820ac0e2807bc433e14fe553e9bf33",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "module-export",
+            "key": "[\"146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f\",\"main.js\",\"default\"]"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_42f0ba1369248f1d0ee7dc7e5deccdb6d03b34696d7c9b587b29561b055a0e2c",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "source-module",
+            "key": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f:main.js"
+          },
+          "hashes": [
+            "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f"
+          ]
+        },
+        {
+          "node_id": "jag_node_61561f95fa66efe6525b31567954c8a58bd0f3667b208e85d3c7d760ec396cdd",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:electron"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_6728bd2855597b2b521020668ce9f4e1578b1769ad6b07cb516e142811ba3015",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:crypto"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_7290cf330a4c464680051bf158a11737c88d9b658d12b8ca33dad9d9ed5bbd43",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-semantic-module",
+            "key": "external:child_process"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_72933fe5ad0b3d02bc689bbec5b98e57781a9e0642402e79d29dd84a40c4add3",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-semantic-module",
+            "key": "external:crypto"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_74570cc130ee00964df34197958ce329e59db8b64add4f152b4c9dbaa459c620",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-semantic-module",
+            "key": "external:net"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_82249640deb32652d0071229456acdeae30c3713f8cee3fb82d70352dbea476f",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:url"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_842abef9a77ef072b5bc55e00dda19a5b6039ae08288fb1c66240fa6c0321588",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-semantic-module",
+            "key": "external:path"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_a15518c53e559509aa493fc7a059a511b8aec92d52aa9035a505fe2c42060ada",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-semantic-module",
+            "key": "external:fs"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_a2953a5694265708ca5deaa4162924db5aa6ec0fe23179473703e2415da6f20d",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:fs"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_a304199f3cdfbb132783f2ef19661c97cf6538f6f9e0d2241ebd38a905fa03f5",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-semantic-module",
+            "key": "external:os"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_a7c8f694bd07b5387690de4a25f3dff858865973ff593bb314159b8932c86c15",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:net"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_bc3fca896e4b81c6783517a7fe5c51c8e2c9e5d88eef9bd4f571f9230b5e544b",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-semantic-module",
+            "key": "external:electron"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_c74ef2b3509a9072fea733eb720e062f258b2ba13a163c5e50134f76ca8a1030",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:child_process"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_d678d9ad35db0904fa9af07f745d833b1fd0795211a29e6386551441701f1ea0",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-semantic-module",
+            "key": "external:url"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_e0c8fcd14b723dfb42a5fcabf4ddc6c596d37cc1704c34f1d09456857afaa1a4",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:os"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_e74390bbf11499840fd0d861d90d1e0a9ca4edf57b8eb81dd13287e040979f5b",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:original-fs"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_eaf187fce5c5c6b53bc0f391e658c3a63d73572bc4203b1f221652689777744e",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:path"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_fafc7c8e6c5aa1793108013819c957c7cc427d09fb0ad72f5311fdedb77ca1b2",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:require(Le.join(n,\"lib\",\"i18next.min.js\"))"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_fe6988c196f390298badd9cd9530548d189f2a76953fbe4898fd5a652e300db4",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:util"
+          },
+          "hashes": []
+        }
+      ],
+      "evidence_ids": [
+        "ev_33dbd0e169afe1032be50a2e5b3e66c5dc4ff9f2054e42cf9372747e8317dfbe",
+        "ev_567264dc2eb43f055ea7d893e67d0e21a7dc1ea021c2e08a115702ab8cc6ce04",
+        "ev_e2809f7236674c2336e540fe2729b8313954868caa2c3ab5d885f98ead29ab6a",
+        "ev_c4b04e330802e56f7636d51242bb38580276eb12ea255541de755d2a5141b4ac",
+        "ev_b469247e5d636a425b47917f761eae279f1d7e86c43cd86e3fce44988a5f0598",
+        "ev_93cbfc24e386077948a61dc1157959417a6c5377e9f54375c03ba15365e23173",
+        "ev_7432a0dde4182b070ad12f1cf151308172395964652971ff8e1565518cd1ad23",
+        "ev_a005dd8d3ceca77b24c9a5aa146942ab3f34a48162e614bfff16a958684d8a6e",
+        "ev_3580e133a1de7a09380d4687c129d443331b6d38c98c99f6428e0f466ac93dbf",
+        "ev_a6e087ed609abae3bdf0dc77aeaf4abdcea870468aeaddb3a6a0e1b646df8685",
+        "ev_7b31bc7b49d8da26f65d808244db614aa2d8744247d4f20da34ed8735b94eac0",
+        "ev_2afe9014704ae2bc5a93c6c88e8cfb23cd148547953042dbdcf637a06af84b56",
+        "ev_8fdaf63a37e42868d44d6fc89a23cd006bf37df5e5f424d7acdc97d1478b8f04",
+        "ev_e6e641238fc4ece5d13eafd8e9a4fcc9984b56669b76ca1bda52870a861941c1",
+        "ev_1771b46f3285c0f9e9a73d530fc281aba43b0caec95a8ee87d60d96e5dd373d2",
+        "ev_0b0cc381727a520ce0448045c48f2d8823580b22a53f9f5a631dafb266fd6d79",
+        "ev_6362631fb5460e86c50d1ef5f4b9300946cd5b41db6709d876632e8f50cb40da",
+        "ev_2494811f5b47edb5b64d1514ea113206a0cf33c7e47cd90d97487b5d7183addb",
+        "ev_d0c5bb23f7219fd47681c41cfc0b8ad8ce3017ab9e6120318b905eaa8d616b48",
+        "ev_b01a365566ca55606e27d15a530126748ff6c4d9fd0b26fc70f4412aee9880ea",
+        "ev_9349be4c28ddd6a0e0a38de0722bd29a8aa3a025d91b764f414b9d81e17df3d1",
+        "ev_33f1514f2cea1aea6623e7b8e19d92ed9ab4b9204202b77ec2926051d4242076",
+        "ev_f3f799745dc0307faeb2583b1e9809d36aabecac0ae225c638e0277c0534812d",
+        "ev_74719b7d318c48bf1e4c99697117c87d9285aa3461459b267c41ccdf2846a7a7",
+        "ev_bbba71e32ba77eff0c8d26bc00bade45ab5cf5381240687f77a6bbf8c5b09c7a",
+        "ev_d1cd2f1c09da3d43518e2b7a81c0265303db24ecdfdf34c6a19b4c158a397a18",
+        "ev_2f9b32442e5252da5ef10474ef5890f951007e56324e1fed442286dd7b77ce05"
+      ]
+    },
+    "candidate": {
+      "summary": {
+        "revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "runtime_root": "/home/yann/yann/rea-compatibility-first-lab-20261012/phase3-guidance-runtime",
+        "artifact": "obsidian.asar",
+        "artifact_sha256": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+        "artifact_sha256_after": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+        "delivery": "complete",
+        "sdk_schema_mode": "selected",
+        "native_question": null,
+        "javascript_question": "selected",
+        "provider_settings_sha256": "8f391e4f78bad489477f8b5e7f6cb156d49e8cecf94671bbc4088f35d97488c2",
+        "measure_source_sha256": "dfc71b088f3bfc7539565d478d3b6509513e0d984bfbb12998dee6d0e02701c8",
+        "runtime_files_sha256": "c35e1d11fdfa4c93ce7600b247ebf44abbd27e514b1024ca948fdb33e82c1a3b",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "node_version": "v24.18.0",
+        "sdk_client_version": "2.3.1",
+        "sdk_server_version": "2.3.1",
+        "platform": "linux",
+        "architecture": "x64",
+        "connected_ms": 7373.273702,
+        "catalog_ms": 2729.3020639999995,
+        "catalog_json_utf8_bytes": 2387588,
+        "catalog_input_definition_utf8_bytes": 497897,
+        "elapsed_ms": 41497.897035999995,
+        "calls": [
+          {
+            "name": "analyze_javascript_application",
+            "arguments": {
+              "input_path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/obsidian-1.14.4.asar",
+              "source_paths": ["package.json", "main.js"],
+              "detail": "summary"
+            },
+            "elapsed_ms": 29283.265207000004,
+            "client_before_send_ms": 1857.512455,
+            "transport_roundtrip_ms": 27370.632693,
+            "client_after_receive_ms": 55.120059000000765,
+            "client_result_json_utf8_bytes": 29162,
+            "runner_encoding_ms": 0.40489000000525266,
+            "producer_evidence_id": "ev_da0d78a19ca40f30ac6213d04784bd9288404eb6e13ced991e2f9454f33c5b46",
+            "is_error": false,
+            "progress": [
+              {
+                "elapsed_ms": 1904.6423649999997,
+                "progress": 1,
+                "message": "analyze_javascript_application: Inventorying and parsing application artifacts"
+              },
+              {
+                "elapsed_ms": 5484.560197999997,
+                "progress": 2,
+                "message": "read_javascript_artifacts: Reading inventoried JavaScript application sources"
+              },
+              {
+                "elapsed_ms": 6908.159739000001,
+                "progress": 3,
+                "message": "parse_javascript_sources: Parsing and projecting 2 selected application source files"
+              },
+              {
+                "elapsed_ms": 28114.980183,
+                "progress": 4,
+                "message": "build_javascript_application_graph: Constructing application and Electron boundary relationships"
+              },
+              {
+                "elapsed_ms": 28759.927954,
+                "progress": 5,
+                "message": "build_javascript_semantic_graph: Binding and validating static semantic relationships"
+              },
+              {
+                "elapsed_ms": 28903.350132,
+                "progress": 6,
+                "message": "validate_javascript_application_result: Validating result metadata and cross-graph bindings"
+              },
+              {
+                "elapsed_ms": 29066.389629999998,
+                "progress": 7,
+                "message": "hash_javascript_application_evidence: Hashing the complete application analysis Evidence"
+              },
+              {
+                "elapsed_ms": 29185.933449000004,
+                "progress": 8,
+                "message": "analyze_javascript_application: Application graph and Electron boundaries reconstructed"
+              }
+            ]
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "page",
+                "collection": "modules",
+                "offset": 0,
+                "limit": 64
+              }
+            },
+            "elapsed_ms": 829.2906590000057,
+            "client_before_send_ms": 534.7392030000046,
+            "transport_roundtrip_ms": 173.95502699999633,
+            "client_after_receive_ms": 120.59642900000472,
+            "client_result_json_utf8_bytes": 38014,
+            "runner_encoding_ms": 0.24619100000563776,
+            "producer_evidence_id": "ev_fac8a2752b593ff621c88e776dfe233e8dfb58904b62939f8b84f37b2d3966cf",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_15b5b46dfcbc20cac7c7a9c7b2d2efe21d39cecc77bb3a42e86506ac480c6cd0"
+                }
+              }
+            },
+            "elapsed_ms": 38.156928999997035,
+            "client_before_send_ms": 1.0052099999957136,
+            "transport_roundtrip_ms": 32.71679900000163,
+            "client_after_receive_ms": 4.434919999999693,
+            "client_result_json_utf8_bytes": 30150,
+            "runner_encoding_ms": 0.22251999999571126,
+            "producer_evidence_id": "ev_0371be7701eb1f24b97abf47638122f1bb00f2cb779c5eb39d0022e8857ffb63",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_205f7beec1e6b5efa4ff4928ea25da1e87be912fe4b597ff4ec40b0c1f7d956d"
+                }
+              }
+            },
+            "elapsed_ms": 18.477490000004764,
+            "client_before_send_ms": 0.7014899999994668,
+            "transport_roundtrip_ms": 16.555080000005546,
+            "client_after_receive_ms": 1.2209199999997509,
+            "client_result_json_utf8_bytes": 28480,
+            "runner_encoding_ms": 0.12747099999978673,
+            "producer_evidence_id": "ev_34acc70c7d182bbd96529e0dfe36d058fd6dea5eff9a6b406cd18665b457128c",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_288149271a58cce3ef8ca8fcadfc24618bb0a4255724e5440605400bbbd61afb"
+                }
+              }
+            },
+            "elapsed_ms": 28.111510000002454,
+            "client_before_send_ms": 1.0608110000030138,
+            "transport_roundtrip_ms": 25.86431900000025,
+            "client_after_receive_ms": 1.1863799999991897,
+            "client_result_json_utf8_bytes": 26708,
+            "runner_encoding_ms": 0.1738000000041211,
+            "producer_evidence_id": "ev_9eaf8092a8c2b55157c4ffc96e1913bcc97d3d859038eb29c5e0ccbd5bf7816f",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_3b78134c949c0ddae48a6c44419bfad0e1820ac0e2807bc433e14fe553e9bf33"
+                }
+              }
+            },
+            "elapsed_ms": 28.117529000002833,
+            "client_before_send_ms": 0.5969990000012331,
+            "transport_roundtrip_ms": 24.921249999999418,
+            "client_after_receive_ms": 2.5992800000021816,
+            "client_result_json_utf8_bytes": 32578,
+            "runner_encoding_ms": 0.322970000001078,
+            "producer_evidence_id": "ev_82d3acc05caefb534b9abf49ad34e1d41a3b9865d136c8e47d85d94905530c1e",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_42f0ba1369248f1d0ee7dc7e5deccdb6d03b34696d7c9b587b29561b055a0e2c"
+                }
+              }
+            },
+            "elapsed_ms": 16.950769000002765,
+            "client_before_send_ms": 2.5019800000009127,
+            "transport_roundtrip_ms": 13.22896000000037,
+            "client_after_receive_ms": 1.2198290000014822,
+            "client_result_json_utf8_bytes": 27178,
+            "runner_encoding_ms": 0.17229000000224914,
+            "producer_evidence_id": "ev_04ea99f79746776e3387797460ca7ffb1f1b12665e62aed90c5c05cf007d5171",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_61561f95fa66efe6525b31567954c8a58bd0f3667b208e85d3c7d760ec396cdd"
+                }
+              }
+            },
+            "elapsed_ms": 14.559729000000516,
+            "client_before_send_ms": 0.6111600000003818,
+            "transport_roundtrip_ms": 12.82850899999903,
+            "client_after_receive_ms": 1.1200600000011036,
+            "client_result_json_utf8_bytes": 28346,
+            "runner_encoding_ms": 0.2153889999972307,
+            "producer_evidence_id": "ev_2aaa1a390cab8ad588513ece84529256747317baf07042800cb7c65318ed0221",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_6728bd2855597b2b521020668ce9f4e1578b1769ad6b07cb516e142811ba3015"
+                }
+              }
+            },
+            "elapsed_ms": 17.124400000000605,
+            "client_before_send_ms": 0.6827999999950407,
+            "transport_roundtrip_ms": 15.432220000002417,
+            "client_after_receive_ms": 1.0093800000031479,
+            "client_result_json_utf8_bytes": 25842,
+            "runner_encoding_ms": 0.18811000000278,
+            "producer_evidence_id": "ev_261a3f443ebe424ae6bb26a9c2618edf5f0743ccf16c611bc639b38aeb1ca78a",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_7290cf330a4c464680051bf158a11737c88d9b658d12b8ca33dad9d9ed5bbd43"
+                }
+              }
+            },
+            "elapsed_ms": 16.158699999999953,
+            "client_before_send_ms": 0.9810300000026473,
+            "transport_roundtrip_ms": 14.108039999999164,
+            "client_after_receive_ms": 1.069629999998142,
+            "client_result_json_utf8_bytes": 26762,
+            "runner_encoding_ms": 2.3467000000018743,
+            "producer_evidence_id": "ev_e75ae2b2f637c0eebda5b03bb4112ef7a5488e1dedb948e9b412e8e272c0e863",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_72933fe5ad0b3d02bc689bbec5b98e57781a9e0642402e79d29dd84a40c4add3"
+                }
+              }
+            },
+            "elapsed_ms": 12.94716000000335,
+            "client_before_send_ms": 0.3544000000038068,
+            "transport_roundtrip_ms": 11.787159999999858,
+            "client_after_receive_ms": 0.8055999999996857,
+            "client_result_json_utf8_bytes": 26732,
+            "runner_encoding_ms": 0.1832399999984773,
+            "producer_evidence_id": "ev_77af247421c73d1c5c44a3ff403464dceba5c884014dd2cad64bc5eddce7a10d",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_74570cc130ee00964df34197958ce329e59db8b64add4f152b4c9dbaa459c620"
+                }
+              }
+            },
+            "elapsed_ms": 14.600978999995277,
+            "client_before_send_ms": 0.41625999999814667,
+            "transport_roundtrip_ms": 11.798320000001695,
+            "client_after_receive_ms": 2.3863989999954356,
+            "client_result_json_utf8_bytes": 26702,
+            "runner_encoding_ms": 0.14999900000111666,
+            "producer_evidence_id": "ev_545b21979f13da8a3eb245e3d5a6cf679bcc58c2e020367c9f2f4950a11f906f",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_82249640deb32652d0071229456acdeae30c3713f8cee3fb82d70352dbea476f"
+                }
+              }
+            },
+            "elapsed_ms": 15.160420000000158,
+            "client_before_send_ms": 0.34886099999857834,
+            "transport_roundtrip_ms": 14.060919000003196,
+            "client_after_receive_ms": 0.7506399999983842,
+            "client_result_json_utf8_bytes": 25812,
+            "runner_encoding_ms": 0.11551999999937834,
+            "producer_evidence_id": "ev_88ec471657f5c85ef7716c00434062a0ecbdafa854abac07c8ee2dee92c4ff31",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_842abef9a77ef072b5bc55e00dda19a5b6039ae08288fb1c66240fa6c0321588"
+                }
+              }
+            },
+            "elapsed_ms": 16.941619999997783,
+            "client_before_send_ms": 0.8033599999980652,
+            "transport_roundtrip_ms": 13.803009999995993,
+            "client_after_receive_ms": 2.3352500000037253,
+            "client_result_json_utf8_bytes": 33420,
+            "runner_encoding_ms": 0.21171999999933178,
+            "producer_evidence_id": "ev_c2f1cb3b7549c34fe7e4dd59127bab1f479b0990b50bb173a123626534e91f3c",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_a15518c53e559509aa493fc7a059a511b8aec92d52aa9035a505fe2c42060ada"
+                }
+              }
+            },
+            "elapsed_ms": 24.438399999999092,
+            "client_before_send_ms": 0.3766899999973248,
+            "transport_roundtrip_ms": 23.064870000001974,
+            "client_after_receive_ms": 0.9968399999997928,
+            "client_result_json_utf8_bytes": 33392,
+            "runner_encoding_ms": 2.4772499999962747,
+            "producer_evidence_id": "ev_56ea251f07340d4df515bc6f8eee01f286933669482c6b8f4fd6b5cfe19284cf",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_a2953a5694265708ca5deaa4162924db5aa6ec0fe23179473703e2415da6f20d"
+                }
+              }
+            },
+            "elapsed_ms": 12.777529999999388,
+            "client_before_send_ms": 0.38923000000067987,
+            "transport_roundtrip_ms": 11.413619999999355,
+            "client_after_receive_ms": 0.9746799999993527,
+            "client_result_json_utf8_bytes": 30750,
+            "runner_encoding_ms": 0.177640000001702,
+            "producer_evidence_id": "ev_851dd42f25d3b311faf0af416bbb213d333444f2965d5609cab109db17983d67",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_a304199f3cdfbb132783f2ef19661c97cf6538f6f9e0d2241ebd38a905fa03f5"
+                }
+              }
+            },
+            "elapsed_ms": 18.418998999994074,
+            "client_before_send_ms": 0.3184499999988475,
+            "transport_roundtrip_ms": 17.224059000000125,
+            "client_after_receive_ms": 0.8764899999951012,
+            "client_result_json_utf8_bytes": 30036,
+            "runner_encoding_ms": 0.08671999999933178,
+            "producer_evidence_id": "ev_0d7b16bbf50c0f9487898c1d694ba7cce6576f86be30714dd50eba2ec51e8359",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_a7c8f694bd07b5387690de4a25f3dff858865973ff593bb314159b8932c86c15"
+                }
+              }
+            },
+            "elapsed_ms": 15.27441999999428,
+            "client_before_send_ms": 0.3931609999999637,
+            "transport_roundtrip_ms": 13.903658999995969,
+            "client_after_receive_ms": 0.9775999999983469,
+            "client_result_json_utf8_bytes": 25812,
+            "runner_encoding_ms": 0.2263699999966775,
+            "producer_evidence_id": "ev_cb7b5a87fb6ef58ec4f5d7011769b99db9a2a2e2daa5609e22feb0cf8e2b52f3",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_bc3fca896e4b81c6783517a7fe5c51c8e2c9e5d88eef9bd4f571f9230b5e544b"
+                }
+              }
+            },
+            "elapsed_ms": 15.17395000000397,
+            "client_before_send_ms": 0.5599100000035833,
+            "transport_roundtrip_ms": 12.279879999994591,
+            "client_after_receive_ms": 2.334160000005795,
+            "client_result_json_utf8_bytes": 30112,
+            "runner_encoding_ms": 0.1471599999931641,
+            "producer_evidence_id": "ev_cccd390510676cc5d8cfbfa88e74911e564612726b0786ad0fde04fd31d20161",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_c74ef2b3509a9072fea733eb720e062f258b2ba13a163c5e50134f76ca8a1030"
+                }
+              }
+            },
+            "elapsed_ms": 15.365630000000237,
+            "client_before_send_ms": 0.41169000000081724,
+            "transport_roundtrip_ms": 12.59541999999783,
+            "client_after_receive_ms": 2.3585200000015902,
+            "client_result_json_utf8_bytes": 25872,
+            "runner_encoding_ms": 0.1136899999983143,
+            "producer_evidence_id": "ev_d7159bf7a2117621a7b4ac7256e804251e4fb2e570ec5b63797af5823a0d20e0",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_d678d9ad35db0904fa9af07f745d833b1fd0795211a29e6386551441701f1ea0"
+                }
+              }
+            },
+            "elapsed_ms": 21.657240000000456,
+            "client_before_send_ms": 0.4047900000005029,
+            "transport_roundtrip_ms": 20.45514999999432,
+            "client_after_receive_ms": 0.7973000000056345,
+            "client_result_json_utf8_bytes": 26702,
+            "runner_encoding_ms": 0.10394000000087544,
+            "producer_evidence_id": "ev_4c0795dc41ca0d71d13d07dad2d4756eba20b69005ff7791827ddd3d4b2d642e",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_e0c8fcd14b723dfb42a5fcabf4ddc6c596d37cc1704c34f1d09456857afaa1a4"
+                }
+              }
+            },
+            "elapsed_ms": 17.530319999998028,
+            "client_before_send_ms": 1.7451599999985774,
+            "transport_roundtrip_ms": 14.813210000000254,
+            "client_after_receive_ms": 0.9719499999991967,
+            "client_result_json_utf8_bytes": 28270,
+            "runner_encoding_ms": 0.15370999999868218,
+            "producer_evidence_id": "ev_955201de8836152ea867211397511db044210db06632126ccb093308bfebf553",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_e74390bbf11499840fd0d861d90d1e0a9ca4edf57b8eb81dd13287e040979f5b"
+                }
+              }
+            },
+            "elapsed_ms": 17.103379000000132,
+            "client_before_send_ms": 0.5652000000045518,
+            "transport_roundtrip_ms": 15.71201899999869,
+            "client_after_receive_ms": 0.8261599999968894,
+            "client_result_json_utf8_bytes": 28384,
+            "runner_encoding_ms": 0.17562899999757065,
+            "producer_evidence_id": "ev_66add4efae6f3940d2c7ca30f168feec798f81ba40fa618a4e6b6c6b6acf08b3",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_eaf187fce5c5c6b53bc0f391e658c3a63d73572bc4203b1f221652689777744e"
+                }
+              }
+            },
+            "elapsed_ms": 23.138598999998067,
+            "client_before_send_ms": 0.39918000000034226,
+            "transport_roundtrip_ms": 22.30304900000192,
+            "client_after_receive_ms": 0.4363699999958044,
+            "client_result_json_utf8_bytes": 30778,
+            "runner_encoding_ms": 0.0825189999959548,
+            "producer_evidence_id": "ev_9ec9569b9a8fd261d23d865c2610d003d4b6f2a998e5417e03e85920668f79e4",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_fafc7c8e6c5aa1793108013819c957c7cc427d09fb0ad72f5311fdedb77ca1b2"
+                }
+              }
+            },
+            "elapsed_ms": 3.904279000002134,
+            "client_before_send_ms": 0.20982899999944493,
+            "transport_roundtrip_ms": 3.3246910000016214,
+            "client_after_receive_ms": 0.36975900000106776,
+            "client_result_json_utf8_bytes": 26004,
+            "runner_encoding_ms": 0.09234000000287779,
+            "producer_evidence_id": "ev_64c67b1f4ac769b888b82c6ef9606cd475fc3ad0cf051bf76476aa5ce34b1c28",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf"
+              },
+              "view": {
+                "kind": "item",
+                "collection": "modules",
+                "selector": {
+                  "node_id": "jag_node_fe6988c196f390298badd9cd9530548d189f2a76953fbe4898fd5a652e300db4"
+                }
+              }
+            },
+            "elapsed_ms": 5.483829999997397,
+            "client_before_send_ms": 0.19081999999616528,
+            "transport_roundtrip_ms": 4.9223000000056345,
+            "client_after_receive_ms": 0.3707099999955972,
+            "client_result_json_utf8_bytes": 25818,
+            "runner_encoding_ms": 0.06367999999929452,
+            "producer_evidence_id": "ev_ba7ce8ac14e806f2c11390060fc37d44d0b0ee8289a74c1537cb65b244c853fd",
+            "is_error": false,
+            "progress": []
+          }
+        ],
+        "failure": null,
+        "measurement_scope": "Public SDK Transport timestamps split client work from the transport/server roundtrip; parsed result JSON bytes are not raw wire bytes; runner encoding and writes are outside each call; engine-stage durations and independent producer truth are not inferred"
+      },
+      "resource": {
+        "resource_scope": "rea-efficiency-51de43afaa204631a667708992b5f0c2.scope",
+        "peak_cgroup_bytes_sampled": 721563648,
+        "elapsed_seconds": 45.22,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 22,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 34830304,
+          "user_usec": 30219721,
+          "system_usec": 4610583,
+          "nr_periods": 451,
+          "nr_throttled": 0,
+          "throttled_usec": 0,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "selected_facts": {
+        "artifact_sha256": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+        "input_path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/obsidian-1.14.4.asar",
+        "source_selection": {
+          "requested_paths": ["package.json", "main.js"],
+          "unselected_files": 36
+        },
+        "statistics": {
+          "relevant_files": 38,
+          "nested_asar_containers": 0,
+          "text_bytes_read": 203962,
+          "invalid_utf8_files": 0,
+          "parsed_javascript_files": 1,
+          "visited_ast_nodes": 28792,
+          "findings": 87,
+          "modules": 0,
+          "parse_failures": 0
+        },
+        "electron": {
+          "browser_windows": 2,
+          "explicit_web_preferences": 0,
+          "preload_entrypoints": 0,
+          "context_bridge_apis": 0,
+          "exposed_api_members": 0,
+          "ipc": {
+            "operations": 47,
+            "literal_channels": 47,
+            "dynamic_channel_operations": 0,
+            "renderer_transmissions": 0,
+            "renderer_listeners": 0,
+            "main_handlers": 47,
+            "paired_renderer_transmissions": 0,
+            "ambiguous_renderer_transmissions": 0,
+            "unpaired_literal_renderer_transmissions": 0
+          },
+          "sender_validation_observations": 1,
+          "utility_processes": 0,
+          "resolved_utility_entrypoints": 0,
+          "native_addon_bindings": 0,
+          "resolved_native_addon_bindings": 0
+        },
+        "coverage": {
+          "application": {
+            "status": "partial",
+            "truncated": false,
+            "omitted_count": null,
+            "limits": [
+              {
+                "name": "javascript_analysis_parent_available_result_budget_bytes",
+                "value": 175687674,
+                "unit": "bytes"
+              },
+              {
+                "name": "javascript_analysis_parent_result_budget_bytes",
+                "value": 186312596,
+                "unit": "bytes"
+              },
+              {
+                "name": "javascript_analysis_worker_heap_limit_bytes",
+                "value": 1098907648,
+                "unit": "bytes"
+              },
+              {
+                "name": "javascript_analysis_worker_timeout_ms",
+                "value": 300000,
+                "unit": "milliseconds"
+              }
+            ]
+          },
+          "semantic": {
+            "status": "partial",
+            "truncated": true,
+            "omitted_nodes": null,
+            "omitted_relations": null,
+            "limits": [
+              {
+                "name": "javascript_analysis_parent_available_result_budget_bytes",
+                "value": 175687674,
+                "unit": "bytes"
+              },
+              {
+                "name": "javascript_analysis_parent_result_budget_bytes",
+                "value": 186312596,
+                "unit": "bytes"
+              },
+              {
+                "name": "javascript_analysis_worker_heap_limit_bytes",
+                "value": 1098907648,
+                "unit": "bytes"
+              },
+              {
+                "name": "javascript_analysis_worker_timeout_ms",
+                "value": 300000,
+                "unit": "milliseconds"
+              }
+            ],
+            "families": [
+              {
+                "family": "boundary",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "call-flow",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "child-process",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "closure",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "configuration",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "data-flow",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "event",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "object-flow",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "promise-ownership",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "request",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "resource-lifecycle",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              },
+              {
+                "family": "timer",
+                "status": "partial",
+                "retained_relations": 0,
+                "omitted_relations": null,
+                "unknown_count": 32
+              }
+            ]
+          },
+          "application_unknowns": 37,
+          "semantic_unknowns": 384
+        }
+      },
+      "modules": [
+        {
+          "node_id": "jag_node_15b5b46dfcbc20cac7c7a9c7b2d2efe21d39cecc77bb3a42e86506ac480c6cd0",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-semantic-module",
+            "key": "external:original-fs"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_205f7beec1e6b5efa4ff4928ea25da1e87be912fe4b597ff4ec40b0c1f7d956d",
+          "kind": "javascript-asset",
+          "path": "main.js",
+          "identity": {
+            "strategy": "content-digest",
+            "stability": "global-exact",
+            "sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba"
+          },
+          "hashes": [
+            "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba"
+          ]
+        },
+        {
+          "node_id": "jag_node_288149271a58cce3ef8ca8fcadfc24618bb0a4255724e5440605400bbbd61afb",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-semantic-module",
+            "key": "external:util"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_3b78134c949c0ddae48a6c44419bfad0e1820ac0e2807bc433e14fe553e9bf33",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "module-export",
+            "key": "[\"146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f\",\"main.js\",\"default\"]"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_42f0ba1369248f1d0ee7dc7e5deccdb6d03b34696d7c9b587b29561b055a0e2c",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "source-module",
+            "key": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f:main.js"
+          },
+          "hashes": [
+            "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f"
+          ]
+        },
+        {
+          "node_id": "jag_node_61561f95fa66efe6525b31567954c8a58bd0f3667b208e85d3c7d760ec396cdd",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:electron"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_6728bd2855597b2b521020668ce9f4e1578b1769ad6b07cb516e142811ba3015",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:crypto"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_7290cf330a4c464680051bf158a11737c88d9b658d12b8ca33dad9d9ed5bbd43",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-semantic-module",
+            "key": "external:child_process"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_72933fe5ad0b3d02bc689bbec5b98e57781a9e0642402e79d29dd84a40c4add3",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-semantic-module",
+            "key": "external:crypto"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_74570cc130ee00964df34197958ce329e59db8b64add4f152b4c9dbaa459c620",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-semantic-module",
+            "key": "external:net"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_82249640deb32652d0071229456acdeae30c3713f8cee3fb82d70352dbea476f",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:url"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_842abef9a77ef072b5bc55e00dda19a5b6039ae08288fb1c66240fa6c0321588",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-semantic-module",
+            "key": "external:path"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_a15518c53e559509aa493fc7a059a511b8aec92d52aa9035a505fe2c42060ada",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-semantic-module",
+            "key": "external:fs"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_a2953a5694265708ca5deaa4162924db5aa6ec0fe23179473703e2415da6f20d",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:fs"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_a304199f3cdfbb132783f2ef19661c97cf6538f6f9e0d2241ebd38a905fa03f5",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-semantic-module",
+            "key": "external:os"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_a7c8f694bd07b5387690de4a25f3dff858865973ff593bb314159b8932c86c15",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:net"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_bc3fca896e4b81c6783517a7fe5c51c8e2c9e5d88eef9bd4f571f9230b5e544b",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-semantic-module",
+            "key": "external:electron"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_c74ef2b3509a9072fea733eb720e062f258b2ba13a163c5e50134f76ca8a1030",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:child_process"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_d678d9ad35db0904fa9af07f745d833b1fd0795211a29e6386551441701f1ea0",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-semantic-module",
+            "key": "external:url"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_e0c8fcd14b723dfb42a5fcabf4ddc6c596d37cc1704c34f1d09456857afaa1a4",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:os"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_e74390bbf11499840fd0d861d90d1e0a9ca4edf57b8eb81dd13287e040979f5b",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:original-fs"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_eaf187fce5c5c6b53bc0f391e658c3a63d73572bc4203b1f221652689777744e",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:path"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_fafc7c8e6c5aa1793108013819c957c7cc427d09fb0ad72f5311fdedb77ca1b2",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:require(Le.join(n,\"lib\",\"i18next.min.js\"))"
+          },
+          "hashes": []
+        },
+        {
+          "node_id": "jag_node_fe6988c196f390298badd9cd9530548d189f2a76953fbe4898fd5a652e300db4",
+          "kind": "javascript-module",
+          "path": "main.js",
+          "identity": {
+            "strategy": "artifact-local-key",
+            "stability": "artifact-version",
+            "artifact_sha256": "5d90e3738f7db8fb8ea00d01556d71310fd557c4a3c785601274c2bb875a2cba",
+            "namespace": "unresolved-reference",
+            "key": "require:util"
+          },
+          "hashes": []
+        }
+      ],
+      "evidence_ids": [
+        "ev_010a637a953249fbcd734e122b537a201f5cc62aa4f31281920b90ed716f0fdf",
+        "ev_da0d78a19ca40f30ac6213d04784bd9288404eb6e13ced991e2f9454f33c5b46",
+        "ev_fac8a2752b593ff621c88e776dfe233e8dfb58904b62939f8b84f37b2d3966cf",
+        "ev_0371be7701eb1f24b97abf47638122f1bb00f2cb779c5eb39d0022e8857ffb63",
+        "ev_34acc70c7d182bbd96529e0dfe36d058fd6dea5eff9a6b406cd18665b457128c",
+        "ev_9eaf8092a8c2b55157c4ffc96e1913bcc97d3d859038eb29c5e0ccbd5bf7816f",
+        "ev_82d3acc05caefb534b9abf49ad34e1d41a3b9865d136c8e47d85d94905530c1e",
+        "ev_04ea99f79746776e3387797460ca7ffb1f1b12665e62aed90c5c05cf007d5171",
+        "ev_2aaa1a390cab8ad588513ece84529256747317baf07042800cb7c65318ed0221",
+        "ev_261a3f443ebe424ae6bb26a9c2618edf5f0743ccf16c611bc639b38aeb1ca78a",
+        "ev_e75ae2b2f637c0eebda5b03bb4112ef7a5488e1dedb948e9b412e8e272c0e863",
+        "ev_77af247421c73d1c5c44a3ff403464dceba5c884014dd2cad64bc5eddce7a10d",
+        "ev_545b21979f13da8a3eb245e3d5a6cf679bcc58c2e020367c9f2f4950a11f906f",
+        "ev_88ec471657f5c85ef7716c00434062a0ecbdafa854abac07c8ee2dee92c4ff31",
+        "ev_c2f1cb3b7549c34fe7e4dd59127bab1f479b0990b50bb173a123626534e91f3c",
+        "ev_56ea251f07340d4df515bc6f8eee01f286933669482c6b8f4fd6b5cfe19284cf",
+        "ev_851dd42f25d3b311faf0af416bbb213d333444f2965d5609cab109db17983d67",
+        "ev_0d7b16bbf50c0f9487898c1d694ba7cce6576f86be30714dd50eba2ec51e8359",
+        "ev_cb7b5a87fb6ef58ec4f5d7011769b99db9a2a2e2daa5609e22feb0cf8e2b52f3",
+        "ev_cccd390510676cc5d8cfbfa88e74911e564612726b0786ad0fde04fd31d20161",
+        "ev_d7159bf7a2117621a7b4ac7256e804251e4fb2e570ec5b63797af5823a0d20e0",
+        "ev_4c0795dc41ca0d71d13d07dad2d4756eba20b69005ff7791827ddd3d4b2d642e",
+        "ev_955201de8836152ea867211397511db044210db06632126ccb093308bfebf553",
+        "ev_66add4efae6f3940d2c7ca30f168feec798f81ba40fa618a4e6b6c6b6acf08b3",
+        "ev_9ec9569b9a8fd261d23d865c2610d003d4b6f2a998e5417e03e85920668f79e4",
+        "ev_64c67b1f4ac769b888b82c6ef9606cd475fc3ad0cf051bf76476aa5ce34b1c28",
+        "ev_ba7ce8ac14e806f2c11390060fc37d44d0b0ee8289a74c1537cb65b244c853fd"
+      ]
+    }
+  },
+  "qualifications": [
+    "All 24 selected main.js module identity records agree. Selection, statistics, Electron observations, partial coverage statuses, omitted/unknown counts, family rows and fixed worker limits agree.",
+    "The original strict comparison fails on four observed budget values. These parent budgets derive from runtime heap availability and are separately preserved with both values and JSON paths. No product output or authenticated Evidence is normalized.",
+    "Semantic coverage remains partial; 36 relevant files are unselected, 37 application unknowns and 384 semantic unknowns remain. AST and module observations do not establish runtime behavior.",
+    "One controlled pair is not a statistical latency win. Model answer completeness is graded separately from producer compatibility."
+  ]
+}

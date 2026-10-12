@@ -1,0 +1,1135 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-12",
+  "issue": "https://github.com/morluto/rea/issues/2016",
+  "question": "SQLite WASM validation/counts/exact first four exports/WAT digest and length/WABT provenance/execution and network states",
+  "controlled_inputs_match": {
+    "question_template_sha256": true,
+    "prompt_sha256": true,
+    "developer_instructions_sha256": true,
+    "provider_settings_sha256": true,
+    "enabled_tools": true
+  },
+  "trials": [
+    {
+      "domain": "wasm",
+      "checks": {
+        "reported_evidence_ids_observed_in_responses": true,
+        "temporary_profile_removed": true,
+        "target_digest": true,
+        "validation": true,
+        "section_count": true,
+        "import_count": true,
+        "export_count": true,
+        "exports_first4": true,
+        "wat_sha256": true,
+        "wat_code_units": true,
+        "runtime_execution": true,
+        "network_fetch": true,
+        "wabt_release": true,
+        "wabt_source_commit": true,
+        "no_resource_abort": true,
+        "no_observed_oom_or_task_limit": true
+      },
+      "all_selected_checks_pass": true,
+      "differences": {},
+      "tool_errors": [
+        {
+          "tool": "inspect_wasm_artifact",
+          "arguments": {
+            "path": "/home/yann/yann/rea-codemode-lab-20261011/real-artifacts/sqlite3.wasm"
+          },
+          "response": {
+            "error": {
+              "code": "resource_constraint",
+              "category": "resource_constraint",
+              "message": "The operation completed, but its complete MCP response exceeds the stdio response budget. The analysis result was not truncated. Export retained evidence to consume the complete analysis, or use complete CLI JSON output.",
+              "retryable": false,
+              "remediation": {
+                "action": "Discover retained records with get_evidence_bundle and detail: summary, then inspect compatible records through inspect_analysis_view using an exact Evidence reference. Export complete retained session evidence through export_evidence_bundle to a caller-selected path, or use complete CLI JSON output. The connection remains usable."
+              },
+              "details": {
+                "operation": "inspect_wasm_artifact",
+                "resource": "transport",
+                "reason": "The operation completed, but its complete MCP response exceeds the stdio response budget. The analysis result was not truncated. Export retained evidence to consume the complete analysis, or use complete CLI JSON output.",
+                "reported_limits": {
+                  "boundary": "mcp-response",
+                  "default_receive_buffer_bytes": 10485760,
+                  "result_budget_bytes": 10484736,
+                  "max_string_code_units": 536869864,
+                  "response_bytes_at_least": 10537095,
+                  "response_code_units_at_least": 10537095,
+                  "constraint": "receive-buffer",
+                  "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140",
+                  "evidence_reference": {
+                    "kind": "retained-evidence",
+                    "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "tool": "inspect_analysis_view",
+          "arguments": {
+            "source": {
+              "kind": "retained-evidence",
+              "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+            },
+            "view": {
+              "kind": "wasm",
+              "facet": "summary"
+            }
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "Input validation error: Invalid arguments for tool inspect_analysis_view: view.facet: Invalid option: expected one of \"sections\"|\"imports\"|\"exports\"|\"candidates\"|\"glue\"|\"wat\"|\"headers\"|\"details\"|\"tool_profile\""
+              }
+            ],
+            "structured_content": null
+          }
+        }
+      ],
+      "summary": {
+        "mode": "direct",
+        "requested_model": "gpt-5.6-terra",
+        "reasoning": "high",
+        "runtime_revision": "0002caa07ffd7319672a21ce901dbfbc55e21aac",
+        "model_identity_scope": "requested alias; resolved server-side model identity is not inferred",
+        "codex_version": "codex-cli 0.161.0",
+        "exit_code": 0,
+        "timeout": false,
+        "wall_seconds": 292.636,
+        "usage": [
+          {
+            "input_tokens": 304698,
+            "cached_input_tokens": 259584,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 8302,
+            "reasoning_output_tokens": 4895
+          }
+        ],
+        "completed_mcp_calls": [
+          {
+            "server": "rea",
+            "tool": "inspect_wasm_artifact",
+            "arguments": {
+              "path": "/home/yann/yann/rea-codemode-lab-20261011/real-artifacts/sqlite3.wasm"
+            },
+            "status": "failed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "summary"
+              }
+            },
+            "status": "failed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "exports",
+                "offset": 0,
+                "limit": 4
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "sections",
+                "offset": 0,
+                "limit": 1
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "imports",
+                "offset": 0,
+                "limit": 1
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "details",
+                "offset": 0,
+                "limit": 1
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 0,
+                "limit": 1
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "tool_profile",
+                "offset": 0,
+                "limit": 1
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "get_evidence_bundle",
+            "arguments": {
+              "detail": "summary",
+              "filters": {
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 0,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 1000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 2000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 3000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 4000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 5000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 6000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 7000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 8000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 9000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 10000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 11000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 12000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 13000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 14000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 15000000,
+                "limit": 382128
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 0,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 1000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 2000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 3000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 4000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 5000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 6000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 7000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 8000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 9000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 10000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 11000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 12000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 13000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 14000000,
+                "limit": 1000000
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "wat",
+                "offset": 15000000,
+                "limit": 382128
+              }
+            },
+            "status": "completed",
+            "error": null
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "summary"
+              }
+            },
+            "status": "completed",
+            "error": null
+          }
+        ],
+        "event_types": {
+          "thread.started": 1,
+          "turn.started": 1,
+          "item.completed": 45,
+          "item.started": 42,
+          "turn.completed": 1
+        },
+        "factual_correctness": "not_assessed",
+        "scope": "real_cli_trial_requires_transcript_and_fact_review"
+      },
+      "fingerprints": {
+        "runtime_revision": "0002caa07ffd7319672a21ce901dbfbc55e21aac",
+        "enabled_tools": [
+          "inspect_wasm_artifact",
+          "inspect_analysis_view",
+          "get_evidence_bundle",
+          "export_evidence_bundle"
+        ],
+        "authority": "static",
+        "runtime_files_sha256": "c1cab7fe56cc35439a480114da3c435d42b0c6875ff8bb98d75e8143418c3380",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "experiment_sources_sha256": {
+          "agent-trial.py": "d6bccbde798bc367ff8aee5f7be09f28b55fc9315c55e8653dede0889b620fc2"
+        },
+        "developer_instructions_sha256": "eaddc85aa5b141538ec280d640c62db799231b394679a17f2e6cc6bc2146a95c",
+        "prompt_sha256": "171215ecb0ee4882047b2140de00a2d9b201df168d4dc94138df98b06d96b54f",
+        "question_template_sha256": "9da43cc57bc62cf6ffaf84f4d8f2352ba71cc7678004f567c0cf4f70a3af4516",
+        "provider_settings_sha256": "1db4e19adcb32bb64a3baad58a1b4ef04b52ba648bab29678693f9ab8dbdabb4"
+      },
+      "answer_file_sha256": "0d003aa8f207cb32d4b3f968366e6f6adfa32c5c388d8b6674739bf6f1a3ad69",
+      "answer_had_json_fence": false,
+      "reported_evidence_ids": [
+        "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140",
+        "ev_8c039b1e4ecefb3619f50d2cc0b9b83086cc505fb0b8662fad7ba11b9cec8922",
+        "ev_f78393e6d8e2e6930e9bbb58d29105b2bac3676ad84a3dc772a9518391cbafa1"
+      ],
+      "resource": {
+        "resource_scope": "rea-efficiency-4d764fc079294dc0ac0829c78fa04758.scope",
+        "peak_cgroup_bytes_sampled": 891744256,
+        "elapsed_seconds": 292.998,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 98,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 15160812,
+          "user_usec": 11263920,
+          "system_usec": 3896892,
+          "nr_periods": 2563,
+          "nr_throttled": 27,
+          "throttled_usec": 32631,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "scope": "Fixed selected-fact review against actual public producer observations. Equivalent explicitly named answer representations are accepted; unknowns/nulls remain checked. Limitations, unsupported claims and broader behavior still require transcript review. Token usage and failed calls are retained; zero exit status is not a factual grade."
+    },
+    {
+      "domain": "wasm",
+      "checks": {
+        "reported_evidence_ids_observed_in_responses": true,
+        "temporary_profile_removed": true,
+        "selected_artifact_bytes_unchanged": true,
+        "target_digest": true,
+        "validation": true,
+        "section_count": true,
+        "import_count": true,
+        "export_count": true,
+        "exports_first4": true,
+        "wat_sha256": true,
+        "wat_code_units": true,
+        "runtime_execution": true,
+        "network_fetch": true,
+        "wabt_release": true,
+        "wabt_source_commit": true,
+        "no_resource_abort": true,
+        "no_observed_oom_or_task_limit": true
+      },
+      "all_selected_checks_pass": true,
+      "differences": {},
+      "tool_errors": [
+        {
+          "tool": "inspect_wasm_artifact",
+          "arguments": {
+            "path": "/home/yann/yann/rea-codemode-lab-20261011/real-artifacts/sqlite3.wasm"
+          },
+          "response": {
+            "error": {
+              "code": "resource_constraint",
+              "category": "resource_constraint",
+              "message": "The operation completed, but its complete MCP response exceeds the stdio response budget. The analysis result was not truncated. Export retained evidence to consume the complete analysis, or use complete CLI JSON output.",
+              "retryable": false,
+              "remediation": {
+                "action": "Discover retained records with get_evidence_bundle and detail: summary, then inspect compatible records through inspect_analysis_view using an exact Evidence reference. Export complete retained session evidence through export_evidence_bundle to a caller-selected path, or use complete CLI JSON output. The connection remains usable."
+              },
+              "details": {
+                "operation": "inspect_wasm_artifact",
+                "resource": "transport",
+                "reason": "The operation completed, but its complete MCP response exceeds the stdio response budget. The analysis result was not truncated. Export retained evidence to consume the complete analysis, or use complete CLI JSON output.",
+                "reported_limits": {
+                  "boundary": "mcp-response",
+                  "default_receive_buffer_bytes": 10485760,
+                  "result_budget_bytes": 10484736,
+                  "max_string_code_units": 536869864,
+                  "response_bytes_at_least": 10537095,
+                  "response_code_units_at_least": 10537095,
+                  "constraint": "receive-buffer",
+                  "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140",
+                  "evidence_reference": {
+                    "kind": "retained-evidence",
+                    "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "summary": {
+        "mode": "direct",
+        "requested_model": "gpt-5.6-terra",
+        "reasoning": "high",
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": "2ee8f3dab694532afc8840e07703127287662d08b74e6ff50491ce63f00d5752",
+        "selected_artifact_sha256_after": "2ee8f3dab694532afc8840e07703127287662d08b74e6ff50491ce63f00d5752",
+        "selected_artifact_bytes_unchanged": true,
+        "model_identity_scope": "requested alias; resolved server-side model identity is not inferred",
+        "codex_version": "codex-cli 0.161.0",
+        "exit_code": 0,
+        "timeout": false,
+        "wall_seconds": 63.79,
+        "usage": [
+          {
+            "input_tokens": 74387,
+            "cached_input_tokens": 49408,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1814,
+            "reasoning_output_tokens": 759
+          }
+        ],
+        "completed_mcp_calls": [
+          {
+            "server": "rea",
+            "tool": "inspect_wasm_artifact",
+            "arguments": {
+              "path": "/home/yann/yann/rea-codemode-lab-20261011/real-artifacts/sqlite3.wasm"
+            },
+            "status": "failed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 1596
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "summary"
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 10410
+          },
+          {
+            "server": "rea",
+            "tool": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+              },
+              "view": {
+                "kind": "wasm",
+                "facet": "exports",
+                "offset": 0,
+                "limit": 4
+              }
+            },
+            "status": "completed",
+            "error": null,
+            "codex_event_result_json_utf8_bytes": 8125
+          }
+        ],
+        "event_types": {
+          "thread.started": 1,
+          "turn.started": 1,
+          "item.completed": 6,
+          "item.started": 3,
+          "turn.completed": 1
+        },
+        "factual_correctness": "not_assessed",
+        "scope": "real_cli_trial_requires_transcript_and_fact_review"
+      },
+      "fingerprints": {
+        "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "selected_artifact_sha256_before": "2ee8f3dab694532afc8840e07703127287662d08b74e6ff50491ce63f00d5752",
+        "enabled_tools": [
+          "inspect_wasm_artifact",
+          "inspect_analysis_view",
+          "get_evidence_bundle",
+          "export_evidence_bundle"
+        ],
+        "authority": "static",
+        "runtime_files_sha256": "c35e1d11fdfa4c93ce7600b247ebf44abbd27e514b1024ca948fdb33e82c1a3b",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "experiment_sources_sha256": {
+          "agent-trial.py": "6ecf7b2ecd98a1050935336d04d9f4b703e2d8519c837e7c987238456713bf1a"
+        },
+        "developer_instructions_sha256": "eaddc85aa5b141538ec280d640c62db799231b394679a17f2e6cc6bc2146a95c",
+        "prompt_sha256": "171215ecb0ee4882047b2140de00a2d9b201df168d4dc94138df98b06d96b54f",
+        "question_template_sha256": "9da43cc57bc62cf6ffaf84f4d8f2352ba71cc7678004f567c0cf4f70a3af4516",
+        "provider_settings_sha256": "1db4e19adcb32bb64a3baad58a1b4ef04b52ba648bab29678693f9ab8dbdabb4"
+      },
+      "answer_file_sha256": "aee8a9564334914293ce66daec8dd278cca13b3f992949179fb82ef0e7c41aa2",
+      "answer_had_json_fence": false,
+      "reported_evidence_ids": [
+        "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140",
+        "ev_8c039b1e4ecefb3619f50d2cc0b9b83086cc505fb0b8662fad7ba11b9cec8922",
+        "ev_f78393e6d8e2e6930e9bbb58d29105b2bac3676ad84a3dc772a9518391cbafa1"
+      ],
+      "resource": {
+        "resource_scope": "rea-efficiency-2b4e25296cf84dd4a3ddfb32ad167e6b.scope",
+        "peak_cgroup_bytes_sampled": 860647424,
+        "elapsed_seconds": 64.08,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 99,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 7975880,
+          "user_usec": 5739981,
+          "system_usec": 2235898,
+          "nr_periods": 574,
+          "nr_throttled": 7,
+          "throttled_usec": 9918,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "scope": "Fixed selected-fact review against actual public producer observations. Equivalent explicitly named answer representations are accepted; unknowns/nulls remain checked. Limitations, unsupported claims and broader behavior still require transcript review. Token usage and failed calls are retained; zero exit status is not a factual grade."
+    }
+  ],
+  "interpretation": "Both actual Codex CLI trials preserve all selected facts and real source/view IDs. One description-only follow-up explicitly spells out summary kind and its fields. Calls change from 42 to 3, and repeated WAT pages disappear. This is one pair with stochastic model behavior, not a statistical speedup or a general causal claim. The original completed-analysis transport error remains in both runs.",
+  "provenance_scope": "Requested gpt-5.6-terra alias/high, Codex CLI 0.161.0, isolated profiles, frozen compiled runtimes, no target WASM execution. SHA-256 values identify selected bytes; publisher authenticity and resolved server-side model identity are not inferred."
+}

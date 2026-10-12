@@ -67,6 +67,36 @@ if (left.artifact === "openwrt.bin") {
     }
   }
 }
+// JavaScript result budgets depend on observed parent heap availability.
+// Preserve their exact values on both sides, then compare the coverage facts
+// and fixed worker limits. Never exclude status, omitted counts or families.
+if (
+  left.artifact === "obsidian.asar" &&
+  left.javascript_question === "selected"
+) {
+  const dynamicBudgets = new Set([
+    "javascript_analysis_parent_available_result_budget_bytes",
+    "javascript_analysis_parent_result_budget_bytes",
+  ]);
+  for (const [side, answer] of [
+    ["left", a],
+    ["right", b],
+  ]) {
+    for (const layer of ["application", "semantic"]) {
+      for (const [index, limit] of answer.coverage[layer].limits.entries()) {
+        if (!dynamicBudgets.has(limit.name) || limit.unit !== "bytes") continue;
+        runSpecific.push({
+          side,
+          path: ["coverage", layer, "limits", index, "value"],
+          name: limit.name,
+          unit: limit.unit,
+          value: limit.value,
+        });
+        delete limit.value;
+      }
+    }
+  }
+}
 const factDifferences = [
   ...new Set([...Object.keys(a), ...Object.keys(b)]),
 ].filter((key) => !isDeepStrictEqual(a[key], b[key]));

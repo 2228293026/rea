@@ -1,5 +1,6 @@
 """Run one owned experiment in a bounded, transient Linux systemd scope."""
 
+import argparse
 import json
 import os
 from pathlib import Path
@@ -43,7 +44,13 @@ def stop_owned_scope(unit, process, group):
 
 
 def main():
-    args = sys.argv[1:]
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--task-ceiling', type=int, default=192)
+    parser.add_argument('command', nargs=argparse.REMAINDER)
+    options = parser.parse_args()
+    if options.task_ceiling <= 0:
+        parser.error('--task-ceiling must be positive')
+    args = options.command
     if args and args[0] == '--':
         args = args[1:]
     if not args:
@@ -56,7 +63,7 @@ def main():
     command = [
         'systemd-run', '--user', '--scope', '--unit=' + unit,
         '-p', 'MemoryMax=4G', '-p', 'MemoryHigh=3G', '-p', 'MemorySwapMax=0',
-        '-p', 'CPUQuota=100%', '-p', 'TasksMax=192',
+        '-p', 'CPUQuota=100%', '-p', 'TasksMax=' + str(options.task_ceiling),
         'taskset', '-c', str(cpu), *args,
     ]
     process = subprocess.Popen(command)
@@ -116,7 +123,7 @@ def main():
             'abort': abort, 'hard_memory_bytes': 4 * gib,
             'early_stop_bytes': 3 * gib, 'cpu_quota_percent': 100,
             'cpu_affinity': [cpu],
-            'task_ceiling': 192, 'peak_tasks_sampled': peak_tasks,
+            'task_ceiling': options.task_ceiling, 'peak_tasks_sampled': peak_tasks,
             'resource_events_last_observed': events,
             'cpu_stat_last_observed': cpu_stats,
         }), file=sys.stderr)
